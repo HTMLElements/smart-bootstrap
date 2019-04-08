@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-webcomponents",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Bootstrap Web Components",
   "main": "index.js",
   "scripts": {
