@@ -16,7 +16,7 @@ Smart('bootstrap-button', class Button extends Smart.ContentElement {
                 type: 'string'
             },
 			'outlined': {
-				value: '',
+				value: false,
                 type: 'boolean'
             },
 			'sizeMode': {
