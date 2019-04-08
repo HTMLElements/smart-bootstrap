@@ -29,35 +29,35 @@ The package contains a set of Free Custom Elements based on the popular Boostrap
 ```
 -->
 ```html
-     <h2>Bootstrap Buttons</h2><br/>
-	<bootstrap-button style-mode="primary">Primary</bootstrap-button>
-	<bootstrap-button style-mode="secondary">Secondary</bootstrap-button>
-	<bootstrap-button style-mode="success">Success</bootstrap-button>
-	<bootstrap-button style-mode="danger">Danger</bootstrap-button>
-	<bootstrap-button style-mode="warning">Warning</bootstrap-button>
-	<bootstrap-button style-mode="info">Info</bootstrap-button>
-	<bootstrap-button style-mode="light">Light</bootstrap-button>
-	<bootstrap-button style-mode="dark">Dark</bootstrap-button>
-	<bootstrap-button style-mode="link">Link</bootstrap-button>
-	<br/><br/><h2>Bootstrap Outline Buttons</h2><br/>
-	<bootstrap-button outlined style-mode="primary">Primary</bootstrap-button>
-	<bootstrap-button outlined style-mode="secondary">Secondary</bootstrap-button>
-	<bootstrap-button outlined style-mode="success">Success</bootstrap-button>
-	<bootstrap-button outlined style-mode="danger">Danger</bootstrap-button>
-	<bootstrap-button outlined style-mode="warning">Warning</bootstrap-button>
-	<bootstrap-button outlined style-mode="info">Info</bootstrap-button>
-	<bootstrap-button outlined style-mode="light">Light</bootstrap-button>
-	<bootstrap-button outlined style-mode="dark">Dark</bootstrap-button>
-	<bootstrap-button outlined style-mode="link">Link</bootstrap-button>
-	<br/><br/><h2>Bootstrap Buttons Size</h2><br/>
-	<bootstrap-button size-mode="lg">Large Button</bootstrap-button>
-	<bootstrap-button size-mode="lg">Large Button</bootstrap-button>
-	<br/><br/>
-	<bootstrap-button size-mode="sm">Small Button</bootstrap-button>
-	<bootstrap-button size-mode="sm">Small Button</bootstrap-button>
-	<br/><br/><h2>Bootstrap Disabled Buttons</h2><br/>
-	<bootstrap-button disabled style-mode="primary">Primary</bootstrap-button>
-	<bootstrap-button disabled style-mode="secondary">Secondary</bootstrap-button>	
+<h2>Bootstrap Buttons</h2><br/>
+<bootstrap-button style-mode="primary">Primary</bootstrap-button>
+<bootstrap-button style-mode="secondary">Secondary</bootstrap-button>
+<bootstrap-button style-mode="success">Success</bootstrap-button>
+<bootstrap-button style-mode="danger">Danger</bootstrap-button>
+<bootstrap-button style-mode="warning">Warning</bootstrap-button>
+<bootstrap-button style-mode="info">Info</bootstrap-button>
+<bootstrap-button style-mode="light">Light</bootstrap-button>
+<bootstrap-button style-mode="dark">Dark</bootstrap-button>
+<bootstrap-button style-mode="link">Link</bootstrap-button>
+<br/><br/><h2>Bootstrap Outline Buttons</h2><br/>
+<bootstrap-button outlined style-mode="primary">Primary</bootstrap-button>
+<bootstrap-button outlined style-mode="secondary">Secondary</bootstrap-button>
+<bootstrap-button outlined style-mode="success">Success</bootstrap-button>
+<bootstrap-button outlined style-mode="danger">Danger</bootstrap-button>
+<bootstrap-button outlined style-mode="warning">Warning</bootstrap-button>
+<bootstrap-button outlined style-mode="info">Info</bootstrap-button>
+<bootstrap-button outlined style-mode="light">Light</bootstrap-button>
+<bootstrap-button outlined style-mode="dark">Dark</bootstrap-button>
+<bootstrap-button outlined style-mode="link">Link</bootstrap-button>
+<br/><br/><h2>Bootstrap Buttons Size</h2><br/>
+<bootstrap-button size-mode="lg">Large Button</bootstrap-button>
+<bootstrap-button size-mode="lg">Large Button</bootstrap-button>
+<br/><br/>
+<bootstrap-button size-mode="sm">Small Button</bootstrap-button>
+<bootstrap-button size-mode="sm">Small Button</bootstrap-button>
+<br/><br/><h2>Bootstrap Disabled Buttons</h2><br/>
+<bootstrap-button disabled style-mode="primary">Primary</bootstrap-button>
+<bootstrap-button disabled style-mode="secondary">Secondary</bootstrap-button>	
 ```
 
 [<img src="https://raw.githubusercontent.com/htmlelements/Bootstrap-Web-Components/master/Bootstrap.png" alt="Screenshot of Bootstrap, Elements">](https://htmlelements.com/demos/)
