@@ -1,0 +1,46 @@
+{
+  "name": "bootstrap-webcomponents",
+  "version": "1.0.0",
+  "description": "Bootstrap Web Components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HTMLElements/smart-core.git"
+  },
+  "dependencies": {
+    "@smarthtmlelements/smart-core": "^2.4.3"
+  },
+  "author": "",
+  "license": "https://github.com/HTMLElements/Bootstrap-Web-Components/blob/master/LICENSE",
+  "bugs": {
+    "url": "https://github.com/HTMLElements/https://github.com/HTMLElements/Bootstrap-Web-Components/issues"
+  },
+  "homepage": "https://github.com/HTMLElements/https://github.com/HTMLElements/Bootstrap-Web-Components#readme",
+  "keywords": [
+    "input",
+    "element",
+    "bootstrap",
+    "inputs",
+    "bootstrap dropdown",
+    "bootstrap button",
+    "bootstrap input",
+    "input web component",
+    "datainput web component",
+    "input component",
+    "datagrid bootstrap",
+    "bootstrap typeahead",
+    "typeahead",
+    "auto complete",
+    "auto suggest input",
+    "input custom element",
+    "html carousel",
+    "material web components",
+    "input",
+    "material input",
+    "custom elements",
+    "inputs"
+  ]
+}

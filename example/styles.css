@@ -1,0 +1,13 @@
+footer {
+	padding: 20px;
+	background: #fafafa;
+	color: #333;
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+}
+
+footer a {
+	color: #333;
+	text-decoration: none;
+}
