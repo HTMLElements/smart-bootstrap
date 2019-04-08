@@ -1,0 +1,29 @@
+{
+  "name": "boostrap-web-components",
+  "authors": [
+    "jQWidgets Ltd"
+  ],
+  "description": "Free Boostrap Web Components",
+  "license": "Apache-2.0",
+  "keywords": [
+    "bootstrap web components",
+    "boostrap custom elements",
+    "html bootstrap",
+    "javascript bootstrap",
+    "bootstrap custom element",
+    "bootstrap user interface",
+    "bootstrap tabs",
+    "bootstrap"
+  ],
+  "main": "",
+  "ignore": [
+    "**/.*",
+    "**/node_modules",
+    "**/bower_components",
+    "**/tests"
+  ],
+  "dependencies": {
+    "webcomponentsjs": "^1.0.0",
+    "smart-core": "HTMLElements/smart-core"
+  }
+}
