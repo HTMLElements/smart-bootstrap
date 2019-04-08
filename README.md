@@ -1,23 +1,19 @@
-# [Bootstrap Web Components](https://www.htmlelements.com)[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Get%20over%2020%20free%20custom%20elements%20based%20on%20SmartHTMLElements%20&url=https://www.htmlelements.com/&via=htmlelements&hashtags=bootstrap,design,templates,autocomplete,input,typeahead,developers,webcomponents,customelements,polymer,material)
+# [Bootstrap Web Components](https://www.htmlelements.com)[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Get%20over%2020%20free%20custom%20elements%20based%20on%20SmartHTMLElements%20&url=https://www.htmlelements.com/&via=htmlelements&hashtags=bootstrap,design,templates,autocomplete,bootstrap-components,typeahead,developers,webcomponents,customelements,polymer,material)
 
 
 &nbsp;
 [![Price](https://img.shields.io/badge/price-FREE-0098f7.svg)](https://github.com/HTMLElements/Bootstrap-Web-Components/blob/master/LICENSE)
 [![npm](https://img.shields.io/npm/v/bootstrap-webcomponents.svg?style=flat)](https://www.npmjs.com/package/bootstrap-webcomponents)
-[![GitHub package version](https://img.shields.io/github/package-json/v/HTMLElements/smart-input.svg)](https://github.com/HTMLElements/smart-input)
-[![License: APACHE](https://img.shields.io/badge/license-APACHE-blue.svg)](https://github.com/HTMLElements/smart-input/blob/master/LICENSE)
+[![GitHub package version](https://img.shields.io/github/package-json/v/HTMLElements/Bootstrap-Web-Components.svg)](https://github.com/HTMLElements/Bootstrap-Web-Components)
+[![License: APACHE](https://img.shields.io/badge/license-APACHE-blue.svg)](https://github.com/HTMLElements/Bootstrap-Web-Components/blob/master/LICENSE)
 [![](https://img.shields.io/website-up-down-green-red/https/shields.io.svg?label=www.htmlelements.com)](https://www.htmlelements.com)
 [![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/htmlelements/bootstrap-webcomponents)
 
-# &lt;smart-input&gt;
+# &lt;Bootstrap Web Components&gt;
 
-[Live Demos ↗](https://htmlelements.com/demos/)
-|
-[Documentation ↗](https://www.htmlelements.com/docs/)
-|
 [Installation ↗](https://www.npmjs.com/package/bootstrap-webcomponents)
 
-[&lt;bootstrap-webcomponents&gt;](https://htmlelements.com/demos/) is a Custom HTML Element providing an alternative of the standard Input Auto Complete, part of the [Smart HTML Elements](https://htmlelements.com/).
+The package contains a set of Free Custom Elements based on the popular Boostrap library. 
 
 <!--
 ```
@@ -25,15 +21,15 @@
   <template>
     <script src="../webcomponentsjs/webcomponents-lite.js"></script>
     <script src="../smart-core/source/smart.core.js"></script>
-   	<script type="text/javascript" src="../src/bootstrap-elements.js"></script>	
+    <script type="text/javascript" src="../src/bootstrap-elements.js"></script>	
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	  <next-code-block></next-code-block>
+    <next-code-block></next-code-block>
   </template>
 </custom-element-demo>
 ```
 -->
 ```html
-	<h2>Bootstrap Buttons</h2><br/>
+     <h2>Bootstrap Buttons</h2><br/>
 	<bootstrap-button style-mode="primary">Primary</bootstrap-button>
 	<bootstrap-button style-mode="secondary">Secondary</bootstrap-button>
 	<bootstrap-button style-mode="success">Success</bootstrap-button>
@@ -64,42 +60,34 @@
 	<bootstrap-button disabled style-mode="secondary">Secondary</bootstrap-button>	
 ```
 
-[<img src="https://raw.githubusercontent.com/htmlelements/smart-input/master/smart-input.png" alt="Screenshot of smart-input, using the Material theme">](https://htmlelements.com/demos/)
+[<img src="https://raw.githubusercontent.com/htmlelements/Bootstrap-Web-Components/master/Bootstrap.png" alt="Screenshot of Bootstrap, Elements">](https://htmlelements.com/demos/)
 
-
-
-## Getting Started
-
-Smart HTML Elements components documentation includes getting started, customization and api documentation topics.
-
-[Getting Started Documentation](https://www.htmlelements.com/docs/)
-|
 
 ## The file structure for Smart HTML Elements
 
-- `source/`
+- `src/`
 
   Javascript files.
 
-- `source/styles/`
+- `src/styles/`
 
   Component CSS Files.
 
-- `demos/`
+- `example/`
 
-  Demo files
+  Example files
 
 ## Running demos in browser
 
-1. Fork the `Smart-HTML-Elements-Core` repository and clone it locally.
+1. Fork the repository and clone it locally.
 
 1. Make sure you have [npm](https://www.npmjs.com/) installed.
 
-1. When in the `Smart-HTML-Elements-Core` directory, run `npm install` and then `bower install` to install dependencies.
+1. When in the directory, run `npm install` 
 
 1. Run a localhost or upload the demo on a web server. Then run:
 
-  - /demos/smart-input/overview/
+  - /example/
 
 
 ## Following the coding style
