@@ -15,19 +15,9 @@
 
 The package contains a set of Free Custom Elements based on the popular Boostrap library. 
 
-<!--
-```
-<custom-element-demo>
-  <template>
-    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
-    <script src="../smart-core/source/smart.core.js"></script>
-    <script type="text/javascript" src="../src/bootstrap-elements.js"></script>	
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <next-code-block></next-code-block>
-  </template>
-</custom-element-demo>
-```
--->
+[Demo ↗](https://www.htmlelements.com/demos/bootstrap/)
+
+
 ```html
 <h2>Bootstrap Buttons</h2><br/>
 <bootstrap-button style-mode="primary">Primary</bootstrap-button>
