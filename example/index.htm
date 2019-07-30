@@ -1,52 +1,402 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-    <title>Bootstrap Button Web Component Demo | https://www.htmlelements.com/</title>
-	<meta name="description" content="Use web components for Bootstrap and Custom Elements with Bootstrap styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.">
-	<meta name="author" content="https://www.htmlelements.com/ and Boyko Markov">	
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+	<title>Bootstrap Button Web Component Demo | https://www.htmlelements.com/</title>
+	<meta name="description"
+		content="Use web components for Bootstrap and Custom Elements with Bootstrap styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.">
+	<meta name="author" content="https://www.htmlelements.com/ and Boyko Markov">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="styles.css" />	
-	<script type="text/javascript" src="../../@smarthtmlelements/smart-core/source/smart.core.js"></script>
-    <script src="index.js"></script>
-	<script type="text/javascript" src="../src/bootstrap-elements.js"></script>	
+	<link rel="stylesheet" type="text/css" href="styles.css" />
+	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+	<script type="text/javascript" src="../node_modules/@smarthtmlelements/smart-core/source/smart.core.js"></script>
+	<script src="index.js"></script>
+	<script type="text/javascript" src="../src/bootstrap-elements.js"></script>
 </head>
+
 <body>
 	<h1>Bootstrap based Custom Elements and Web Components | Free</h1>
-	<p>Use Custom Elements with Bootstrap for actions in forms, dialogs, and more with support for multiple sizes, states, and more.</p>
-	<h2>Bootstrap Buttons</h2><br/>
-	<bootstrap-button style-mode="primary">Primary</bootstrap-button>
-	<bootstrap-button style-mode="secondary">Secondary</bootstrap-button>
-	<bootstrap-button style-mode="success">Success</bootstrap-button>
-	<bootstrap-button style-mode="danger">Danger</bootstrap-button>
-	<bootstrap-button style-mode="warning">Warning</bootstrap-button>
-	<bootstrap-button style-mode="info">Info</bootstrap-button>
-	<bootstrap-button style-mode="light">Light</bootstrap-button>
-	<bootstrap-button style-mode="dark">Dark</bootstrap-button>
-	<bootstrap-button style-mode="link">Link</bootstrap-button>
-	<br/><br/><h2>Bootstrap Outline Buttons</h2><br/>
-	<bootstrap-button outlined style-mode="primary">Primary</bootstrap-button>
-	<bootstrap-button outlined style-mode="secondary">Secondary</bootstrap-button>
-	<bootstrap-button outlined style-mode="success">Success</bootstrap-button>
-	<bootstrap-button outlined style-mode="danger">Danger</bootstrap-button>
-	<bootstrap-button outlined style-mode="warning">Warning</bootstrap-button>
-	<bootstrap-button outlined style-mode="info">Info</bootstrap-button>
-	<bootstrap-button outlined style-mode="light">Light</bootstrap-button>
-	<bootstrap-button outlined style-mode="dark">Dark</bootstrap-button>
-	<bootstrap-button outlined style-mode="link">Link</bootstrap-button>
-	<br/><br/><h2>Bootstrap Buttons Size</h2><br/>
-	<bootstrap-button size-mode="lg">Large Button</bootstrap-button>
-	<bootstrap-button size-mode="lg">Large Button</bootstrap-button>
-	<br/><br/>
-	<bootstrap-button size-mode="sm">Small Button</bootstrap-button>
-	<bootstrap-button size-mode="sm">Small Button</bootstrap-button>
-	<br/><br/><h2>Bootstrap Disabled Buttons</h2><br/>
-	<bootstrap-button disabled style-mode="primary">Primary</bootstrap-button>
-	<bootstrap-button disabled style-mode="secondary">Secondary</bootstrap-button>		
+	<div class="main-container">
+		<section></section>
+		<section class="content-section">
+			<p>Use Custom Elements with Bootstrap for actions in forms, dialogs, and more with support for multiple
+				sizes,
+				states, and more.</p>
+
+			<h2 class="separator">Quick Start</h2>
+			<p>
+				Looking to quickly add Bootstrap Webcomponents to your project ?
+				<p>
+					Official Github page <a
+						href="https://github.com/HTMLElements/Bootstrap-Web-Components">Bootstrap Web Components</a>
+				</p>
+				<p>
+					Using a package manager download the Bootstrap Webcomponents <a
+						href="https://www.npmjs.com/package/bootstrap-webcomponents">NPM package</a>
+				</p>
+			</p>
+
+			<h2>CSS</h2>
+			<p>
+				Copy-paste the stylesheet &lt;link&gt; into your &lt;head&gt; before all other stylesheets to load our
+				CSS.
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre
+						class="prettyprint">&lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"&gt;</pre>
+				</figure>
+			</p>
+
+			<h2>JS</h2>
+			<p>
+				Copy-paste the &lt;script&gt; tags into your &lt;head&gt; before all other javascript references to load
+				the neccessary dependencies.
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;script type="text/javascript" src="../node_modules/@smarthtmlelements/smart-core/source/smart.core.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="../src/bootstrap-elements.js""&gt;&lt;/script&gt;</pre>
+				</figure>
+			</p>
+
+			<h2>Starter Template</h2>
+			<p>Here's an example on how to create a simple button on a page:</p>
+			<p>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;!DOCTYPE html&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+	&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
+	&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" /&gt;
+	&lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"&gt;
+	&lt;script type="text/javascript" src="../node_modules/@smarthtmlelements/smart-core/source/smart.core.js"&gt;&lt;/script&gt;
+	&lt;script type="text/javascript" src="../src/bootstrap-elements.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;bootstrap-button outlined style-mode="primary"&gt;Primary&lt;/bootstrap-button&gt;
+&lt;/body&gt;
+</pre>
+				</figure>
+			</p>
+
+			<h2 class="separator">Components</h3>
+
+				<h2>Bootstrap Buttons</h2><br />
+				<p>Use Bootstrap custom button styles for actions in forms, dialogs, and more with support for multiple
+					sizes, states, and more.</p>
+				</br>
+				<h3>Examples</h3>
+
+				<p>Bootstrap includes several predefined button styles, each serving its own semantic purpose, with a
+					few extras thrown in for more control.</p>
+				<div class="bd-example">
+					<bootstrap-button style-mode="primary">Primary</bootstrap-button>
+					<bootstrap-button style-mode="secondary">Secondary</bootstrap-button>
+					<bootstrap-button style-mode="success">Success</bootstrap-button>
+					<bootstrap-button style-mode="danger">Danger</bootstrap-button>
+					<bootstrap-button style-mode="warning">Warning</bootstrap-button>
+					<bootstrap-button style-mode="info">Info</bootstrap-button>
+					<bootstrap-button style-mode="light">Light</bootstrap-button>
+					<bootstrap-button style-mode="dark">Dark</bootstrap-button>
+					<bootstrap-button style-mode="link">Link</bootstrap-button>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-button style-mode="primary"&gt;Primary&lt;/bootstrap-button&gt;
+&lt;bootstrap-button style-mode="secondary"&gt;Secondary&lt;/bootstrap-button&gt;
+&lt;bootstrap-button style-mode="success"&gt;Success&lt;/bootstrap-button&gt;
+&lt;bootstrap-button style-mode="danger"&gt;Danger&lt;/bootstrap-button&gt;
+&lt;bootstrap-button style-mode="warning"&gt;Warning&lt;/bootstrap-button&gt;
+&lt;bootstrap-button style-mode="info"&gt;Info&lt;/bootstrap-button&gt;
+&lt;bootstrap-button style-mode="light"&gt;Light&lt;/bootstrap-button&gt;
+&lt;bootstrap-button style-mode="dark"&gt;Dark&lt;/bootstrap-button&gt;
+&lt;bootstrap-button style-mode="link"&gt;Link&lt;/bootstrap-button&gt;</pre>
+				</figure>
+
+				<p>
+					<b>StyleMode</b> property allows the user to change the style of the elements.
+				</p>
+
+				<h2>Outlined Buttons</h2><br />
+				<p>
+					In need of a button, but not the hefty background colors they bring? Just add the class
+					<b>outlined</b> to remove all background images and colors on any button.
+				</p>
+				<div class="bd-example">
+					<bootstrap-button outlined style-mode="primary">Primary</bootstrap-button>
+					<bootstrap-button outlined style-mode="secondary">Secondary</bootstrap-button>
+					<bootstrap-button outlined style-mode="success">Success</bootstrap-button>
+					<bootstrap-button outlined style-mode="danger">Danger</bootstrap-button>
+					<bootstrap-button outlined style-mode="warning">Warning</bootstrap-button>
+					<bootstrap-button outlined style-mode="info">Info</bootstrap-button>
+					<bootstrap-button outlined style-mode="light">Light</bootstrap-button>
+					<bootstrap-button outlined style-mode="dark">Dark</bootstrap-button>
+					<bootstrap-button outlined style-mode="link">Link</bootstrap-button>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-button outlined style-mode="primary"&gt;Primary&lt;/bootstrap-button&gt;
+&lt;bootstrap-button outlined style-mode="secondary"&gt;Secondary&lt;/bootstrap-button&gt;
+&lt;bootstrap-button outlined style-mode="success"&gt;Success&lt;/bootstrap-button&gt;
+&lt;bootstrap-button outlined style-mode="danger"&gt;Danger&lt;/bootstrap-button&gt;
+&lt;bootstrap-button outlined style-mode="warning"&gt;Warning&lt;/bootstrap-button&gt;
+&lt;bootstrap-button outlined style-mode="info"&gt;Info&lt;/bootstrap-button&gt;
+&lt;bootstrap-button outlined style-mode="light"&gt;Light&lt;/bootstrap-button&gt;
+&lt;bootstrap-button outlined style-mode="dark"&gt;Dark&lt;/bootstrap-button&gt;
+&lt;bootstrap-button outlined style-mode="link"&gt;Link&lt;/bootstrap-button&gt;</pre>
+				</figure>
+
+				<p>
+					Setting the <b>outlined</b> property the elements turn into outlined buttons with no filling untill
+					hovered.
+				</p>
+
+				<h2>Buttons Sizes</h2><br />
+				<p>
+					Fancy larger or smaller buttons? Just set the <b>sizeMode</b> property to 'sm' or 'lg' for
+					additional sizes.
+				</p>
+				<div class="bd-example">
+					<bootstrap-button size-mode="lg">Large Button</bootstrap-button>
+					<bootstrap-button size-mode="lg">Large Button</bootstrap-button>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-button size-mode="lg"&gt;Large Button&lt;/bootstrap-button&gt;
+&lt;bootstrap-button size-mode="lg"&gt;Large Button&lt;/bootstrap-button&gt;</pre>
+				</figure>
+
+				<div class="bd-example">
+					<bootstrap-button size-mode="sm">Small Button</bootstrap-button>
+					<bootstrap-button size-mode="sm">Small Button</bootstrap-button>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-button size-mode="sm"&gt;Large Button&lt;/bootstrap-button&gt;
+&lt;bootstrap-button size-mode="sm"&gt;Large Button&lt;/bootstrap-button&gt;</pre>
+				</figure>
+				<p>
+					Buttons can be reset back to normal if <b>SizeMode</b> is set to an empty string.
+				</p>
+
+				<h2>Disabled Buttons</h2><br />
+				<div class="bd-example">
+					<bootstrap-button disabled style-mode="primary">Primary</bootstrap-button>
+					<bootstrap-button disabled style-mode="secondary">Secondary</bootstrap-button>
+				</div>
+				<div class="bd-clipboard">
+						<div class="simple-tooltip">
+							<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+								<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+						</div>
+					</div>
+					<figure class="highlight">
+						<pre class="prettyprint">
+&lt;bootstrap-button disabled&gt;Primary Button&lt;/bootstrap-button&gt;
+&lt;bootstrap-button disabled&gt;Button&lt;/bootstrap-button&gt;</pre>
+					</figure>
+
+					<p>
+						To disable/enable an element just set the <b>disabled</b> property.
+					</p>
+
+				<h2>Bootstrap Checkbox</h2><br />
+				<p>
+					Checkboxes are buttons that can be toggled. The checked state of these buttons can be updated via click or by setting the <b>checked</b> property to true. 
+					Checkboxes like the other toggle buttons can be pre-checked.
+				</p>
+				<div class="bd-example">
+					<bootstrap-check-box checked>Checked</bootstrap-check-box>
+					<bootstrap-check-box>Unchecked</bootstrap-check-box>
+				</div>
+				<div class="bd-clipboard">
+						<div class="simple-tooltip">
+							<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+								<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+						</div>
+					</div>
+					<figure class="highlight">
+						<pre class="prettyprint">
+&lt;bootstrap-check-box checked&gt;Checked&lt;/bootstrap-check-box&gt;
+&lt;bootstrap-check-box&gt;Unchecked&lt;/bootstrap-check-box&gt;</pre>
+					</figure>
+
+					<p>
+						Appling/Removing the <b>checked</b> attribute will toggle the state of the button.
+					</p>
+
+				<h2>Toggle Button</h2>
+				<div class="bd-example">
+					<bootstrap-toggle-button checked> Checked</bootstrap-toggle-button>
+					<bootstrap-toggle-button>Unchecked</bootstrap-toggle-button>
+				</div>
+
+				<h2>Radio Button</h2>
+				<div class="bd-example">
+					<bootstrap-radio-button checked> Active</bootstrap-radio-button>
+					<bootstrap-radio-button>Radio</bootstrap-radio-button>
+					<bootstrap-radio-button>Radio</bootstrap-radio-button>
+				</div>
+
+				<h2>Dropdowns</h2>
+				<div class="bd-example">
+					<bootstrap-drop-down label="Dropdown button">
+						<a class="dropdown-item" href="#">Action</a>
+						<a class="dropdown-item" href="#">Another action</a>
+						<a class="dropdown-item" href="#">Something else here</a>
+					</bootstrap-drop-down>
+				</div>
+
+				<h2>Dropdown varians</h2>
+				<div class="bd-example">
+					<div class="btn-group">
+						<bootstrap-drop-down label="Primary" style-mode="primary">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-drop-down>
+					</div>
+					<div class="btn-group">
+						<bootstrap-drop-down label="Secondary" style-mode="secondary">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-drop-down>
+					</div>
+					<div class="btn-group">
+						<bootstrap-drop-down label="Success" style-mode="success">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-drop-down>
+					</div>
+					<div class="btn-group">
+						<bootstrap-drop-down label="Info" style-mode="info">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-drop-down>
+					</div>
+					<div class="btn-group">
+						<bootstrap-drop-down label="Warning" style-mode="warning">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-drop-down>
+					</div>
+					<div class="btn-group">
+						<bootstrap-drop-down label="Danger" style-mode="danger">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-drop-down>
+					</div>
+				</div>
+				<h2>Split Button</h2>
+				<div class="bd-example">
+					<bootstrap-drop-down label="Dropdown button">
+						<a class="dropdown-item" href="#">Action</a>
+						<a class="dropdown-item" href="#">Another action</a>
+						<a class="dropdown-item" href="#">Something else here</a>
+					</bootstrap-drop-down>
+				</div>
+				<h2>Sizing</h2>
+				<div class="btn-toolbar">
+					<div class="bd-example">
+						<bootstrap-drop-down label="Large button" size-mode="lg">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+						</bootstrap-drop-down>
+					</div>
+					<div class="bd-example">
+						<bootstrap-drop-down label="Large split button" size-mode="lg">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+						</bootstrap-drop-down>
+					</div>
+				</div>
+				<div class="btn-toolbar">
+					<div class="bd-example">
+						<bootstrap-drop-down label="Small button" size-mode="sm">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+						</bootstrap-drop-down>
+					</div>
+					<div class="bd-example">
+						<bootstrap-drop-down label="Small split button" size-mode="sm">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+						</bootstrap-drop-down>
+					</div>
+				</div>
+		</section>
+		<section class="nav-section"></section>
+
+
+	</div>
 </body>
 <footer>
-by: <a href="https://www.htmlelements.com/">https://www.htmlelements.com/</a>
+	by: <a href="https://www.htmlelements.com/">https://www.htmlelements.com/</a>
 </footeR>
+
 </html>

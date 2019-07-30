@@ -2,7 +2,7 @@ footer {
 	padding: 20px;
 	background: #fafafa;
 	color: #333;
-	position: fixed;
+	position: sticky;
 	bottom: 0px;
 	width: 100%;
 }
@@ -10,4 +10,169 @@ footer {
 footer a {
 	color: #333;
 	text-decoration: none;
+}
+
+.bd-example {
+	position: relative;
+	padding: 1rem;
+}
+
+.bd-example {
+	position: relative;
+	padding: 1rem;
+	margin: 1rem -15px 0;
+	border: solid #f8f9fa;
+}
+
+bootstrap-drop-down {
+	display: block;
+}
+
+h1 {
+	text-align: center;
+}
+
+h2 {
+	margin-top: 3rem;
+	pointer-events: none;
+	font-size: 2rem;
+}
+
+h1, h2 {
+	margin-bottom: .5rem;
+	font-weight: 500;
+	line-height: 1.2;
+}
+
+p {
+	margin-top: 0;
+	margin-bottom: 1rem;
+}
+
+.bd-clipboard {
+	display: block;
+	position: relative;
+	float: right;
+}
+
+.btn-clipboard:hover {
+	color: #fff;
+	background-color: #027de7;
+}
+
+.btn-clipboard:focus {
+	outline: none;
+}
+
+.btn-clipboard {
+	position: absolute;
+	top: .5rem;
+	right: .5rem;
+	z-index: 10;
+	display: block;
+	padding: .25rem .5rem;
+	font-size: 75%;
+	color: #818a91;
+	background-color: transparent;
+	border: 0;
+	border-radius: .25rem;
+}
+
+.highlight {
+	margin-right: -15px;
+	margin-left: -15px;
+	padding: 1rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	background-color: #f8f9fa;
+}
+
+.highlight pre {
+	padding: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+	background-color: transparent;
+	border: 0;
+}
+
+pre {
+	display: block;
+	font-size: 87.5%;
+	color: #212529;
+	overflow: auto;
+	font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.highlight pre code {
+	font-size: inherit;
+	color: #212529;
+	word-break: normal;
+}
+
+.bd-clipboard+.highlight {
+	margin-top: 0;
+}
+
+code {
+	font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+@media (min-width: 576px) .bd-content .highlight {
+	margin-right: 0;
+	margin-left: 0;
+}
+
+@media (min-width: 576px) .highlight {
+	padding: 1.5rem;
+}
+
+.main-container {
+	display: grid;
+	grid-template-columns: 22.5% 50% 22.5%;
+	grid-column-gap: 2.5%;
+}
+
+.highlight pre.prettyprint {
+	border: none;
+}
+
+h2.separator {
+	border-bottom: 1px solid #dee2e6;
+}
+
+.simple-tooltip {
+	position: relative;
+}
+
+.simple-tooltip .tooltip-text {
+	visibility: hidden;
+	white-space: nowrap;
+	background-color: #555;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px;
+	position: absolute;
+	z-index: 1;
+	top: calc(-100% - 8px);
+	left: 50%;
+	transform: translateX(-50%);
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+.simple-tooltip .tooltip-text::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #555 transparent transparent transparent;
+}
+
+.simple-tooltip:hover .tooltip-text {
+	visibility: visible;
+	opacity: 1;
 }
