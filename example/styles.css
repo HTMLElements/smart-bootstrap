@@ -24,7 +24,7 @@ footer a {
 	border: solid #f8f9fa;
 }
 
-bootstrap-drop-down {
+bootstrap-drop-down, bootstrap-split-button {
 	display: block;
 }
 
@@ -76,6 +76,23 @@ p {
 	background-color: transparent;
 	border: 0;
 	border-radius: .25rem;
+}
+
+.btn-toolbar {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+}
+
+.bd-example>.btn-toolbar+.btn-toolbar {
+    margin-top: .5rem;
+}
+
+.ml-2, .mx-2 {
+    margin-left: .5rem!important;
 }
 
 .highlight {

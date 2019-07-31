@@ -30,8 +30,8 @@
 			<p>
 				Looking to quickly add Bootstrap Webcomponents to your project ?
 				<p>
-					Official Github page <a
-						href="https://github.com/HTMLElements/Bootstrap-Web-Components">Bootstrap Web Components</a>
+					Official Github page <a href="https://github.com/HTMLElements/Bootstrap-Web-Components">Bootstrap
+						Web Components</a>
 				</p>
 				<p>
 					Using a package manager download the Bootstrap Webcomponents <a
@@ -229,24 +229,25 @@
 					<bootstrap-button disabled style-mode="secondary">Secondary</bootstrap-button>
 				</div>
 				<div class="bd-clipboard">
-						<div class="simple-tooltip">
-							<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
-								<span class="tooltip-text">Copy to clipboard</span>Copy</button>
-						</div>
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
 					</div>
-					<figure class="highlight">
-						<pre class="prettyprint">
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
 &lt;bootstrap-button disabled&gt;Primary Button&lt;/bootstrap-button&gt;
 &lt;bootstrap-button disabled&gt;Button&lt;/bootstrap-button&gt;</pre>
-					</figure>
+				</figure>
 
-					<p>
-						To disable/enable an element just set the <b>disabled</b> property.
-					</p>
+				<p>
+					To disable/enable an element just set the <b>disabled</b> property.
+				</p>
 
 				<h2>Bootstrap Checkbox</h2><br />
 				<p>
-					Checkboxes are buttons that can be toggled. The checked state of these buttons can be updated via click or by setting the <b>checked</b> property to true. 
+					Checkboxes are buttons that can be toggled. The checked state of these buttons can be updated via
+					click or by setting the <b>checked</b> property to true.
 					Checkboxes like the other toggle buttons can be pre-checked.
 				</p>
 				<div class="bd-example">
@@ -254,35 +255,93 @@
 					<bootstrap-check-box>Unchecked</bootstrap-check-box>
 				</div>
 				<div class="bd-clipboard">
-						<div class="simple-tooltip">
-							<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
-								<span class="tooltip-text">Copy to clipboard</span>Copy</button>
-						</div>
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
 					</div>
-					<figure class="highlight">
-						<pre class="prettyprint">
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
 &lt;bootstrap-check-box checked&gt;Checked&lt;/bootstrap-check-box&gt;
 &lt;bootstrap-check-box&gt;Unchecked&lt;/bootstrap-check-box&gt;</pre>
-					</figure>
+				</figure>
 
-					<p>
-						Appling/Removing the <b>checked</b> attribute will toggle the state of the button.
-					</p>
+				<p>
+					Appling/Removing the <b>checked</b> attribute will toggle the state of the button.
+				</p>
 
-				<h2>Toggle Button</h2>
+				<h2>Bootstrap Toggle Button</h2>
 				<div class="bd-example">
 					<bootstrap-toggle-button checked> Checked</bootstrap-toggle-button>
 					<bootstrap-toggle-button>Unchecked</bootstrap-toggle-button>
 				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-toggle-button checked&gt;Checked&lt;/bootstrap-toggle-button&gt;
+&lt;bootstrap-toggle-button&gt;Unchecked&lt;/bootstrap-toggle-button&gt;</pre>
+				</figure>
 
-				<h2>Radio Button</h2>
+				<p>
+					Add the <b>checked</b> attribute to toggle a button’s active state. If you’re pre-toggling a button,
+					you must manually add the <b>checked</b> attribute to the button.
+				</p>
+
+				<h2>Bootstrap Radio Button</h2>
 				<div class="bd-example">
 					<bootstrap-radio-button checked> Active</bootstrap-radio-button>
 					<bootstrap-radio-button>Radio</bootstrap-radio-button>
 					<bootstrap-radio-button>Radio</bootstrap-radio-button>
 				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-radio-button checked&gt; Active&lt;/bootstrap-radio-button&gt;
+&lt;bootstrap-radio-button>Radio&lt;/bootstrap-radio-button&gt;
+&lt;bootstrap-radio-button>Radio&lt;/bootstrap-radio-button&gt;</pre>
+				</figure>
+				<p>
+					Radio buttons are group elements that allow only one of them to be checked. Similar to the other
+					toggle elements to set a button into checked state the property <b>checked</b> has to be applied to
+					the element.
+					All elements that have the same <b>group</b> property are considered to be in the same group.
+					<b>group</b> can be set on initialization.
+				</p>
 
-				<h2>Dropdowns</h2>
+				<h2>Bootstrap Dropdowns</h2>
+				<p>
+					Dropdowns are toggleable, contextual overlays for displaying lists of links and more.
+					They’re toggled by clicking, not by hovering; this is an intentional design decision.
+					Dropdowns are built using the <b>Smart Framework's DropDownPositioning API</b>, which provides
+					dynamic positioning and viewport detection.
+					No additional references are required since the API is part of the base class
+					<b>smartelements.js</b>.
+				</p>
+
+				<p>
+					Bootstrap’s dropdowns are designed to be generic and applicable to a variety of situations and
+					markup structures.
+					For instance, it is possible to create dropdowns that contain additional inputs and form controls,
+					such as search fields or login forms.
+					However, Bootstrap does add built-in support for most standard keyboard menu interactions, such as
+					the ability to move through individual .dropdown-item elements using the cursor keys and close the
+					menu with the ESC key.
+				</p>
+
+				<p>
+					In order for a DropDown item to visually appear as an item it is neccessary to add the class
+					<b>.dropdown-item</b>.
+				</p>
 				<div class="bd-example">
 					<bootstrap-drop-down label="Dropdown button">
 						<a class="dropdown-item" href="#">Action</a>
@@ -290,6 +349,24 @@
 						<a class="dropdown-item" href="#">Something else here</a>
 					</bootstrap-drop-down>
 				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-drop-down label="Dropdown button"&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;
+&lt;/bootstrap-drop-down&gt;</pre>
+				</figure>
+
+				<p>
+					<b>label</b> property is used to set the label of the drop down button.
+				</p>
 
 				<h2>Dropdown varians</h2>
 				<div class="bd-example">
@@ -348,47 +425,356 @@
 						</bootstrap-drop-down>
 					</div>
 				</div>
-				<h2>Split Button</h2>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;!-- Example single danger button --&gt;
+&lt;bootstrap-drop-down label="Danger" style-mode="danger"&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;
+	&lt;div class="dropdown-divider">&lt;/div&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Separated link&lt;/a&gt;
+&lt;/bootstrap-drop-down&gt;</pre>
+				</figure>
+
+				<p>
+					<b>StyleMode</b> determines the style of the DropDown.
+				</p>
+
+				<h2>Bootstrap Split Button</h2>
+				<p>
+					Similarly, create split button dropdowns with virtually the same markup as single button dropdowns,
+					but with the addition of .dropdown-toggle-split for proper spacing around the dropdown caret.
+
+					We use this extra class to reduce the horizontal padding on either side of the caret by 25% and
+					remove the margin-left that’s added for regular button dropdowns.
+					Those extra changes keep the caret centered in the split button and provide a more appropriately
+					sized hit area next to the main button.
+				</p>
 				<div class="bd-example">
-					<bootstrap-drop-down label="Dropdown button">
+					<bootstrap-split-button label="Dropdown button">
 						<a class="dropdown-item" href="#">Action</a>
 						<a class="dropdown-item" href="#">Another action</a>
 						<a class="dropdown-item" href="#">Something else here</a>
-					</bootstrap-drop-down>
+					</bootstrap-split-button>
 				</div>
+
+				<h2>Split Button varians</h2>
+				<div class="bd-example">
+					<div class="btn-group">
+						<bootstrap-split-button label="Primary" style-mode="primary">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-split-button>
+					</div>
+					<div class="btn-group">
+						<bootstrap-split-button label="Secondary" style-mode="secondary">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-split-button>
+					</div>
+					<div class="btn-group">
+						<bootstrap-split-button label="Success" style-mode="success">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-split-button>
+					</div>
+					<div class="btn-group">
+						<bootstrap-split-button label="Info" style-mode="info">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-split-button>
+					</div>
+					<div class="btn-group">
+						<bootstrap-split-button label="Warning" style-mode="warning">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-split-button>
+					</div>
+					<div class="btn-group">
+						<bootstrap-split-button label="Danger" style-mode="danger">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-split-button>
+					</div>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;!-- Example single danger button --&gt;
+&lt;bootstrap-split-button label="Danger" style-mode="danger"&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;
+	&lt;div class="dropdown-divider">&lt;/div&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Separated link&lt;/a&gt;
+&lt;/bootstrap-split-button&gt;</pre>
+				</figure>
+
+
 				<h2>Sizing</h2>
-				<div class="btn-toolbar">
-					<div class="bd-example">
+				<p>Button dropdowns work with buttons of all sizes, including default and split dropdown buttons.</p>
+				<div class="bd-example">
+					<div class="btn-toolbar">
 						<bootstrap-drop-down label="Large button" size-mode="lg">
 							<a class="dropdown-item" href="#">Action</a>
 							<a class="dropdown-item" href="#">Another action</a>
 							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
 						</bootstrap-drop-down>
-					</div>
-					<div class="bd-example">
-						<bootstrap-drop-down label="Large split button" size-mode="lg">
+						<bootstrap-split-button label="Large split button" size-mode="lg" class="ml-2">
 							<a class="dropdown-item" href="#">Action</a>
 							<a class="dropdown-item" href="#">Another action</a>
 							<a class="dropdown-item" href="#">Something else here</a>
-						</bootstrap-drop-down>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-split-button>
 					</div>
-				</div>
-				<div class="btn-toolbar">
-					<div class="bd-example">
+					<div class="btn-toolbar">
 						<bootstrap-drop-down label="Small button" size-mode="sm">
 							<a class="dropdown-item" href="#">Action</a>
 							<a class="dropdown-item" href="#">Another action</a>
 							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
 						</bootstrap-drop-down>
-					</div>
-					<div class="bd-example">
-						<bootstrap-drop-down label="Small split button" size-mode="sm">
+						<bootstrap-split-button label="Small split button" size-mode="sm" class="ml-2">
 							<a class="dropdown-item" href="#">Action</a>
 							<a class="dropdown-item" href="#">Another action</a>
 							<a class="dropdown-item" href="#">Something else here</a>
-						</bootstrap-drop-down>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-split-button>
 					</div>
 				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;!-- Large button groups (default and split) --&gt;
+&lt;bootstrap-drop-down label="Large button" size-mode="lg"&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;
+&lt;/bootstrap-drop-down&gt;
+&lt;bootstrap-split-button label="Large split button" size-mode="lg"&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;
+&lt;/bootstrap-split-button&gt;
+
+&lt;!-- Small button groups (default and split) --&gt;
+&lt;bootstrap-drop-down label="Small button" size-mode="sm"&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;
+&lt;/bootstrap-drop-down&gt;
+&lt;bootstrap-split-button label="Small split button" size-mode="sm"&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;
+&lt;/bootstrap-split-button&gt;</pre>
+				</figure>
+				<p>
+					Similar to the other buttons the <b>sizeMode</b> property determines the size of the component.
+				</p>
+
+				<h2>Directions</h2>
+
+				<h2>Dropup</h2>
+				<p>Trigger dropdown menus above elements by adding changing the <b>dropDownPosition</b> property to
+					'top' to the parent element.</p>
+
+				<div class="bd-example">
+					<div class="btn-toolbar">
+						<bootstrap-drop-down label="Dropup" drop-down-position="top">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-drop-down>
+						<bootstrap-split-button label="Split droppup" class="ml-2" drop-down-position="top">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-split-button>
+					</div>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;!-- Default dropright button --&gt;
+&lt;bootstrap-drop-down label="Dropup" drop-down-position="top""&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;
+&lt;/bootstrap-drop-down&gt;
+	&lt;!-- Split dropright button --&gt;
+&lt;bootstrap-split-button label="Split dropup" drop-down-position="top"&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;
+&lt;/bootstrap-split-button&gt;</pre>
+				</figure>
+
+				<h2>Dropright</h2>
+				<p>Trigger dropdown menus at the right of the elements by adding changing the <b>dropDownPosition</b>
+					property to
+					'right' to the parent element.</p>
+
+				<div class="bd-example">
+					<div class="btn-toolbar">
+						<bootstrap-drop-down label="Dropright" drop-down-position="right">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-drop-down>
+						<bootstrap-split-button label="Split dropright" class="ml-2" drop-down-position="right">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-split-button>
+					</div>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+	&lt;!-- Default dropright button --&gt;
+	&lt;bootstrap-drop-down label="Dropright" drop-down-position="right""&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;
+	&lt;/bootstrap-drop-down&gt;
+
+	&lt;!-- Split dropright button --&gt;
+	&lt;bootstrap-split-button label="Split dropright" drop-down-position="right"&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;
+	&lt;/bootstrap-split-button&gt;</pre>
+				</figure>
+
+				<h2>Dropleft</h2>
+				<p>Trigger dropdown menus at the left of the elements by adding changing the <b>dropDownPosition</b>
+					property to
+					'left' to the parent element.</p>
+
+				<div class="bd-example">
+					<div class="btn-toolbar">
+						<bootstrap-drop-down label="Dropleft" drop-down-position="left">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-drop-down>
+						<bootstrap-split-button label="Split dropleft" class="ml-2" drop-down-position="left">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-split-button>
+					</div>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+	&lt;!-- Default dropleft button --&gt;
+	&lt;bootstrap-drop-down label="Dropleft" drop-down-position="left""&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;
+	&lt;/bootstrap-drop-down&gt;
+
+	&lt;!-- Split dropleft button --&gt;
+	&lt;bootstrap-split-button label="Split dropleft" drop-down-position="left"&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;
+	&lt;/bootstrap-split-button&gt;</pre>
+				</figure>
+
+				<h2>Menu items</h2>
+				<p>Optionally you can use &lt;button&gt; elements in your dropdowns instead of just &lt;a&gt;'s.</p>
+
+				<div class="bd-example">
+					<bootstrap-drop-down label="Dropdown" id="b1">
+						<button class="dropdown-item" type="button">Action</button>
+						<button class="dropdown-item" type="button">Another action</button>
+						<button class="dropdown-item" type="button">Something else here</button>
+					</bootstrap-drop-down>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+	&lt;bootstrap-drop-down label="Dropdown"&gt;
+		&lt;button class="dropdown-item" type="button"&gt;Action&lt;/button&gt;
+		&lt;button class="dropdown-item" type="button"&gt;Another action&lt;/button&gt;
+		&lt;button class="dropdown-item" type="button"&gt;Something else here&lt;/button&gt;
+	&lt;/bootstrap-drop-down&gt;</pre>
+				</figure>
 		</section>
 		<section class="nav-section"></section>
 

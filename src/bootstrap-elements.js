@@ -276,7 +276,7 @@ Smart('bootstrap-drop-down', class DropDown extends Smart.ContentElement {
 				type: 'boolean'
 			},
 			'dropDownPosition': {
-				allowedValues: ['auto', 'top', 'bottom', 'overlay-top', 'overlay-center', 'overlay-bottom', 'center-bottom', 'center-top'],
+				allowedValues: ['auto', 'top', 'bottom', 'left', 'right'],
 				value: 'auto',
 				type: 'string'
 			},
@@ -305,22 +305,28 @@ Smart('bootstrap-drop-down', class DropDown extends Smart.ContentElement {
 	propertyChangedHandler(propertyName, oldValue, newValue) {
 		const that = this;
 
-		if (propertyName === 'styleMode') {
+
+		if (propertyName === 'styleMode' || propertyName === 'sizeMode') {
 			that.$.button.classList.remove('btn-' + oldValue);
 			that.$.button.classList.add('btn-' + newValue);
-		}
-		else if(propertyName === 'sizeMode') {
-			that.$.button.classList.remove('btn-' + oldValue);
-			that.$.button.classList.add('btn-' + newValue);
+
+			if (that.$.actionButton) {
+				that.$.actionButton.classList.remove('btn-' + oldValue);
+				that.$.actionButton.classList.add('btn-' + newValue);
+			}
 		}
 		else if (propertyName === 'dropDownPosition') {
 			that._positionDetection.dropDownPositionChangedHandler();
+			that._setArrowPosition();
+		}
+		else if (propertyName === 'opened') {
+			newValue ? that.show() : that.hide();
 		}
 	}
 
 	/** CheckBox's template. */
 	template() {
-		return `<div class="dropdown" id="container">
+		return `<div class="dropdown btn-group" id="container">
 					<button id="button" class="btn dropdown-toggle" data-toggle="dropdown">[[label]]</button>
 					<div id="dropDownContainer" class="dropdown-menu"><content></content></div>
 				</div>`;
@@ -346,14 +352,29 @@ Smart('bootstrap-drop-down', class DropDown extends Smart.ContentElement {
 		that._positionDetection.setDropDownPosition();
 		// that._calculateDropDownSize();
 		that._positionDetection.handleAutoPositioning();
+		that._positionDetection.customPositionDropDown = that._customPositionDropDown.bind(that);
+
+		that._setArrowPosition();
+
 
 		that.$.button.classList.add('btn-' + that.styleMode);
-		that.$.button.classList.add('btn-' + that.sizeMode);
+
+		if (that.sizeMode) {
+			that.$.button.classList.add('btn-' + that.sizeMode);
+		}
+
+		if (that.$.actionButton) {
+			that.$.actionButton.classList.add('btn-' + that.styleMode);
+
+			if (that.sizeMode) {
+				that.$.actionButton.classList.add('btn-' + that.sizeMode);
+			}
+		}
 
 		if (that.opened) {
 			that.$.dropDownContainer.classList.add('show');
 			that.$.container.classList.add('show');
-			that.opened = true;
+			that.set('opened', true);
 		}
 	}
 
@@ -372,29 +393,6 @@ Smart('bootstrap-drop-down', class DropDown extends Smart.ContentElement {
 		if (isHidden) {
 			that.show();
 		}
-
-		// Disable totally Popper.js for Dropdown in Navbar
-		if (!that.closest('.navbar')) {
-			/**
-			 * Check for Popper dependency
-			 * Popper - https://popper.js.org
-			 */
-			// if (typeof Popper === 'undefined') {
-			// 	throw new TypeError('Bootstrap\'s dropdowns require Popper.js (https://popper.js.org/)')
-			// }
-
-		}
-
-		// If this is a touch-enabled device we add extra
-		// empty mouseover listeners to the body's immediate children;
-		// only needed because of broken event delegation on iOS
-		// https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
-		// if ('ontouchstart' in document.documentElement &&
-		// 	parent.closest(that.Selector.NAVBAR_NAV).length === 0) {
-		// 	// $(document.body).children().on('mouseover', null, $.noop);
-		// 	document.addEventListener('mouseover', null, that._mouseoverNoop);
-		// }
-
 	}
 
 	show() {
@@ -414,7 +412,7 @@ Smart('bootstrap-drop-down', class DropDown extends Smart.ContentElement {
 
 		that.$.dropDownContainer.classList.add('show');
 		that.$.container.classList.add('show');
-		that.opened = true;
+		that.set('opened', true);
 
 		that._positionDetection.checkBrowserBounds('vertically');
 		that._positionDetection.positionDropDown();
@@ -425,6 +423,32 @@ Smart('bootstrap-drop-down', class DropDown extends Smart.ContentElement {
 		that.$.fireEvent('shown');
 
 		that.$.button.focus();
+	}
+
+	_setArrowPosition() {
+		const that = this;
+
+		that.$.container.classList.remove('dropup');
+		that.$.container.classList.remove('dropleft');
+		that.$.container.classList.remove('dropright');
+
+		if (that.dropDownPosition !== 'auto') {
+			switch (that._dropDownListPosition) {
+				case 'top':
+					that.$.container.classList.add('dropup');
+					break;
+				case 'right':
+					that.$.container.classList.add('dropright');
+					break;
+				case 'left':
+					that.$.container.classList.add('dropleft');
+					break;
+			}
+		}
+
+		if (that._repositionButtons) {
+			that._repositionButtons();
+		}
 	}
 
 	hide() {
@@ -444,7 +468,7 @@ Smart('bootstrap-drop-down', class DropDown extends Smart.ContentElement {
 
 		that.$.dropDownContainer.classList.remove('show');
 		that.$.container.classList.remove('show');
-		that.opened = false;
+		that.set('opened', false);
 
 		that.$.fireEvent('hidden');
 
@@ -533,7 +557,7 @@ Smart('bootstrap-drop-down', class DropDown extends Smart.ContentElement {
 		const toggles = [].slice.call(document.querySelectorAll('.dropdown-menu'))
 
 		for (let i = 0, len = toggles.length; i < len; i++) {
-			const parent = toggles[i].closest('bootstrap-drop-down');
+			const parent = toggles[i].closest('bootstrap-drop-down') || toggles[i].closest('bootstrap-split-button');
 
 			if (!parent) {
 				continue;
@@ -557,18 +581,79 @@ Smart('bootstrap-drop-down', class DropDown extends Smart.ContentElement {
 				return
 			}
 
-			// If this is a touch-enabled device we remove the extra
-			// empty mouseover listeners we added for iOS support
-			// if ('ontouchstart' in document.documentElement) {
-			// 	$(document.body).children().off('mouseover', null, $.noop)
-			// }
-
 			parent.setAttribute('aria-expanded', 'false');
 			parent.$.container.classList.remove('show');
-			parent.opened = false;
+			parent.set('opened', false);
 			dropdownMenu.classList.remove('show');
 
 			parent.$.fireEvent('hidden');
+		}
+	}
+
+	_customPositionDropDown() {
+		const that = this,
+			coordinates = that.$[that instanceof Smart.SplitButton ? 'button' : 'container'].getBoundingClientRect(),
+			dropDown = that.$.dropDownContainer;
+		let top = coordinates.top,
+			left = coordinates.left;
+
+		switch (that._dropDownListPosition) {
+			case 'bottom':
+				top = coordinates.bottom;
+				break;
+			case 'top':
+				top = coordinates.top - dropDown.offsetHeight;
+				break;
+			case 'left':
+				top = coordinates.top;
+				left -= dropDown.offsetWidth;
+				break;
+			case 'right':
+				top = coordinates.top;
+				left += coordinates.width;
+				break;
+		}
+
+		return { left: left, top: top };
+	}
+});
+
+Smart('bootstrap-split-button', class SplitButton extends Smart.DropDown {
+
+	/** CheckBox's template. */
+	template() {
+		return `<div class="dropdown btn-group" id="container">
+					<div id="buttonGroup" class="btn-group"></div>
+					<button id="actionButton" class="btn">[[label]]</button>
+					<button id="button" class="btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
+					<div id="dropDownContainer" class="dropdown-menu"><content></content></div>
+					</div>
+				</div>`;
+	}
+
+	_repositionButtons() {
+		const that = this,
+			actionButton = that.$.actionButton,
+			dropDown = that.$.dropDownContainer,
+			button = that.$.button,
+			container = that.$.container,
+			buttonGroup = that.$.buttonGroup;
+
+		//Reset
+		actionButton.parentElement.removeChild(actionButton);
+		button.parentElement.removeChild(button);
+		dropDown.parentElement.removeChild(dropDown);
+
+		container.appendChild(actionButton);
+		container.appendChild(button);
+		container.appendChild(dropDown);
+
+		if (that.dropDownPosition === 'left' && !buttonGroup.contains(button)) {
+			buttonGroup.appendChild(button);
+			buttonGroup.appendChild(dropDown);
+		}
+		else if (that.dropDownPosition === 'right' && !buttonGroup.contains(actionButton)) {
+			buttonGroup.appendChild(actionButton);
 		}
 	}
 });

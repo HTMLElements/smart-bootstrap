@@ -1,3 +1,4 @@
+// Copy code button click functionality
 function onClick(target) {
     const copyText = event.target.closest('.bd-clipboard').nextElementSibling,
         selection = window.getSelection(),
@@ -16,6 +17,7 @@ function onClick(target) {
     event.target.querySelector('.tooltip-text').innerHTML = 'Copied!';
 }
 
+// Copy code button hover functionality
 function onMouseOut(target) {
     const tooltipText = event.target.classList.contains('tooltip-text') ? event.target : event.target.querySelector('.tooltip-text');
 
