@@ -23,3 +23,13 @@ function onMouseOut(target) {
 
     tooltipText.innerHTML = 'Copy to clipboard';
 }
+
+function customDropDownPositioning(dropDown) {
+    if(this.label === 'Left-aligned but right aligned when large screen') {
+        dropDown.classList.add('dropdown-menu-lg-right');
+    }
+    else if(this.label === 'Right-aligned but left aligned when large screen') {
+        dropDown.classList.add('dropdown-menu-right');
+        dropDown.classList.add('dropdown-menu-lg-left');
+    }
+}

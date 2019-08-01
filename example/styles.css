@@ -1,3 +1,35 @@
+/* --- Bootstrap Element styles --- */
+
+bootstrap-drop-down, bootstrap-split-button, bootstrap-input-group {
+	display: block;
+}
+
+bootstrap-input-group .input-group-prepend bootstrap-button .btn, 
+bootstrap-input-group .input-group-append:last-child bootstrap-button:not(:last-child) .btn, 
+bootstrap-input-group .input-group-prepend bootstrap-drop-down .btn, 
+bootstrap-input-group .input-group-append:last-child bootstrap-drop-down:not(:last-child) .btn,
+bootstrap-input-group .input-group-prepend bootstrap-split-button .btn, 
+bootstrap-input-group .input-group-append:last-child bootstrap-split-button:not(:last-child) .btn {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+bootstrap-input-group .input-group-append bootstrap-button .btn, 
+bootstrap-input-group .input-group-prepend:first-child bootstrap-button:not(:first-child) .btn, 
+bootstrap-input-group .input-group-append bootstrap-drop-down .btn, 
+bootstrap-input-group .input-group-prepend:first-child bootstrap-drop-down:not(:first-child) .btn,
+bootstrap-input-group .input-group-append bootstrap-split-button .btn, 
+bootstrap-input-group .input-group-prepend:first-child bootstrap-split-button:not(:first-child) .btn {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+bootstrap-input-group bootstrap-button+bootstrap-button {
+	margin-left: -1px;
+}
+
+/* --- --- */
+
 footer {
 	padding: 20px;
 	background: #fafafa;
@@ -24,8 +56,59 @@ footer a {
 	border: solid #f8f9fa;
 }
 
-bootstrap-drop-down, bootstrap-split-button {
-	display: block;
+@media (min-width: 576px) {
+	.bd-example {
+		padding: 1.5rem;
+		margin-right: 0;
+		margin-left: 0;
+		border-width: .2rem;
+	}
+}
+
+.bd-example>.dropdown-menu:first-child {
+	position: static;
+	display: inline-block;
+	float: initial;
+}
+
+.bd-content>table {
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 1rem;
+}
+
+.bd-content>table>tbody>tr>td, .bd-content>table>tbody>tr>th, .bd-content>table>tfoot>tr>td, .bd-content>table>tfoot>tr>th, .bd-content>table>thead>tr>td, .bd-content>table>thead>tr>th {
+	padding: .75rem;
+	vertical-align: top;
+	border: 1px solid #dee2e6;
+}
+
+.bd-content>table td:first-child>code {
+	white-space: nowrap;
+}
+
+.bd-links {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	margin-right: -15px;
+	margin-left: -15px;
+}
+
+@media (min-width: 768px) {
+	.bd-links {
+		display: block!important;
+	}
+}
+
+@media (min-width: 768px) {
+	.bd-links {
+		max-height: calc(100vh - 9rem);
+		overflow-y: auto;
+	}
+}
+
+table {
+	border-collapse: collapse;
 }
 
 h1 {
@@ -88,11 +171,11 @@ p {
 }
 
 .bd-example>.btn-toolbar+.btn-toolbar {
-    margin-top: .5rem;
+	margin-top: .5rem;
 }
 
 .ml-2, .mx-2 {
-    margin-left: .5rem!important;
+	margin-left: .5rem!important;
 }
 
 .highlight {
@@ -134,18 +217,22 @@ code {
 	font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-@media (min-width: 576px) .bd-content .highlight {
-	margin-right: 0;
-	margin-left: 0;
+@media (min-width: 576px) {
+	.bd-content .highlight {
+		margin-right: 0;
+		margin-left: 0;
+	}
 }
 
-@media (min-width: 576px) .highlight {
-	padding: 1.5rem;
+@media (min-width: 576px) {
+	.highlight {
+		padding: 1.5rem;
+	}
 }
 
 .main-container {
 	display: grid;
-	grid-template-columns: 22.5% 50% 22.5%;
+	grid-template-columns: 20% 55% 20%;
 	grid-column-gap: 2.5%;
 }
 
@@ -192,4 +279,43 @@ h2.separator {
 .simple-tooltip:hover .tooltip-text {
 	visibility: visible;
 	opacity: 1;
+}
+
+.content-section {
+	border-left: 1px solid #eee;
+	padding-left: 3rem;
+}
+
+.nav-section {
+	position: sticky;
+	top: 4rem;
+	z-index: 1000;
+	height: calc(100vh - 4rem);
+}
+
+nav {
+	display: block;
+	/* border-right: 1px solid #eee; */
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	-webkit-font-smoothing: antialiased;
+	font: inherit;
+}
+
+nav li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+	font-size: 16px;
+}
+
+nav li a {
+	display: block;
+	padding: .25rem 1.5rem;
+	font-size: 90%;
+	color: rgba(0, 0, 0, .65);
 }

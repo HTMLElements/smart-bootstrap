@@ -259,10 +259,6 @@ Smart('bootstrap-drop-down', class DropDown extends Smart.ContentElement {
 	// DropDown's properties.
 	static get properties() {
 		return {
-			'checked': {
-				value: false,
-				type: 'boolean'
-			},
 			'styleMode': {
 				value: 'secondary',
 				type: 'string'
@@ -275,10 +271,18 @@ Smart('bootstrap-drop-down', class DropDown extends Smart.ContentElement {
 				value: false,
 				type: 'boolean'
 			},
+			'outlined': {
+				value: false,
+				type: 'boolean'
+			},
 			'dropDownPosition': {
-				allowedValues: ['auto', 'top', 'bottom', 'left', 'right'],
+				allowedValues: ['auto', 'top', 'bottom', 'left', 'right', 'custom'],
 				value: 'auto',
 				type: 'string'
+			},
+			'customDropDownPositionCallback': {
+				value: null,
+				type: 'function'
 			},
 			'sizeMode': {
 				value: '',
@@ -308,11 +312,36 @@ Smart('bootstrap-drop-down', class DropDown extends Smart.ContentElement {
 
 		if (propertyName === 'styleMode' || propertyName === 'sizeMode') {
 			that.$.button.classList.remove('btn-' + oldValue);
-			that.$.button.classList.add('btn-' + newValue);
 
-			if (that.$.actionButton) {
-				that.$.actionButton.classList.remove('btn-' + oldValue);
-				that.$.actionButton.classList.add('btn-' + newValue);
+			if (propertyName === 'styleMode') {
+				that.$.button.classList.remove('btn-outline-' + newValue);
+
+				if (that.$.actionButton) {
+					that.$.actionButton.classList.remove('btn-outline-' + oldValue);
+				}
+
+				if (propertyName === 'outlined') {
+					that.$.button.classList.add('btn-outline-' + newValue);
+
+					if (that.$.actionButton) {
+						that.$.actionButton.classList.add('btn-outline-' + newValue);
+					}
+				}
+				else {
+					that.$.button.classList.add('btn-' + newValue);
+
+					if (that.$.actionButton) {
+						that.$.actionButton.classList.add('btn-' + newValue);
+					}
+				}
+			}
+			else {
+				that.$.button.classList.add('btn-' + newValue);
+
+				if (that.$.actionButton) {
+					that.$.actionButton.classList.remove('btn-' + oldValue);
+					that.$.actionButton.classList.add('btn-' + newValue);
+				}
 			}
 		}
 		else if (propertyName === 'dropDownPosition') {
@@ -349,22 +378,32 @@ Smart('bootstrap-drop-down', class DropDown extends Smart.ContentElement {
 
 		that._positionDetection = new Smart.Utilities.PositionDetection(that, that.$.dropDownContainer, that.$.container, 'hide');
 		that._positionDetection.getDropDownParent(true);
-		that._positionDetection.setDropDownPosition();
-		// that._calculateDropDownSize();
 		that._positionDetection.handleAutoPositioning();
+		that._positionDetection.setDropDownPosition();
 		that._positionDetection.customPositionDropDown = that._customPositionDropDown.bind(that);
 
 		that._setArrowPosition();
 
-
-		that.$.button.classList.add('btn-' + that.styleMode);
+		if (that.styleMode) {
+			if (that.outlined) {
+				that.$.button.classList.add('btn-outline-' + that.styleMode);
+			}
+			else {
+				that.$.button.classList.add('btn-' + that.styleMode);
+			}
+		}
 
 		if (that.sizeMode) {
 			that.$.button.classList.add('btn-' + that.sizeMode);
 		}
 
 		if (that.$.actionButton) {
-			that.$.actionButton.classList.add('btn-' + that.styleMode);
+			if (that.outlined) {
+				that.$.actionButton.classList.add('btn-outline-' + that.styleMode);
+			}
+			else {
+				that.$.actionButton.classList.add('btn-' + that.styleMode);
+			}
 
 			if (that.sizeMode) {
 				that.$.actionButton.classList.add('btn-' + that.sizeMode);
@@ -414,11 +453,15 @@ Smart('bootstrap-drop-down', class DropDown extends Smart.ContentElement {
 		that.$.container.classList.add('show');
 		that.set('opened', true);
 
-		that._positionDetection.checkBrowserBounds('vertically');
-		that._positionDetection.positionDropDown();
-		that._positionDetection.checkBrowserBounds('horizontally');
-
-		that.$.dropDownContainer.setAttribute('x-placement', that._dropDownListPosition + '-start');
+		if (that.customDropDownPositionCallback) {
+			that.customDropDownPositionCallback(that.$.dropDownContainer);
+		}
+		else {
+			that._positionDetection.checkBrowserBounds('vertically');
+			that._positionDetection.positionDropDown();
+			that._positionDetection.checkBrowserBounds('horizontally');
+			that.$.dropDownContainer.setAttribute('x-placement', that._dropDownListPosition + '-start');
+		}
 
 		that.$.fireEvent('shown');
 
@@ -654,6 +697,179 @@ Smart('bootstrap-split-button', class SplitButton extends Smart.DropDown {
 		}
 		else if (that.dropDownPosition === 'right' && !buttonGroup.contains(actionButton)) {
 			buttonGroup.appendChild(actionButton);
+		}
+		
+
+		if (that.dropDownPosition !== 'left' && that.dropDownPosition !== 'right') {
+			that.$.container.removeChild(buttonGroup);
+		}
+		else if(!buttonGroup.parentElement) {
+			that.$.container.insertBefore(buttonGroup, actionButton);
+		}
+	}
+});
+
+Smart('bootstrap-input-group', class InputGroup extends Smart.ContentElement {
+	// Button's properties.
+	static get properties() {
+		return {
+			'contentBefore': {
+				value: '',
+				type: 'string'
+			},
+			'contentAfter': {
+				value: '',
+				type: 'string'
+			},
+			'type': {
+				value: 'text',
+				type: 'string'
+			},
+			'name': {
+				value: '',
+				type: 'string'
+			},
+			'placeholder': {
+				value: '',
+				type: 'string'
+			},
+			'styleMode': {
+				value: '',
+				type: 'string'
+			},
+			'noWrap': {
+				value: false,
+				type: 'boolean'
+			},
+			'sizeMode': {
+				value: '',
+				allowedValue: ['lg', 'sm', ''],
+				type: 'string'
+			}
+		};
+	}
+
+	/** Button's template. */
+	template() {
+		return `<div class="input-group" id="container">
+					<div id="prependContainer" class="input-group-prepend">[[contentBefore]]</div>
+					<div id="contentContainer"><content></content></div>
+					<div id="appendContainer" class="input-group-append">[[contentAfter]]</div>
+				</div>`;
+	}
+
+	ready() {
+		const that = this;
+
+		that.noWrap ? that.$.container.classList.add('flex-nowrap') : that.$.container.classList.remove('flex-nowrap');
+
+		that.render();
+	}
+
+	propertyChangedHandler(propertyName, oldValue, newValue) {
+		const that = this;
+
+		if (propertyName === 'noWrap') {
+			newValue ? that.$.container.classList.add('flex-nowrap') : that.$.container.classList.remove('flex-nowrap');
+		}
+		else if (propertyName === 'placeholder' || propertyName === 'name' || propertyName === 'type') {
+			const inputs = that.$.inputContainer.querySelectorAll('.form-control');
+
+			for (let i = 0; i < inputs.length; i++) {
+				inputs[i][propertyName] = newValue;
+			}
+		}
+		else if (propertyName === 'styleMode' || propertyName === 'sizeMode') {
+			that.$.container.classList.remove('input-group-' + oldValue);
+			that.$.container.classList.add('input-group-' + newValue);
+		}
+		else if (propertyName === 'contentBefore' || propertyName === 'contentAfter') {
+			const container = that.$[propertyName === 'contentBefore' ? 'prependContainer' : 'appendContainer'];
+
+			container.innerHTML = newValue;
+
+			if (newValue && !container.parentElement) {
+				propertyName === 'contentBefore' ? that.$.container.insertBefore(container, that.$.container.firstElementChild) : that.$.container.appendChild(container);
+			}
+			else if (!newValue) {
+				that.$.container.removeChild(container);
+			}
+		}
+	}
+
+	render() {
+		const that = this,
+			container = that.$.contentContainer,
+			prependContainer = that.$.prependContainer,
+			appendContainer = that.$.appendContainer;
+		let formControl = container.querySelector('.form-control');
+
+		if (!formControl) {
+			const input = document.createElement('input');
+
+			input.type = that.type;
+			input.placeholder = that.placeholder;
+			input.name = that.name;
+			input.classList.add('form-control');
+
+			container.appendChild(input);
+			formControl = input;
+		}
+
+		let previousEl = formControl.previousElementSibling;
+
+		while (previousEl) {
+			const pe = previousEl;
+
+			if (pe === prependContainer) {
+				break;
+			}
+
+			previousEl = previousEl.previousElementSibling;
+
+			if (!pe.classList.contains('form-control')) {
+				prependContainer.insertBefore(pe, prependContainer.firstElementChild);
+			}
+		}
+
+		let nextEl = formControl.nextElementSibling;
+
+		while (nextEl) {
+			const nx = nextEl;
+
+			if (nx === appendContainer) {
+				break;
+			}
+
+			nextEl = nextEl.nextElementSibling;
+
+			if (!nx.classList.contains('form-control')) {
+				appendContainer.appendChild(nx);
+			}
+		}
+
+		while (container.firstElementChild) {
+			that.$.container.insertBefore(container.firstElementChild, appendContainer);
+		}
+
+		if (!appendContainer.children.length) {
+			that.$.container.removeChild(appendContainer);
+		}
+
+		if (!prependContainer.children.length) {
+			that.$.container.removeChild(prependContainer);
+		}
+
+		if (!container.children.length) {
+			that.$.container.removeChild(container);
+		}
+
+		if (that.sizeMode) {
+			that.$.container.classList.add('input-group-' + that.sizeMode);
+		}
+
+		if (that.styleMode) {
+			that.$.container.classList.add('input-group-' + that.styleMode);
 		}
 	}
 });
