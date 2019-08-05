@@ -1380,7 +1380,6 @@ document.querySelector('bootstrap-drop-down').addEventListener('show', function(
 &lt;/bootstrap-input-group&gt;</pre>
 				</figure>
 
-				
 				<h2>Buttons with Split Buttons</h2>
 				<p>
 					Input groups with Bootstrap Split Buttons that contains Bootstrap buttons as addons.
@@ -1438,12 +1437,768 @@ document.querySelector('bootstrap-drop-down').addEventListener('show', function(
 	&lt;/bootstrap-split-button&gt;
 &lt;/bootstrap-input-group&gt;</pre>
 				</figure>
+
+				<h2>Custom select</h2>
+				<p>
+					Input groups with a select insted of input.
+				</p>
+
+				<div class="bd-example">
+					<bootstrap-input-group class="mb-3">
+						<label class="input-group-text" for="inputGroupSelect01">Options</label>
+						<select class="custom-select form-control" id="inputGroupSelect01">
+							<option selected>Choose...</option>
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						</select>
+					</bootstrap-input-group>
+					<bootstrap-input-group class="mb-3">
+						<select class=" custom-select form-control" id="inputGroupSelect01">
+							<option selected>Choose...</option>
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						</select>
+						<label class="input-group-text" for="inputGroupSelect01">Options</label>
+					</bootstrap-input-group>
+					<bootstrap-input-group class="mb-3">
+						<button class=" btn btn-outline-secondary" type="button">Button</button>
+						<select class="custom-select form-control" aria-label="Example select with button addon">
+							<option selected>Choose...</option>
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						</select>
+					</bootstrap-input-group>
+					<bootstrap-input-group>
+						<select class="custom-select form-control" aria-label="Example select with button addon">
+							<option selected>Choose...</option>
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						</select>
+						<button class="btn btn-outline-secondary" type="button">Button</button>
+					</bootstrap-input-group>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-input-group class="mb-3"&gt;
+	&lt;label class="input-group-text" for="inputGroupSelect01"&gt;Options&lt;/label&gt;
+	&lt;select class="custom-select form-control" id="inputGroupSelect01"&gt;
+		&lt;option selected&gt;Choose...&lt;/option&gt;
+		&lt;option value="1"&gt;One&lt;/option&gt;
+		&lt;option value="2"&gt;Two&lt;/option&gt;
+		&lt;option value="3"&gt;Three&lt;/option&gt;
+	&lt;/select&gt;
+&lt;/bootstrap-input-group&gt;
+
+&lt;bootstrap-input-group class="mb-3"&gt;
+	&lt;select class=" custom-select form-control" id="inputGroupSelect01"&gt;
+		&lt;option selected&gt;Choose...&lt;/option&gt;
+		&lt;option value="1"&gt;One&lt;/option&gt;
+		&lt;option value="2"&gt;Two&lt;/option&gt;
+		&lt;option value="3"&gt;Three&lt;/option&gt;
+	&lt;/select&gt;
+	&lt;label class="input-group-text" for="inputGroupSelect01"&gt;Options&lt;/label&gt;
+&lt;/bootstrap-input-group&gt;
+
+&lt;bootstrap-input-group class="mb-3"&gt;
+	&lt;button class=" btn btn-outline-secondary" type="button"&gt;Button&lt;/button&gt;
+	&lt;select class="custom-select form-control" aria-label="Example select with button addon"&gt;
+		&lt;option selected&gt;Choose...&lt;/option&gt;
+		&lt;option value="1"&gt;One&lt;/option&gt;
+		&lt;option value="2"&gt;Two&lt;/option&gt;
+		&lt;option value="3"&gt;Three&lt;/option&gt;
+	&lt;/select&gt;
+&lt;/bootstrap-input-group&gt;
+
+&lt;bootstrap-input-group&gt;
+	&lt;select class="custom-select form-control" aria-label="Example select with button addon"&gt;
+		&lt;option selected&gt;Choose...&lt;/option&gt;
+		&lt;option value="1"&gt;One&lt;/option&gt;
+		&lt;option value="2"&gt;Two&lt;/option&gt;
+		&lt;option value="3"&gt;Three&lt;/option&gt;
+	&lt;/select&gt;
+	&lt;button class="btn btn-outline-secondary" type="button"&gt;Button&lt;/button&gt;
+&lt;/bootstrap-input-group&gt;</pre>
+				</figure>
+
+				<h2>Custom file input</h2>
+				<p>
+					Input groups with a file upload.
+				</p>
+
+				<div class="bd-example">
+					<bootstrap-input-group class="mb-3">
+						<span class="input-group-text">Upload</span>
+						<div class="custom-file form-control">
+							<input type="file" class="custom-file-input" />
+							<label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+						</div>
+					</bootstrap-input-group>
+					<bootstrap-input-group class="mb-3">
+						<div class="custom-file  form-control">
+							<input type="file" class="custom-file-input" />
+							<label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+						</div>
+						<span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
+					</bootstrap-input-group>
+					<bootstrap-input-group class="mb-3">
+						<button class="btn btn-outline-secondary" type="button">Button</button>
+						<div class="custom-file  form-control">
+							<input type="file" class="custom-file-input" />
+							<label class="custom-file-label" for="inputGroupFile03">Choose file</label>
+						</div>
+					</bootstrap-input-group>
+					<bootstrap-input-group>
+						<div class="custom-file form-control">
+							<input type="file" class="custom-file-input" />
+							<label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+						</div>
+						<button class="btn btn-outline-secondary" type="button">Button</button>
+					</bootstrap-input-group>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-input-group class="mb-3"&gt;
+	&lt;label class="input-group-text" for="inputGroupSelect01"&gt;Options&lt;/label&gt;
+	&lt;select class="custom-select form-control" id="inputGroupSelect01"&gt;
+		&lt;option selected&gt;Choose...&lt;/option&gt;
+		&lt;option value="1"&gt;One&lt;/option&gt;
+		&lt;option value="2"&gt;Two&lt;/option&gt;
+		&lt;option value="3"&gt;Three&lt;/option&gt;
+	&lt;/select&gt;
+&lt;/bootstrap-input-group&gt;
+
+&lt;bootstrap-input-group class="mb-3"&gt;
+	&lt;select class=" custom-select form-control" id="inputGroupSelect01"&gt;
+		&lt;option selected&gt;Choose...&lt;/option&gt;
+		&lt;option value="1"&gt;One&lt;/option&gt;
+		&lt;option value="2"&gt;Two&lt;/option&gt;
+		&lt;option value="3"&gt;Three&lt;/option&gt;
+	&lt;/select&gt;
+	&lt;label class="input-group-text" for="inputGroupSelect01"&gt;Options&lt;/label&gt;
+&lt;/bootstrap-input-group&gt;
+
+&lt;bootstrap-input-group class="mb-3"&gt;
+	&lt;button class=" btn btn-outline-secondary" type="button"&gt;Button&lt;/button&gt;
+	&lt;select class="custom-select form-control" aria-label="Example select with button addon"&gt;
+		&lt;option selected&gt;Choose...&lt;/option&gt;
+		&lt;option value="1"&gt;One&lt;/option&gt;
+		&lt;option value="2"&gt;Two&lt;/option&gt;
+		&lt;option value="3"&gt;Three&lt;/option&gt;
+	&lt;/select&gt;
+&lt;/bootstrap-input-group&gt;
+
+&lt;bootstrap-input-group&gt;
+	&lt;select class="custom-select form-control" aria-label="Example select with button addon"&gt;
+		&lt;option selected&gt;Choose...&lt;/option&gt;
+		&lt;option value="1"&gt;One&lt;/option&gt;
+		&lt;option value="2"&gt;Two&lt;/option&gt;
+		&lt;option value="3"&gt;Three&lt;/option&gt;
+	&lt;/select&gt;
+	&lt;button class="btn btn-outline-secondary" type="button"&gt;Button&lt;/button&gt;
+&lt;/bootstrap-input-group&gt;</pre>
+				</figure>
+
+				<h2 id="modal">Modal</h2>
+				<p>Use Smart's Bootstrap JavaScript modal to add dialogs to your site for lightboxes, user
+					notifications, or completely custom content.</p>
+
+				<h2>How it works</h2>
+				<p>Before getting started with Bootstrap’s modal component, be sure to read the following as our menu
+					options have recently changed.</p>
+				<ul>
+					<li>
+						Modals are built with HTML, CSS, and JavaScript. They’re positioned over everything else in the
+						document and remove scroll from the
+
+						<body> so that modal content scrolls instead.
+					</li>
+					<li>
+						Clicking on the modal “backdrop” will automatically close the modal.
+					</li>
+					<li>
+						Bootstrap only supports one modal window at a time. Nested modals aren’t supported as we believe
+						them to be poor user experiences.
+					</li>
+					<li>
+						Modals use position: fixed, which can sometimes be a bit particular about its rendering.
+						Whenever possible, place your modal HTML in a top-level position to avoid potential interference
+						from other elements.
+						You’ll likely run into issues when nesting a .modal within another fixed element.
+					</li>
+					<li>
+						Once again, due to position: fixed, there are some caveats with using modals on mobile devices.
+						See our browser support docs for details.
+					</li>
+					<li>
+						Due to how HTML5 defines its semantics, the autofocus HTML attribute has no effect in Bootstrap
+						modals. To achieve the same effect, use some custom JavaScript:
+						<figure class="highlight">
+							<pre class="prettyprint">
+document.querySelector('#myModal').addEventListener('shown', function() {
+	document.querySelector('#myInput').select();
+});</pre>
+						</figure>
+					</li>
+				</ul>
+				<p>
+					Below is a static modal example (meaning its position and display have been overridden). Included
+					are the modal header, modal body (required for padding), and modal footer (optional). We ask that
+					you include modal headers with dismiss actions whenever possible, or provide another explicit
+					dismiss action.
+				</p>
+
+				<div class="bd-example bd-example-modal">
+					<bootstrap-modal>
+						<div class="modal-header">
+							<h5 class="modal-title">Modal title</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<p>Modal body text goes here.</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-primary">Save changes</button>
+						</div>
+					</bootstrap-modal>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-modal&gt;
+	&lt;div class="modal-header"&gt;
+		&lt;h5 class="modal-title"&gt;Modal title&lt;/h5&gt;
+		&lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;
+			&lt;span aria-hidden="true"&gt;&times;&lt;/span&gt;
+		&lt;/button&gt;
+	&lt;/div&gt;
+	&lt;div class="modal-body"&gt;
+		&lt;p&gt;Modal body text goes here.&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class="modal-footer"&gt;
+		&lt;button type="button" class="btn btn-secondary" data-dismiss="modal"&gt;Close&lt;/button&gt;
+		&lt;button type="button" class="btn btn-primary"&gt;Save changes&lt;/button&gt;
+	&lt;/div&gt;
+&lt;/bootstrap-modal&gt;</pre>
+				</figure>
+
+				<h2>Live demo</h2>
+
+				<p>
+					Toggle a working modal demo by clicking the button below. It will slide down and fade in from the
+					top of the page.
+				</p>
+
+				<bootstrap-modal id="exampleModalLive" class="fade">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p>Modal body text goes here.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					</div>
+				</bootstrap-modal>
+				<div class="bd-example">
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLive">
+						Launch demo modal
+					</button>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;!-- Button trigger modal --&gt;
+&lt;button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLive"&gt;
+	Launch demo modal
+&lt;/button&gt;
+
+&lt;!-- Modal --&gt;
+&lt;bootstrap-modal id="exampleModalLive" class="fade"&gt;
+	&lt;div class="modal-header"&gt;
+		&lt;h5 class="modal-title" id="exampleModalLabel"&gt;Modal title&lt;/h5&gt;
+		&lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;
+			&lt;span aria-hidden="true"&gt;&times;&lt;/span&gt;
+		&lt;/button&gt;
+	&lt;/div&gt;
+	&lt;div class="modal-body"&gt;
+		&lt;p&gt;Modal body text goes here.&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class="modal-footer"&gt;
+		&lt;button type="button" class="btn btn-secondary" data-dismiss="modal"&gt;Close&lt;/button&gt;
+		&lt;button type="button" class="btn btn-primary"&gt;Save changes&lt;/button&gt;
+	&lt;/div&gt;
+&lt;/bootstrap-modal&gt;</pre>
+				</figure>
+
+				<h2>Scrolling long content</h2>
+
+				<p>
+					When modals become too long for the user’s viewport or device, they scroll independent of the page
+					itself. By default all modals are with auto height.
+				</p>
+
+				<bootstrap-modal id="exampleModalLong" class="fade">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+							egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
+							vel augue laoreet rutrum faucibus dolor auctor.</p>
+						<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque
+							nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+						</p>
+						<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+							egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
+							vel augue laoreet rutrum faucibus dolor auctor.</p>
+						<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque
+							nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+						</p>
+						<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+							egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
+							vel augue laoreet rutrum faucibus dolor auctor.</p>
+						<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque
+							nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+						</p>
+						<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+							egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
+							vel augue laoreet rutrum faucibus dolor auctor.</p>
+						<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque
+							nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+						</p>
+						<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+							egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
+							vel augue laoreet rutrum faucibus dolor auctor.</p>
+						<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque
+							nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+						</p>
+						<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+							egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
+							vel augue laoreet rutrum faucibus dolor auctor.</p>
+						<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque
+							nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+						</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					</div>
+				</bootstrap-modal>
+				<div class="bd-example">
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+						Launch demo modal
+					</button>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;!-- Button trigger modal --&gt;
+&lt;button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"&gt;
+	Launch demo modal
+&lt;/button&gt;
+
+&lt;!-- Modal --&gt;
+&lt;bootstrap-modal id="exampleModalLong" class="fade"&gt;
+	&lt;div class="modal-header"&gt;
+		&lt;h5 class="modal-title" id="exampleModalLongTitle"&gt;Modal title&lt;/h5&gt;
+		&lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;
+			&lt;span aria-hidden="true">&times;&lt;/span&gt;
+		&lt;/button&gt;
+	&lt;/div&gt;
+	&lt;div class="modal-body"&gt;
+		...
+	&lt;/div&gt;
+	&lt;div class="modal-footer"&gt;
+		&lt;button type="button" class="btn btn-secondary" data-dismiss="modal"&gt;Close&lt;/button&gt;
+		&lt;button type="button" class="btn btn-primary"&gt;Save changes&lt;/button&gt;
+	&lt;/div&gt;
+&lt;/bootstrap-modal&gt;</pre>
+				</figure>
+
+				<p>
+					You can also create a scrollable modal that allows scroll the modal body by setting the
+					<b>scrollable</b> property:
+				</p>
+
+				<bootstrap-modal id="exampleModalScrollable" class="fade" scrollable>
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+							egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
+							vel augue laoreet rutrum faucibus dolor auctor.</p>
+						<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque
+							nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+						</p>
+						<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+							egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
+							vel augue laoreet rutrum faucibus dolor auctor.</p>
+						<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque
+							nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+						</p>
+						<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+							egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
+							vel augue laoreet rutrum faucibus dolor auctor.</p>
+						<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque
+							nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+						</p>
+						<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+							egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
+							vel augue laoreet rutrum faucibus dolor auctor.</p>
+						<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque
+							nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+						</p>
+						<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+							egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
+							vel augue laoreet rutrum faucibus dolor auctor.</p>
+						<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque
+							nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+						</p>
+						<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+							egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
+							vel augue laoreet rutrum faucibus dolor auctor.</p>
+						<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque
+							nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+						</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					</div>
+				</bootstrap-modal>
+				<div class="bd-example">
+					<button type="button" class="btn btn-primary" data-toggle="modal"
+						data-target="#exampleModalScrollable">
+						Launch demo modal
+					</button>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;!-- Button trigger modal --&gt;
+&lt;button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable"&gt;
+	Launch demo modal
+&lt;/button&gt;
+
+&lt;!-- Modal --&gt;
+&lt;bootstrap-modal id="exampleModalLive" class="fade" scrollable&gt;
+	&lt;div class="modal-header"&gt;
+		&lt;h5 class="modal-title" id="exampleModalScrollable"&gt;Modal title&lt;/h5&gt;
+		&lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;
+			&lt;span aria-hidden="true">&times;&lt;/span&gt;
+		&lt;/button&gt;
+	&lt;/div&gt;
+	&lt;div class="modal-body"&gt;
+		...
+	&lt;/div&gt;
+	&lt;div class="modal-footer"&gt;
+		&lt;button type="button" class="btn btn-secondary" data-dismiss="modal"&gt;Close&lt;/button&gt;
+		&lt;button type="button" class="btn btn-primary"&gt;Save changes&lt;/button&gt;
+	&lt;/div&gt;
+&lt;/bootstrap-modal&gt;</pre>
+				</figure>
+
+				<h2>Vertically centered</h2>
+
+				<p>
+					Add the <b>centered</b> property to vertically center the modal.
+				</p>
+
+				<bootstrap-modal id="exampleModalCenter" class="fade" centered>
+					<div class="modal-header">
+						<h5 class="modal-title">Modal title</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+							egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					</div>
+				</bootstrap-modal>
+				<bootstrap-modal id="exampleModalScrollableCenter" class="fade" centered scrollable>
+					<div class="modal-header">
+						<h5 class="modal-title">Modal title</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+							egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
+							vel augue laoreet rutrum faucibus dolor auctor.</p>
+						<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque
+							nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+						</p>
+						<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+							egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
+							vel augue laoreet rutrum faucibus dolor auctor.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					</div>
+				</bootstrap-modal>
+				<div class="bd-example">
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+						Vertically centered modal
+					</button>
+					<button type="button" class="btn btn-primary" data-toggle="modal"
+						data-target="#exampleModalScrollableCenter">
+						Vertically centered scrollable modal
+					</button>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;!-- Button trigger vertically centered modal --&gt;
+&lt;button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"&gt;
+	Vertically centered modal
+&lt;/button&gt;
+
+&lt;!-- Button trigger vertically centered scrollable modal --&gt;
+&lt;button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollableCenter"&gt;
+	Vertically centered scrollable modal
+&lt;/button&gt;
+
+&lt;!-- Vertically centered modal --&gt;
+&lt;bootstrap-modal id="exampleModalCenter" class="fade" centered&gt;
+	&lt;div class="modal-header"&gt;
+		&lt;h5 class="modal-title" id="exampleModalLabel"&gt;Modal title&lt;/h5&gt;
+		&lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;
+			&lt;span aria-hidden="true"&gt;&times;&lt;/span&gt;
+		&lt;/button&gt;
+	&lt;/div&gt;
+	&lt;div class="modal-body"&gt;
+		&lt;p&gt;Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+			egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class="modal-footer"&gt;
+		&lt;button type="button" class="btn btn-secondary" data-dismiss="modal"&gt;Close&lt;/button&gt;
+		&lt;button type="button" class="btn btn-primary"&gt;Save changes&lt;/button&gt;
+	&lt;/div&gt;
+&lt;/bootstrap-modal&gt;
+
+&lt;!-- Vertically centered scrollable modal --&gt;
+&lt;bootstrap-modal id="exampleModalCenter" class="fade" centered scrollable&gt;
+	&lt;div class="modal-header"&gt;
+		&lt;h5 class="modal-title" id="exampleModalLabel"&gt;Modal title&lt;/h5&gt;
+		&lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;
+			&lt;span aria-hidden="true"&gt;&times;&lt;/span&gt;
+		&lt;/button&gt;
+	&lt;/div&gt;
+	&lt;div class="modal-body"&gt;
+		&lt;p&gt;Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+			egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.&lt;/p&gt;
+		&lt;p&gt;Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
+			vel augue laoreet rutrum faucibus dolor auctor.&lt;/p&gt;
+		&lt;p&gt;Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque
+			nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+		&lt;/p&gt;
+		&lt;p&gt;Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+			egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.&lt;/p&gt;
+		&lt;p&gt;Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
+			vel augue laoreet rutrum faucibus dolor auctor.&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class="modal-footer"&gt;
+		&lt;button type="button" class="btn btn-secondary" data-dismiss="modal"&gt;Close&lt;/button&gt;
+		&lt;button type="button" class="btn btn-primary"&gt;Save changes&lt;/button&gt;
+	&lt;/div&gt;
+&lt;/bootstrap-modal&gt;</pre>
+				</figure>
+
+				<!-- <h2>Tooltips and popovers</h2>
+
+				<p>
+					Tooltips and popovers can be placed within modals as needed. When modals are closed, any tooltips
+					and popovers within are also automatically dismissed.
+				</p>
+
+				<bootstrap-modal id="exampleModalPopovers" class="fade">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalPopoversLabel">Modal title</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<h5>Popover in a modal</h5>
+						<p>This <a href="#" role="button" class="btn btn-secondary popover-test" title=""
+								data-content="Popover body content is set in this attribute."
+								data-container="#exampleModalPopovers" data-original-title="Popover title">button</a>
+							triggers a popover on click.</p>
+						<hr>
+						<h5>Tooltips in a modal</h5>
+						<p><a href="#" class="tooltip-test" title="" data-container="#exampleModalPopovers"
+								data-original-title="Tooltip">This link</a> and <a href="#" class="tooltip-test"
+								title="" data-container="#exampleModalPopovers" data-original-title="Tooltip">that
+								link</a> have tooltips on hover.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					</div>
+				</bootstrap-modal>
+				<div class="bd-example">
+					<button type="button" class="btn btn-primary" data-toggle="modal"
+						data-target="#exampleModalPopovers">
+						Launch demo modal
+					</button>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;div class="modal-body"&gt;
+  &lt;h5&gt;Popover in a modal&lt;/h5&gt;
+  &lt;p&gt;This &lt;a href="#" role="button" class="btn btn-secondary popover-test" title="Popover title" data-content="Popover body content is set in this attribute."&gt;button&lt;/a&gt; triggers a popover on click.&lt;/p&gt;
+  &lt;hr&gt;
+  &lt;h5&gt;Tooltips in a modal&lt;/h5&gt;
+  &lt;p&gt;&lt;a href="#" class="tooltip-test" title="Tooltip"&gt;This link&lt;/a&gt; and &lt;a href="#" class="tooltip-test" title="Tooltip"&gt;that link&lt;/a&gt; have tooltips on hover.&lt;/p&gt;
+&lt;/div&gt;</pre>
+				</figure> -->
+
+				<h2>Varying modal content</h2>
+
+				<p>
+					Have a bunch of buttons that all trigger the same modal with slightly different contents?
+					Below is a live demo followed by example HTML and JavaScript. For more information, read the modal
+					events docs for details on relatedTarget.
+				</p>
+
+				<bootstrap-modal id="exampleModal" class="fade">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">New message</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<form>
+							<div class="form-group">
+								<label for="recipient-name" class="col-form-label">Recipient:</label>
+								<input type="text" class="form-control" id="recipient-name">
+							</div>
+							<div class="form-group">
+								<label for="message-text" class="col-form-label">Message:</label>
+								<textarea class="form-control" id="message-text"></textarea>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Send message</button>
+					</div>
+				</bootstrap-modal>
+				<div class="bd-example">
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+						data-whatever="@mdo">Open modal for @mdo</button>
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+						data-whatever="@fat">Open modal for @fat</button>
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+						data-whatever="@getbootstrap">Open modal for @getbootstrap</button>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;div class="modal-body"&gt;
+  &lt;h5&gt;Popover in a modal&lt;/h5&gt;
+  &lt;p&gt;This &lt;a href="#" role="button" class="btn btn-secondary popover-test" title="Popover title" data-content="Popover body content is set in this attribute."&gt;button&lt;/a&gt; triggers a popover on click.&lt;/p&gt;
+  &lt;hr&gt;
+  &lt;h5&gt;Tooltips in a modal&lt;/h5&gt;
+  &lt;p&gt;&lt;a href="#" class="tooltip-test" title="Tooltip"&gt;This link&lt;/a&gt; and &lt;a href="#" class="tooltip-test" title="Tooltip"&gt;that link&lt;/a&gt; have tooltips on hover.&lt;/p&gt;
+&lt;/div&gt;</pre>
+				</figure>
+
+
 		</section>
 		<section></section>
 	</div>
 </body>
 <footer>
 	by: <a href="https://www.htmlelements.com/">https://www.htmlelements.com/</a>
-</footeR>
+</footer>
 
 </html>

@@ -4,28 +4,22 @@ bootstrap-drop-down, bootstrap-split-button, bootstrap-input-group {
 	display: block;
 }
 
-bootstrap-input-group .input-group-prepend bootstrap-button .btn, 
-bootstrap-input-group .input-group-append:last-child bootstrap-button:not(:last-child) .btn, 
-bootstrap-input-group .input-group-prepend bootstrap-drop-down .btn, 
-bootstrap-input-group .input-group-append:last-child bootstrap-drop-down:not(:last-child) .btn,
-bootstrap-input-group .input-group-prepend bootstrap-split-button .btn, 
-bootstrap-input-group .input-group-append:last-child bootstrap-split-button:not(:last-child) .btn {
+bootstrap-input-group .input-group-prepend bootstrap-button .btn, bootstrap-input-group .input-group-append:last-child bootstrap-button:not(:last-child) .btn, bootstrap-input-group .input-group-prepend bootstrap-drop-down .btn, bootstrap-input-group .input-group-append:last-child bootstrap-drop-down:not(:last-child) .btn, bootstrap-input-group .input-group-prepend bootstrap-split-button .btn, bootstrap-input-group .input-group-append:last-child bootstrap-split-button:not(:last-child) .btn {
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
 }
 
-bootstrap-input-group .input-group-append bootstrap-button .btn, 
-bootstrap-input-group .input-group-prepend:first-child bootstrap-button:not(:first-child) .btn, 
-bootstrap-input-group .input-group-append bootstrap-drop-down .btn, 
-bootstrap-input-group .input-group-prepend:first-child bootstrap-drop-down:not(:first-child) .btn,
-bootstrap-input-group .input-group-append bootstrap-split-button .btn, 
-bootstrap-input-group .input-group-prepend:first-child bootstrap-split-button:not(:first-child) .btn {
+bootstrap-input-group .input-group-append bootstrap-button .btn, bootstrap-input-group .input-group-prepend:first-child bootstrap-button:not(:first-child) .btn, bootstrap-input-group .input-group-append bootstrap-drop-down .btn, bootstrap-input-group .input-group-prepend:first-child bootstrap-drop-down:not(:first-child) .btn, bootstrap-input-group .input-group-append bootstrap-split-button .btn, bootstrap-input-group .input-group-prepend:first-child bootstrap-split-button:not(:first-child) .btn {
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 }
 
 bootstrap-input-group bootstrap-button+bootstrap-button {
 	margin-left: -1px;
+}
+
+bootstrap-input-group .custom-file.form-control {
+	border: none;
 }
 
 /* --- --- */
@@ -318,4 +312,43 @@ nav li a {
 	padding: .25rem 1.5rem;
 	font-size: 90%;
 	color: rgba(0, 0, 0, .65);
+}
+
+/* Example modals */
+
+.modal {
+	z-index: 1072;
+}
+
+.modal .tooltip {
+	z-index: 1073;
+}
+
+.modal-backdrop {
+	z-index: 1071;
+}
+
+.bd-example-modal {
+	background-color: #fafafa;
+}
+
+.bd-example-modal .modal {
+	position: relative;
+	top: auto;
+	right: auto;
+	bottom: auto;
+	left: auto;
+	z-index: 1;
+	display: block;
+}
+
+.bd-example-modal .modal-dialog {
+	left: auto;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/* Example tabbable tabs */
+.bd-example-tabs .nav-tabs {
+  margin-bottom: 1rem;
 }

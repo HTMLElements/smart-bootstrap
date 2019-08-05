@@ -698,19 +698,19 @@ Smart('bootstrap-split-button', class SplitButton extends Smart.DropDown {
 		else if (that.dropDownPosition === 'right' && !buttonGroup.contains(actionButton)) {
 			buttonGroup.appendChild(actionButton);
 		}
-		
+
 
 		if (that.dropDownPosition !== 'left' && that.dropDownPosition !== 'right') {
 			that.$.container.removeChild(buttonGroup);
 		}
-		else if(!buttonGroup.parentElement) {
+		else if (!buttonGroup.parentElement) {
 			that.$.container.insertBefore(buttonGroup, actionButton);
 		}
 	}
 });
 
 Smart('bootstrap-input-group', class InputGroup extends Smart.ContentElement {
-	// Button's properties.
+	// Element's properties.
 	static get properties() {
 		return {
 			'contentBefore': {
@@ -872,4 +872,455 @@ Smart('bootstrap-input-group', class InputGroup extends Smart.ContentElement {
 			that.$.container.classList.add('input-group-' + that.styleMode);
 		}
 	}
+});
+
+Smart('bootstrap-modal', class Modal extends Smart.ContentElement {
+	// Element's properties.
+	static get properties() {
+		return {
+			'placeholder': {
+				value: '',
+				type: 'string'
+			},
+			'styleMode': {
+				value: '',
+				type: 'string'
+			},
+			'scrollable': {
+				value: false,
+				type: 'boolean'
+			},
+			'sizeMode': {
+				value: '',
+				allowedValue: ['lg', 'sm', ''],
+				type: 'string'
+			},
+			'tabindex': {
+				value: -1,
+				type: 'number'
+			},
+			'centered': {
+				value: false,
+				type: 'boolean'
+			}
+
+		};
+	}
+
+	/**
+	* Element's Event Listeners
+	*/
+	static get listeners() {
+		return {
+			'up': '_upHandler',
+			'dialog.down': '_dialogDownHandler',
+			'keydown': '_keydownHandler',
+			'click': '_clickHandler'
+		};
+	}
+
+	/** Button's template. */
+	template() {
+		return `<div class="modal-dialog" id="dialog">
+					<div class="modal-content" inner-h-t-m-l="[[innerHTML]]">
+						<content></content>
+				</div>`;
+	}
+
+	ready() {
+		const that = this;
+
+		that.render();
+	}
+
+	propertyChangedHandler(propertyName, oldValue, newValue) {
+		const that = this;
+
+		if(propertyName === 'tabindex') {
+			that.setAttribute('tabindex', newValue);
+		}
+		else if(propertyName === 'scrollable' || propertyName === 'centered') {
+			that.$.dialog.classList[newValue ? 'add' : 'remove']('modal-dialog-' + propertyName);
+		}
+	}
+
+	render() {
+		const that = this;
+
+		that.classList.add('modal');
+		that.$.dialog.classList[that.scrollable ? 'add' : 'remove']('modal-dialog-scrollable');
+		that.$.dialog.classList[that.centered ? 'add' : 'remove']('modal-dialog-centered');
+		that.setAttribute('tabindex', that.tabindex);
+	}
+
+	toggle() {
+		return this.opened ? this.hide() : this.show();
+	}
+
+	show() {
+		const that = this;
+
+		if (that.opened || that._isTransitioning) {
+			return;
+		}
+
+		if (that.classList.contains('fade')) {
+			this._isTransitioning = true;
+		}
+
+		const isDefaultPrevented = that.$.fireEvent('show').defaultPrevented;
+
+		if (isDefaultPrevented) {
+			return
+		}
+
+		that.set('opened', true);
+
+		// that._checkScrollbar()
+		that._setScrollbar();
+
+		that._adjustDialog();
+
+		that._setResizeEvent();
+
+		that._showBackdrop(() => that._showElement());
+	}
+
+	hide(event) {
+		const that = this;
+
+		if (event) {
+			event.preventDefault()
+		}
+
+		if (!that.opened || that._isTransitioning) {
+			return
+		}
+
+		const isDefaultPrevented = that.$.fireEvent('hide').defaultPrevented;
+
+		if (isDefaultPrevented) {
+			return
+		}
+
+		that.set('opened', false);
+
+		const transition = that.classList.contains('fade');
+
+		if (transition) {
+			that._isTransitioning = true;
+		}
+
+		that._setResizeEvent();
+		//off focusin
+
+		that.classList.remove('show');
+
+		if (transition) {
+			that.addEventListener('transitionend', (event) => that._hideModal(event), { once: true });
+		}
+		else {
+			that._hideModal();
+		}
+	}
+
+	dispose() {
+		const that = this;
+
+		if (that.parentElement) {
+			that.parentElement.removeChild(that);
+		}
+	}
+
+	// _transitionendHandler(event) {
+	// 	const that = this;
+
+	// 	this._isTransitioning = false;
+
+	// 	if (that.opened) {
+	// 		this._element.focus();
+	// 		that.$.fireEvent('shown')
+	// 	}
+	// 	else {
+	// 		that._hideModal(event);
+	// 	}
+	// }
+
+	_dialogDownHandler(event) {
+		this._dialogDown = true;
+	}
+
+	_upHandler() {
+		const that = this;
+
+		event.stopPropagation();
+
+		if (that._dialogDown && event.target === that) {
+			this._ignoreBackdropClick = true;
+		}
+
+		delete that._dialogDown;
+	}
+
+	_hideModal() {
+		const that = this;
+
+		that.style.display = 'none';
+		that.setAttribute('aria-hidden', true)
+		that.removeAttribute('aria-modal')
+		that._isTransitioning = false
+		that._showBackdrop(() => {
+			document.body.classList.remove('modal-open');
+			that.style.paddingLeft = ''
+			that.style.paddingRight = ''
+			// Restore fixed content padding
+			const fixedContent = [].slice.call(document.querySelectorAll('.fixed-top, .fixed-bottom, .is-fixed, .sticky-top'));
+
+			fixedContent.forEach((index, element) => {
+				const padding = element._paddingRight;
+
+				delete element._paddingRight;
+				element.style.paddingRight = padding ? padding : '';
+			})
+
+			// Restore sticky content
+			const elements = [].slice.call(document.querySelectorAll('.sticky-top'));
+
+			elements.forEach((index, element) => {
+				const margin = element._marginRight;
+
+				if (typeof margin !== 'undefined') {
+					delete element._marginRight;
+					element.style.marginRight = margin ? margin : '';
+				}
+			});
+
+			// Restore body padding
+			const padding = document.body._paddingRight;
+
+			delete document.body._paddingRight;
+			document.body.style.paddingRight = padding ? padding : ''
+
+			that.$.fireEvent('hidden');
+		})
+	}
+
+	_keydownHandler(event) {
+		const that = this;
+
+		if (event.which === 27) {
+			event.preventDefault()
+			this.hide()
+		}
+	}
+
+	_clickHandler(event) {
+		const that = this;
+
+		if (event.target.closest('[data-dismiss="modal"]')) {
+			that.hide();
+			return;
+		}
+
+		if (that._ignoreBackdropClick) {
+			that._ignoreBackdropClick = false;
+			return
+		}
+		if (event.target !== event.currentTarget) {
+			return
+		}
+
+		that.hide()
+	}
+
+	_setScrollbar() {
+		const that = this;
+		const bodyRect = document.body.getBoundingClientRect();
+
+		if (bodyRect.left + bodyRect.right < window.innerWidth) {
+			// Note: DOMNode.style.paddingRight returns the actual value or '' if not set
+			//   while $(DOMNode).css('padding-right') returns the calculated value or 0 if not set
+			const fixedContent = [].slice.call(document.querySelectorAll('.fixed-top, .fixed-bottom, .is-fixed, .sticky-top'));
+			const stickyContent = [].slice.call(document.querySelectorAll('.sticky-top'));
+
+			// Adjust fixed content padding
+
+			for (let i = 0; i < fixedContent.length; i++) {
+				const element = fixedContent[i],
+					calculatedPadding = parseFloat(getComputedStyle(element).getPropertyValue('padding-right')) || 0;
+
+				element.style.paddingRight = (element._paddingRight = (calculatedPadding + that._getScrollbarWidth())) + 'px';
+			}
+
+			for (let i = 0; i < stickyContent.length; i++) {
+				const element = stickyContent[i],
+					calculatedMargin = parseFloat(getComputedStyle(element).getPropertyValue('margin-right')) || 0;
+
+				element.style.marginRight = (element._marginRight = (calculatedMargin + that._getScrollbarWidth())) + 'px';
+			}
+
+			// Adjust body padding
+			document.body._paddingRight = document.body.style.paddingRight;
+			document.body.style.paddingRight = ((parseFloat(getComputedStyle(document.body).getPropertyValue('padding-right')) || 0) + that._getScrollbarWidth()) + 'px';
+		}
+
+		document.body.classList.add('modal-open');
+	}
+
+	_getScrollbarWidth() {
+		const scrollDiv = document.createElement('div');
+
+		scrollDiv.className = 'modal-scrollbar-measure';
+
+		document.body.appendChild(scrollDiv);
+
+		const scrollbarWidth = scrollDiv.getBoundingClientRect().width - scrollDiv.clientWidth;
+
+		document.body.removeChild(scrollDiv);
+
+		return scrollbarWidth;
+	}
+
+	_adjustDialog() {
+		const that = this,
+			isModalOverflowing = that.scrollHeight > document.documentElement.clientHeight,
+			bodyRect = document.body.getBoundingClientRect(),
+			isBodyOverflowing = bodyRect.left + bodyRect.right < window.innerWidth;
+
+
+		if (isBodyOverflowing && isModalOverflowing) {
+			that.style.paddingLeft = that._getScrollbarWidth() + 'px';
+		}
+
+		if (isBodyOverflowing && !isModalOverflowing) {
+			that.style.paddingRight = that._getScrollbarWidth() + 'px';
+		}
+	}
+
+	_setResizeEvent() {
+		const that = this,
+			resizeHanler = (event) => that._adjustDialog();
+
+		if (that.opened) {
+			window.addEventListener('resize', resizeHanler);
+		}
+		else {
+			window.removeEventListener('resize', resizeHanler);
+		}
+	}
+
+	_showElement() {
+		const that = this;
+
+		const transition = that.classList.contains('fade'),
+			dialog = that.$.dialog;
+
+		that.style.display = 'block';
+		that.removeAttribute('aria-hidden');
+		that.setAttribute('aria-modal', true);
+
+		if (dialog.classList.contains('modal-dialog-scrollable')) {
+			dialog.querySelector('.modal-body').scrollTop = 0
+		}
+		else {
+			that.scrollTop = 0
+		}
+
+		if (transition) {
+			that.offsetHeight;
+		}
+
+		that.classList.add('show')
+
+		that._enforceFocus()
+
+		const transitionComplete = () => {
+			that.focus()
+			that._isTransitioning = false;
+			that.$.fireEvent('shown');
+		}
+
+		if (transition) {
+			that.$.dialog.addEventListener('transitionend', transitionComplete, { once: true });
+		}
+		else {
+			transitionComplete()
+			// that._transitionendHandler()
+		}
+	}
+
+	_enforceFocus() {
+		const that = this,
+			focusInHandler = function () {
+				if (document !== event.target && that !== event.target && !that.contains(event.target)) {
+					event.preventDefault();
+					that.hide();
+				}
+			}
+
+		document.removeEventListener('focusin', focusInHandler);// Guard against infinite focus loop
+		document.addEventListener('focusin', focusInHandler);
+	}
+
+	_showBackdrop(callback) {
+		const that = this;
+		const animate = that.classList.contains('fade');
+
+		if (that.opened) {
+			if (!that._backdrop) {
+				that._backdrop = document.createElement('div')
+				that._backdrop.className = 'modal-backdrop';
+			}
+
+			if (animate) {
+				this._backdrop.classList.add('fade');
+			}
+
+			if (!that._backdrop.parentElement) {
+				document.body.appendChild(that._backdrop);
+			}
+
+			if (animate) {
+				//reflow
+				that._backdrop.offsetHeight;
+			}
+
+			this._backdrop.classList.add('show')
+
+			if (!callback) {
+				return
+			}
+
+			if (!animate) {
+				callback();
+				return
+			}
+
+			that._backdrop.addEventListener('transitionend', callback, { once: true });
+		}
+		else if (!that.opened && that._backdrop) {
+			that._backdrop.classList.remove('show');
+
+			const callbackRemove = () => {
+				if (that._backdrop.parentElement) {
+					that._backdrop.parentElement.removeChild(that._backdrop);
+				}
+
+				if (callback) {
+					callback()
+				}
+			}
+
+			if (that.classList.contains('fade')) {
+				that._backdrop.addEventListener('transitionend', callbackRemove, { once: true });
+			}
+			else {
+				callbackRemove()
+			}
+		}
+		else if (callback) {
+			callback()
+		}
+	}
+
 });
