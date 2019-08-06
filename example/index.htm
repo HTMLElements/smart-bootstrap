@@ -1,52 +1,2208 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-    <title>Bootstrap Button Web Component Demo | https://www.htmlelements.com/</title>
-	<meta name="description" content="Use web components for Bootstrap and Custom Elements with Bootstrap styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.">
-	<meta name="author" content="https://www.htmlelements.com/ and Boyko Markov">	
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+	<title>Bootstrap Web Components Demo | https://www.htmlelements.com/</title>
+	<meta name="description"
+		content="Use web components for Bootstrap and Custom Elements with Bootstrap styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.">
+	<meta name="author" content="https://www.htmlelements.com/ and Boyko Markov">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="styles.css" />	
-	<script type="text/javascript" src="../../@smarthtmlelements/smart-core/source/smart.core.js"></script>
-    <script src="index.js"></script>
-	<script type="text/javascript" src="../src/bootstrap-elements.js"></script>	
+	<link rel="stylesheet" type="text/css" href="styles.css" />
+	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+	<script type="text/javascript" src="../node_modules/@smarthtmlelements/smart-core/source/smart.core.js"></script>
+	<script src="index.js"></script>
+	<script type="text/javascript" src="../src/smart.bootstrap.js"></script>
 </head>
+
 <body>
-	<h1>Bootstrap based Custom Elements and Web Components | Free</h1>
-	<p>Use Custom Elements with Bootstrap for actions in forms, dialogs, and more with support for multiple sizes, states, and more.</p>
-	<h2>Bootstrap Buttons</h2><br/>
-	<bootstrap-button style-mode="primary">Primary</bootstrap-button>
-	<bootstrap-button style-mode="secondary">Secondary</bootstrap-button>
-	<bootstrap-button style-mode="success">Success</bootstrap-button>
-	<bootstrap-button style-mode="danger">Danger</bootstrap-button>
-	<bootstrap-button style-mode="warning">Warning</bootstrap-button>
-	<bootstrap-button style-mode="info">Info</bootstrap-button>
-	<bootstrap-button style-mode="light">Light</bootstrap-button>
-	<bootstrap-button style-mode="dark">Dark</bootstrap-button>
-	<bootstrap-button style-mode="link">Link</bootstrap-button>
-	<br/><br/><h2>Bootstrap Outline Buttons</h2><br/>
-	<bootstrap-button outlined style-mode="primary">Primary</bootstrap-button>
-	<bootstrap-button outlined style-mode="secondary">Secondary</bootstrap-button>
-	<bootstrap-button outlined style-mode="success">Success</bootstrap-button>
-	<bootstrap-button outlined style-mode="danger">Danger</bootstrap-button>
-	<bootstrap-button outlined style-mode="warning">Warning</bootstrap-button>
-	<bootstrap-button outlined style-mode="info">Info</bootstrap-button>
-	<bootstrap-button outlined style-mode="light">Light</bootstrap-button>
-	<bootstrap-button outlined style-mode="dark">Dark</bootstrap-button>
-	<bootstrap-button outlined style-mode="link">Link</bootstrap-button>
-	<br/><br/><h2>Bootstrap Buttons Size</h2><br/>
-	<bootstrap-button size-mode="lg">Large Button</bootstrap-button>
-	<bootstrap-button size-mode="lg">Large Button</bootstrap-button>
-	<br/><br/>
-	<bootstrap-button size-mode="sm">Small Button</bootstrap-button>
-	<bootstrap-button size-mode="sm">Small Button</bootstrap-button>
-	<br/><br/><h2>Bootstrap Disabled Buttons</h2><br/>
-	<bootstrap-button disabled style-mode="primary">Primary</bootstrap-button>
-	<bootstrap-button disabled style-mode="secondary">Secondary</bootstrap-button>		
+	<h1>Bootstrap Web Components by <a href="https://www.htmlelements.com/" target="_blank">Smart</a> </h1>
+	<div class="main-container">
+		<section class="nav-section">
+			<!-- Contents Menu Section -->
+			<nav>
+				<ul>
+					<h4>Content</h4>
+					<li><a href="#quickStart">Getting Started</a></li>
+				</ul>
+			</nav>
+			<nav>
+				<ul>
+					<h4>Components</h4>
+					<li><a href="#buttons">Buttons</a></li>
+					<li><a href="#dropDowns">Dropdowns</a></li>
+					<li><a href="#inputGroups">Input group</a></li>
+					<li><a href="#modal">Modal</a></li>
+					<li><a href="#forms">Forms</a></li>
+				</ul>
+			</nav>
+
+		</section>
+		<section class="content-section bd-content">
+			<p>Use Custom Elements with Bootstrap for actions in forms, dialogs, and more with support for multiple
+				sizes,
+				states, and more.</p>
+
+			<h2 class="separator" id="quickStart">Story</h2>
+			<p>
+				UI Components based on Bootstrap 4+, Web Components and <a target="_blank" href="https://www.htmlelements.com/">Smart</a>.
+				<br/>Feel free to use these components for both private as well as commercial projects.				
+			</p>
+			
+			<h2 class="separator" id="quickStart">Quick Start</h2>
+			<p>
+				Looking to quickly add Bootstrap Webcomponents to your project ?
+				<p>
+					Official Github page <a href="https://github.com/HTMLElements/Bootstrap-Web-Components">Bootstrap
+						Web Components</a>
+				</p>
+				<p>
+					Using a package manager download the Bootstrap Webcomponents <a
+						href="https://www.npmjs.com/package/bootstrap-webcomponents">NPM package</a>
+				</p>
+			</p>
+
+			<h2>CSS</h2>
+			<p>
+				Copy-paste the stylesheet &lt;link&gt; into your &lt;head&gt; before all other stylesheets to load our
+				CSS.
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre
+						class="prettyprint">&lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"&gt;</pre>
+				</figure>
+			</p>
+
+			<h2>JS</h2>
+			<p>
+				Copy-paste the &lt;script&gt; tags into your &lt;head&gt; before all other javascript references to load
+				the neccessary dependencies.
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;script type="text/javascript" src="../node_modules/@smarthtmlelements/smart-core/source/smart.core.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="../src/bootstrap-elements.js""&gt;&lt;/script&gt;</pre>
+				</figure>
+			</p>
+
+			<h2>Starter Template</h2>
+			<p>Here's an example on how to create a simple button on a page:</p>
+			<p>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;!DOCTYPE html&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+	&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
+	&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" /&gt;
+	&lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"&gt;
+	&lt;script type="text/javascript" src="../node_modules/@smarthtmlelements/smart-core/source/smart.core.js"&gt;&lt;/script&gt;
+	&lt;script type="text/javascript" src="../src/bootstrap-elements.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;bootstrap-button outlined style-mode="primary"&gt;Primary&lt;/bootstrap-button&gt;
+&lt;/body&gt;
+</pre>
+				</figure>
+			</p>
+
+			<h2 class="separator">Components</h3>
+
+				<h2 id="buttons">Bootstrap Buttons</h2><br />
+				<p>Use Bootstrap custom button styles for actions in forms, dialogs, and more with support for multiple
+					sizes, states, and more.</p>
+				</br>
+				<h3>Examples</h3>
+
+				<p>Bootstrap includes several predefined button styles, each serving its own semantic purpose, with a
+					few extras thrown in for more control.</p>
+				<div class="bd-example">
+					<bootstrap-button style-mode="primary">Primary</bootstrap-button>
+					<bootstrap-button style-mode="secondary">Secondary</bootstrap-button>
+					<bootstrap-button style-mode="success">Success</bootstrap-button>
+					<bootstrap-button style-mode="danger">Danger</bootstrap-button>
+					<bootstrap-button style-mode="warning">Warning</bootstrap-button>
+					<bootstrap-button style-mode="info">Info</bootstrap-button>
+					<bootstrap-button style-mode="light">Light</bootstrap-button>
+					<bootstrap-button style-mode="dark">Dark</bootstrap-button>
+					<bootstrap-button style-mode="link">Link</bootstrap-button>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-button style-mode="primary"&gt;Primary&lt;/bootstrap-button&gt;
+&lt;bootstrap-button style-mode="secondary"&gt;Secondary&lt;/bootstrap-button&gt;
+&lt;bootstrap-button style-mode="success"&gt;Success&lt;/bootstrap-button&gt;
+&lt;bootstrap-button style-mode="danger"&gt;Danger&lt;/bootstrap-button&gt;
+&lt;bootstrap-button style-mode="warning"&gt;Warning&lt;/bootstrap-button&gt;
+&lt;bootstrap-button style-mode="info"&gt;Info&lt;/bootstrap-button&gt;
+&lt;bootstrap-button style-mode="light"&gt;Light&lt;/bootstrap-button&gt;
+&lt;bootstrap-button style-mode="dark"&gt;Dark&lt;/bootstrap-button&gt;
+&lt;bootstrap-button style-mode="link"&gt;Link&lt;/bootstrap-button&gt;</pre>
+				</figure>
+
+				<p>
+					<b>StyleMode</b> property allows the user to change the style of the elements.
+				</p>
+
+				<h2>Outlined Buttons</h2><br />
+				<p>
+					In need of a button, but not the hefty background colors they bring? Just add the class
+					<b>outlined</b> to remove all background images and colors on any button.
+				</p>
+				<div class="bd-example">
+					<bootstrap-button outlined style-mode="primary">Primary</bootstrap-button>
+					<bootstrap-button outlined style-mode="secondary">Secondary</bootstrap-button>
+					<bootstrap-button outlined style-mode="success">Success</bootstrap-button>
+					<bootstrap-button outlined style-mode="danger">Danger</bootstrap-button>
+					<bootstrap-button outlined style-mode="warning">Warning</bootstrap-button>
+					<bootstrap-button outlined style-mode="info">Info</bootstrap-button>
+					<bootstrap-button outlined style-mode="light">Light</bootstrap-button>
+					<bootstrap-button outlined style-mode="dark">Dark</bootstrap-button>
+					<bootstrap-button outlined style-mode="link">Link</bootstrap-button>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-button outlined style-mode="primary"&gt;Primary&lt;/bootstrap-button&gt;
+&lt;bootstrap-button outlined style-mode="secondary"&gt;Secondary&lt;/bootstrap-button&gt;
+&lt;bootstrap-button outlined style-mode="success"&gt;Success&lt;/bootstrap-button&gt;
+&lt;bootstrap-button outlined style-mode="danger"&gt;Danger&lt;/bootstrap-button&gt;
+&lt;bootstrap-button outlined style-mode="warning"&gt;Warning&lt;/bootstrap-button&gt;
+&lt;bootstrap-button outlined style-mode="info"&gt;Info&lt;/bootstrap-button&gt;
+&lt;bootstrap-button outlined style-mode="light"&gt;Light&lt;/bootstrap-button&gt;
+&lt;bootstrap-button outlined style-mode="dark"&gt;Dark&lt;/bootstrap-button&gt;
+&lt;bootstrap-button outlined style-mode="link"&gt;Link&lt;/bootstrap-button&gt;</pre>
+				</figure>
+
+				<p>
+					Setting the <b>outlined</b> property the elements turn into outlined buttons with no filling untill
+					hovered.
+				</p>
+
+				<h2>Buttons Sizes</h2><br />
+				<p>
+					Fancy larger or smaller buttons? Just set the <b>sizeMode</b> property to 'sm' or 'lg' for
+					additional sizes.
+				</p>
+				<div class="bd-example">
+					<bootstrap-button size-mode="lg">Large Button</bootstrap-button>
+					<bootstrap-button size-mode="lg">Large Button</bootstrap-button>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-button size-mode="lg"&gt;Large Button&lt;/bootstrap-button&gt;
+&lt;bootstrap-button size-mode="lg"&gt;Large Button&lt;/bootstrap-button&gt;</pre>
+				</figure>
+
+				<div class="bd-example">
+					<bootstrap-button size-mode="sm">Small Button</bootstrap-button>
+					<bootstrap-button size-mode="sm">Small Button</bootstrap-button>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-button size-mode="sm"&gt;Large Button&lt;/bootstrap-button&gt;
+&lt;bootstrap-button size-mode="sm"&gt;Large Button&lt;/bootstrap-button&gt;</pre>
+				</figure>
+				<p>
+					Buttons can be reset back to normal if <b>SizeMode</b> is set to an empty string.
+				</p>
+
+				<h2>Disabled Buttons</h2><br />
+				<div class="bd-example">
+					<bootstrap-button disabled style-mode="primary">Primary</bootstrap-button>
+					<bootstrap-button disabled style-mode="secondary">Secondary</bootstrap-button>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-button disabled&gt;Primary Button&lt;/bootstrap-button&gt;
+&lt;bootstrap-button disabled&gt;Button&lt;/bootstrap-button&gt;</pre>
+				</figure>
+
+				<p>
+					To disable/enable an element just set the <b>disabled</b> property.
+				</p>
+
+				<h2>Bootstrap Checkbox</h2><br />
+				<p>
+					Checkboxes are buttons that can be toggled. The checked state of these buttons can be updated via
+					click or by setting the <b>checked</b> property to true.
+					Checkboxes like the other toggle buttons can be pre-checked.
+				</p>
+				<div class="bd-example">
+					<bootstrap-check-box checked>Checked</bootstrap-check-box>
+					<bootstrap-check-box>Unchecked</bootstrap-check-box>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-check-box checked&gt;Checked&lt;/bootstrap-check-box&gt;
+&lt;bootstrap-check-box&gt;Unchecked&lt;/bootstrap-check-box&gt;</pre>
+				</figure>
+
+				<p>
+					Appling/Removing the <b>checked</b> attribute will toggle the state of the button.
+				</p>
+
+				<h2>Bootstrap Toggle Button</h2>
+				<div class="bd-example">
+					<bootstrap-toggle-button checked> Checked</bootstrap-toggle-button>
+					<bootstrap-toggle-button>Unchecked</bootstrap-toggle-button>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-toggle-button checked&gt;Checked&lt;/bootstrap-toggle-button&gt;
+&lt;bootstrap-toggle-button&gt;Unchecked&lt;/bootstrap-toggle-button&gt;</pre>
+				</figure>
+
+				<p>
+					Add the <b>checked</b> attribute to toggle a button’s active state. If you’re pre-toggling a button,
+					you must manually add the <b>checked</b> attribute to the button.
+				</p>
+
+				<h2>Bootstrap Radio Button</h2>
+				<div class="bd-example">
+					<bootstrap-radio-button checked> Active</bootstrap-radio-button>
+					<bootstrap-radio-button>Radio</bootstrap-radio-button>
+					<bootstrap-radio-button>Radio</bootstrap-radio-button>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-radio-button checked&gt; Active&lt;/bootstrap-radio-button&gt;
+&lt;bootstrap-radio-button>Radio&lt;/bootstrap-radio-button&gt;
+&lt;bootstrap-radio-button>Radio&lt;/bootstrap-radio-button&gt;</pre>
+				</figure>
+				<p>
+					Radio buttons are group elements that allow only one of them to be checked. Similar to the other
+					toggle elements to set a button into checked state the property <b>checked</b> has to be applied to
+					the element.
+					All elements that have the same <b>group</b> property are considered to be in the same group.
+					<b>group</b> can be set on initialization.
+				</p>
+
+				<h2 id="dropDowns">Bootstrap Dropdowns</h2>
+				<p>
+					Dropdowns are toggleable, contextual overlays for displaying lists of links and more.
+					They’re toggled by clicking, not by hovering; this is an intentional design decision.
+					Dropdowns are built using the <b>Smart Framework's DropDownPositioning API</b>, which provides
+					dynamic positioning and viewport detection.
+					No additional references are required since the API is part of the base class
+					<b>smartelements.js</b>.
+				</p>
+
+				<p>
+					Bootstrap’s dropdowns are designed to be generic and applicable to a variety of situations and
+					markup structures.
+					For instance, it is possible to create dropdowns that contain additional inputs and form controls,
+					such as search fields or login forms.
+					However, Bootstrap does add built-in support for most standard keyboard menu interactions, such as
+					the ability to move through individual .dropdown-item elements using the cursor keys and close the
+					menu with the ESC key.
+				</p>
+
+				<p>
+					In order for a DropDown item to visually appear as an item it is neccessary to add the class
+					<b>.dropdown-item</b>.
+				</p>
+				<div class="bd-example">
+					<bootstrap-drop-down label="Dropdown button">
+						<a class="dropdown-item" href="#">Action</a>
+						<a class="dropdown-item" href="#">Another action</a>
+						<a class="dropdown-item" href="#">Something else here</a>
+					</bootstrap-drop-down>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-drop-down label="Dropdown button"&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;
+&lt;/bootstrap-drop-down&gt;</pre>
+				</figure>
+
+				<p>
+					<b>label</b> property is used to set the label of the drop down button.
+				</p>
+
+				<h2>Dropdown varians</h2>
+				<div class="bd-example">
+					<div class="btn-group">
+						<bootstrap-drop-down label="Primary" style-mode="primary">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-drop-down>
+					</div>
+					<div class="btn-group">
+						<bootstrap-drop-down label="Secondary" style-mode="secondary">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-drop-down>
+					</div>
+					<div class="btn-group">
+						<bootstrap-drop-down label="Success" style-mode="success">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-drop-down>
+					</div>
+					<div class="btn-group">
+						<bootstrap-drop-down label="Info" style-mode="info">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-drop-down>
+					</div>
+					<div class="btn-group">
+						<bootstrap-drop-down label="Warning" style-mode="warning">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-drop-down>
+					</div>
+					<div class="btn-group">
+						<bootstrap-drop-down label="Danger" style-mode="danger">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-drop-down>
+					</div>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;!-- Example single danger button --&gt;
+&lt;bootstrap-drop-down label="Danger" style-mode="danger"&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;
+	&lt;div class="dropdown-divider">&lt;/div&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Separated link&lt;/a&gt;
+&lt;/bootstrap-drop-down&gt;</pre>
+				</figure>
+
+				<p>
+					<b>StyleMode</b> determines the style of the DropDown.
+				</p>
+
+				<h2>Bootstrap Split Button</h2>
+				<p>
+					Similarly, create split button dropdowns with virtually the same markup as single button dropdowns,
+					but with the addition of .dropdown-toggle-split for proper spacing around the dropdown caret.
+
+					We use this extra class to reduce the horizontal padding on either side of the caret by 25% and
+					remove the margin-left that’s added for regular button dropdowns.
+					Those extra changes keep the caret centered in the split button and provide a more appropriately
+					sized hit area next to the main button.
+				</p>
+				<div class="bd-example">
+					<bootstrap-split-button label="Dropdown button">
+						<a class="dropdown-item" href="#">Action</a>
+						<a class="dropdown-item" href="#">Another action</a>
+						<a class="dropdown-item" href="#">Something else here</a>
+					</bootstrap-split-button>
+				</div>
+
+				<h2>Split Button varians</h2>
+				<div class="bd-example">
+					<div class="btn-group">
+						<bootstrap-split-button label="Primary" style-mode="primary">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-split-button>
+					</div>
+					<div class="btn-group">
+						<bootstrap-split-button label="Secondary" style-mode="secondary">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-split-button>
+					</div>
+					<div class="btn-group">
+						<bootstrap-split-button label="Success" style-mode="success">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-split-button>
+					</div>
+					<div class="btn-group">
+						<bootstrap-split-button label="Info" style-mode="info">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-split-button>
+					</div>
+					<div class="btn-group">
+						<bootstrap-split-button label="Warning" style-mode="warning">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-split-button>
+					</div>
+					<div class="btn-group">
+						<bootstrap-split-button label="Danger" style-mode="danger">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-split-button>
+					</div>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;!-- Example single danger button --&gt;
+&lt;bootstrap-split-button label="Danger" style-mode="danger"&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;
+	&lt;div class="dropdown-divider">&lt;/div&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Separated link&lt;/a&gt;
+&lt;/bootstrap-split-button&gt;</pre>
+				</figure>
+
+
+				<h2>Sizing</h2>
+				<p>Button dropdowns work with buttons of all sizes, including default and split dropdown buttons.</p>
+				<div class="bd-example">
+					<div class="btn-toolbar">
+						<bootstrap-drop-down label="Large button" size-mode="lg">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-drop-down>
+						<bootstrap-split-button label="Large split button" size-mode="lg" class="ml-2">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-split-button>
+					</div>
+					<div class="btn-toolbar">
+						<bootstrap-drop-down label="Small button" size-mode="sm">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-drop-down>
+						<bootstrap-split-button label="Small split button" size-mode="sm" class="ml-2">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-split-button>
+					</div>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;!-- Large button groups (default and split) --&gt;
+&lt;bootstrap-drop-down label="Large button" size-mode="lg"&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;
+&lt;/bootstrap-drop-down&gt;
+&lt;bootstrap-split-button label="Large split button" size-mode="lg"&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;
+&lt;/bootstrap-split-button&gt;
+
+&lt;!-- Small button groups (default and split) --&gt;
+&lt;bootstrap-drop-down label="Small button" size-mode="sm"&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;
+&lt;/bootstrap-drop-down&gt;
+&lt;bootstrap-split-button label="Small split button" size-mode="sm"&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;
+&lt;/bootstrap-split-button&gt;</pre>
+				</figure>
+				<p>
+					Similar to the other buttons the <b>sizeMode</b> property determines the size of the component.
+				</p>
+
+				<h2>Directions</h2>
+
+				<h2>Dropup</h2>
+				<p>Trigger dropdown menus above elements by adding changing the <b>dropDownPosition</b> property to
+					'top' to the parent element.</p>
+
+				<div class="bd-example">
+					<div class="btn-toolbar">
+						<bootstrap-drop-down label="Dropup" drop-down-position="top">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-drop-down>
+						<bootstrap-split-button label="Split droppup" class="ml-2" drop-down-position="top">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-split-button>
+					</div>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;!-- Default dropright button --&gt;
+&lt;bootstrap-drop-down label="Dropup" drop-down-position="top""&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;
+&lt;/bootstrap-drop-down&gt;
+	&lt;!-- Split dropright button --&gt;
+&lt;bootstrap-split-button label="Split dropup" drop-down-position="top"&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+	&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;
+&lt;/bootstrap-split-button&gt;</pre>
+				</figure>
+
+				<h2>Dropright</h2>
+				<p>Trigger dropdown menus at the right of the elements by adding changing the <b>dropDownPosition</b>
+					property to
+					'right' to the parent element.</p>
+
+				<div class="bd-example">
+					<div class="btn-toolbar">
+						<bootstrap-drop-down label="Dropright" drop-down-position="right">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-drop-down>
+						<bootstrap-split-button label="Split dropright" class="ml-2" drop-down-position="right">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-split-button>
+					</div>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+	&lt;!-- Default dropright button --&gt;
+	&lt;bootstrap-drop-down label="Dropright" drop-down-position="right""&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;
+	&lt;/bootstrap-drop-down&gt;
+
+	&lt;!-- Split dropright button --&gt;
+	&lt;bootstrap-split-button label="Split dropright" drop-down-position="right"&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;
+	&lt;/bootstrap-split-button&gt;</pre>
+				</figure>
+
+				<h2>Dropleft</h2>
+				<p>Trigger dropdown menus at the left of the elements by adding changing the <b>dropDownPosition</b>
+					property to
+					'left' to the parent element.</p>
+
+				<div class="bd-example">
+					<div class="btn-toolbar">
+						<bootstrap-drop-down label="Dropleft" drop-down-position="left">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-drop-down>
+						<bootstrap-split-button label="Split dropleft" class="ml-2" drop-down-position="left">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-split-button>
+					</div>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+	&lt;!-- Default dropleft button --&gt;
+	&lt;bootstrap-drop-down label="Dropleft" drop-down-position="left""&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;
+	&lt;/bootstrap-drop-down&gt;
+
+	&lt;!-- Split dropleft button --&gt;
+	&lt;bootstrap-split-button label="Split dropleft" drop-down-position="left"&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;
+	&lt;/bootstrap-split-button&gt;</pre>
+				</figure>
+
+				<h2>Menu items</h2>
+				<p>Optionally you can use &lt;button&gt; elements in your dropdowns instead of just &lt;a&gt;'s.</p>
+
+				<div class="bd-example">
+					<bootstrap-drop-down label="Dropdown">
+						<button class="dropdown-item" type="button">Action</button>
+						<button class="dropdown-item" type="button">Another action</button>
+						<button class="dropdown-item" type="button">Something else here</button>
+					</bootstrap-drop-down>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+	&lt;bootstrap-drop-down label="Dropdown"&gt;
+		&lt;button class="dropdown-item" type="button"&gt;Action&lt;/button&gt;
+		&lt;button class="dropdown-item" type="button"&gt;Another action&lt;/button&gt;
+		&lt;button class="dropdown-item" type="button"&gt;Something else here&lt;/button&gt;
+	&lt;/bootstrap-drop-down&gt;</pre>
+				</figure>
+
+				<h2>Custom alignment</h2>
+				<p>If you want to use custom positioning instead of the dynamic, create a callback and pass it to the
+					<b>customDropDownPositionCallback</b> property.</p>
+
+				<p>To align right the dropdown menu with the given breakpoint or larger, add
+					.dropdown-menu{-sm|-md|-lg|-xl}-right to the drop down.</p>
+				<div class="bd-example">
+					<bootstrap-drop-down label="Left-aligned but right aligned when large screen"
+						custom-drop-down-position-callback="customDropDownPositioning">
+						<button class="dropdown-item" type="button">Action</button>
+						<button class="dropdown-item" type="button">Another action</button>
+						<button class="dropdown-item" type="button">Something else here</button>
+					</bootstrap-drop-down>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+
+	&lt;bootstrap-drop-down label="Left-aligned but right aligned when large screen" custom-drop-down-position-callback="customDropDownPositioning"&gt;
+		&lt;button class="dropdown-item" type="button"&gt;Action&lt;/button&gt;
+		&lt;button class="dropdown-item" type="button"&gt;Another action&lt;/button&gt;
+		&lt;button class="dropdown-item" type="button"&gt;Something else here&lt;/button&gt;
+	&lt;/bootstrap-drop-down&gt;</pre>
+				</figure>
+
+				<p>To align left the dropdown menu with the given breakpoint or larger, add .dropdown-menu-right and
+					.dropdown-menu{-sm|-md|-lg|-xl}-left to the drop down.</p>
+				<div class="bd-example">
+					<bootstrap-drop-down label="Right-aligned but left aligned when large screen"
+						custom-drop-down-position-callback="customDropDownPositioning">
+						<button class="dropdown-item" type="button">Action</button>
+						<button class="dropdown-item" type="button">Another action</button>
+						<button class="dropdown-item" type="button">Something else here</button>
+					</bootstrap-drop-down>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+
+	&lt;bootstrap-drop-down label="Right-aligned but left aligned when large screen" custom-drop-down-position-callback="customDropDownPositioning"&gt;
+		&lt;button class="dropdown-item" type="button"&gt;Action&lt;/button&gt;
+		&lt;button class="dropdown-item" type="button"&gt;Another action&lt;/button&gt;
+		&lt;button class="dropdown-item" type="button"&gt;Something else here&lt;/button&gt;
+	&lt;/bootstrap-drop-down&gt;</pre>
+				</figure>
+
+				<h2>Menu content</h2>
+
+				<h2 id="headers">Headers</h2>
+				<p>Add a header to label sections of actions in any dropdown menu.</p>
+
+				<div class="bd-example">
+					<div class="dropdown-menu">
+						<h6 class="dropdown-header">Dropdown header</h6>
+						<a class="dropdown-item" href="#headers">Action</a>
+						<a class="dropdown-item" href="#headers">Another action</a>
+					</div>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;div class="dropdown-menu"&gt;
+&lt;h6 class="dropdown-header"&gt;Dropdown header&lt;/h6&gt;
+&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+&lt;/div&gt;</pre>
+				</figure>
+
+
+				<h2 id="dividers">Dividers</h2>
+				<p>Separate groups of related menu items with a divider.</p>
+
+				<div class="bd-example">
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="#dividers">Action</a>
+						<a class="dropdown-item" href="#dividers">Another action</a>
+						<a class="dropdown-item" href="#dividers">Something else here</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#dividers">Separated link</a>
+					</div>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;div class="dropdown-menu"&gt;
+&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+&lt;div class="dropdown-divider"&gt;&lt;/div&gt;
+&lt;a class="dropdown-item" href="#"&gt;Separate link&lt;/a&gt;
+&lt;/div&gt;</pre>
+				</figure>
+
+				<h2 id="text">Text</h2>
+				<p>Place any freeform text within a dropdown with text and use spacing utilities. Note that you’ll
+					likely need additional sizing styles to constrain the menu width.</p>
+
+				<div class="bd-example">
+					<div class="dropdown-menu p-4 text-muted" style="max-width: 200px;">
+						<p>
+							Some example text that's free-flowing within the dropdown menu.
+						</p>
+						<p class="mb-0">
+							And this is more example text.
+						</p>
+					</div>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;div class="dropdown-menu p-4 text-muted" style="max-width: 200px;"&gt;
+	&lt;p&gt;
+		Some example text that's free-flowing within the dropdown menu.
+		&lt;/p&gt;
+		&lt;p class="mb-0"&gt;
+		And this is more example text.
+	&lt;/p&gt;
+&lt;/div&gt;</pre>
+				</figure>
+
+				<h2>Methods</h2>
+
+				<p>
+					Public methods can be called directly on the element.
+				</p>
+
+				<table>
+					<thead>
+						<tr>
+							<th>Method</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><code class="highlighter-rouge">toggle()</code></td>
+							<td>Toggles the dropdown.</td>
+						</tr>
+						<tr>
+							<td><code class="highlighter-rouge">show()</code></td>
+							<td>Shows the dropdown.</td>
+						</tr>
+						<tr>
+							<td><code class="highlighter-rouge">hide()</code></td>
+							<td>Hides the dropdown menu.</td>
+						</tr>
+						<tr>
+							<td><code class="highlighter-rouge">update()</code></td>
+							<td>Updates the position of an element’s dropdown.</td>
+						</tr>
+						<tr>
+							<td><code class="highlighter-rouge">dispose()</code></td>
+							<td>Destroys the element.</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<h2>Events</h2>
+
+				<p>
+					Events are fired directly from the element.
+				</p>
+
+				<table>
+					<thead>
+						<tr>
+							<th>Event</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><code class="highlighter-rouge">show</code></td>
+							<td>This event fires immediately when the show instance method is called.</td>
+						</tr>
+						<tr>
+							<td><code class="highlighter-rouge">shown</code></td>
+							<td>This event is fired when the dropdown has been made visible to the user (will wait for
+								CSS transitions, to complete).</td>
+						</tr>
+						<tr>
+							<td><code class="highlighter-rouge">hide</code></td>
+							<td>This event is fired immediately when the hide instance method has been called.</td>
+						</tr>
+						<tr>
+							<td><code class="highlighter-rouge">hidden</code></td>
+							<td>This event is fired when the dropdown has finished being hidden from the user (will wait
+								for CSS transitions, to complete).</td>
+						</tr>
+					</tbody>
+				</table>
+				<p>
+					Binding to events is easy and simple:
+				</p>
+				<figure class="highlight">
+					<pre class="prettyprint">
+document.querySelector('bootstrap-drop-down').addEventListener('show', function(){
+	//do something...
+})</pre>
+				</figure>
+
+				<h2 id="inputGroups">Bootstrap Input Groups</h2><br />
+				<p>Easily extend form controls by adding text, buttons, or button groups on either side of textual
+					inputs, custom selects, and custom file inputs.</p>
+				</br>
+
+				<h2>Basic example</h2>
+				<p>
+					Place one add-on or button on either side of an input. You may also place one on both sides of an
+					input. Remember to place &lt;label&gt;s outside the input group.
+				</p>
+
+				<div class="bd-example">
+					<bootstrap-input-group class="mb-3">
+						<span class="input-group-text" id="basic-addon1">@</span>
+						<input type="text" class="form-control" placeholder="Username" aria-label="Username"
+							aria-describedby="basic-addon1">
+					</bootstrap-input-group>
+					<bootstrap-input-group class="mb-3">
+						<input type="text" class="form-control" placeholder="Recipient's username"
+							aria-label="Recipient's username" aria-describedby="basic-addon2">
+						<span class="input-group-text" id="basic-addon2">@example.com</span>
+					</bootstrap-input-group>
+					<label for="basic-url">Your vanity URL</label>
+					<bootstrap-input-group class="mb-3">
+						<span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+					</bootstrap-input-group>
+					<bootstrap-input-group class="mb-3">
+						<span class="input-group-text">$</span>
+						<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+						<span class="input-group-text">.00</span>
+					</bootstrap-input-group>
+					<bootstrap-input-group>
+						<span class="input-group-text">With textarea</span>
+						<textarea class="form-control" aria-label="With textarea"></textarea>
+					</bootstrap-input-group>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-input-group class="mb-3"&gt;
+	&lt;span class="input-group-text" id="basic-addon1"&gt;@&lt;/span&gt;
+	&lt;input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"&gt;
+&lt;/bootstrap-input-group&gt;
+
+&lt;bootstrap-input-group class="mb-3"&gt;
+	&lt;input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2"&gt;
+	&lt;span class="input-group-text" id="basic-addon2"&gt;@example.com&lt;/span&gt;
+&lt;/bootstrap-input-group&gt;
+
+&lt;label for="basic-url"&gt;Your vanity URL&lt;/label&gt;
+&lt;bootstrap-input-group class="mb-3"&gt;
+	&lt;span class="input-group-text" id="basic-addon3"&gt;https://example.com/users/&lt;/span&gt;
+&lt;/bootstrap-input-group&gt;
+
+&lt;bootstrap-input-group class="mb-3"&gt;
+	&lt;span class="input-group-text"&gt;$&lt;/span&gt;
+	&lt;input type="text" class="form-control" aria-label="Amount (to the nearest dollar)"&gt;
+	&lt;span class="input-group-text"&gt;.00&lt;/span&gt;
+&lt;/bootstrap-input-group&gt;
+
+&lt;bootstrap-input-group&gt;
+	&lt;span class="input-group-text"&gt;With textarea&lt;/span&gt;
+	&lt;textarea class="form-control" aria-label="With textarea"&gt;&lt;/textarea&gt;
+&lt;/bootstrap-input-group&gt;</pre>
+				</figure>
+
+				<h2>Wrapping</h2>
+				<p>
+					Input groups wrap by default via flex-wrap: wrap in order to accommodate custom form field
+					validation within an input group. You may disable this with the <b>noWrap</b> property.
+				</p>
+
+				<div class="bd-example">
+					<bootstrap-input-group no-wrap>
+						<span class="input-group-text" id="basic-addon1">@</span>
+						<input type="text" class="form-control" placeholder="Username" aria-label="Username"
+							aria-describedby="basic-addon1">
+					</bootstrap-input-group>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+	&lt;bootstrap-input-group no-wrap&gt;
+		&lt;span class="input-group-text" id="basic-addon1"&gt;@&lt;/span&gt;
+		&lt;input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1"&gt;
+	&lt;/bootstrap-input-group&gt;</pre>
+				</figure>
+
+				<h2>Sizing</h2>
+				<p>
+					Add the <b>sizeMode</b> property in order to change the size of the input group.
+				</p>
+
+				<div class="bd-example">
+					<bootstrap-input-group size-mode="sm" class="mb-3">
+						<span class="input-group-text">Small</span>
+					</bootstrap-input-group>
+					<bootstrap-input-group class="mb-3">
+						<span class="input-group-text">Default</span>
+					</bootstrap-input-group>
+					<bootstrap-input-group size-mode="lg">
+						<span class="input-group-text">Large</span>
+					</bootstrap-input-group>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-input-group size-mode="sm" class="mb-3"&gt;
+	&lt;span class="input-group-text"&gt;Small&lt;/span&gt;
+&lt;/bootstrap-input-group&gt;
+
+&lt;bootstrap-input-group class="mb-3"&gt;
+	&lt;span class="input-group-text"&gt;Default&lt;/span&gt;
+&lt;/bootstrap-input-group&gt;
+
+&lt;bootstrap-input-group size-mode="lg"&gt;
+	&lt;span class="input-group-text"&gt;Large&lt;/span&gt;
+&lt;/bootstrap-input-group&gt;</pre>
+				</figure>
+
+				<h2>Checkbox and radios</h2>
+				<p>
+					Place any checkbox or radio option within an input group’s addon instead of text.
+				</p>
+
+				<div class="bd-example">
+					<bootstrap-input-group class="mb-3">
+						<div class="input-group-text">
+							<input type="checkbox" aria-label="Checkbox for following text input">
+						</div>
+					</bootstrap-input-group>
+					<bootstrap-input-group>
+						<div class="input-group-text">
+							<input type="radio" aria-label="Radio button for following text input">
+						</div>
+					</bootstrap-input-group>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-input-group class="mb-3"&gt;
+	&lt;div class="input-group-text"&gt;
+		&lt;input type="checkbox" aria-label="Checkbox for following text input"&gt;
+	&lt;/div&gt;&lt;/span&gt;
+&lt;/bootstrap-input-group&gt;
+
+&lt;bootstrap-input-group"&gt;
+	&lt;div class="input-group-text"&gt;
+		&lt;input type="radio" aria-label="Radio button for following text input"&gt;
+	&lt;/div&gt;&lt;/span&gt;
+&lt;/bootstrap-input-group&gt;
+</pre>
+				</figure>
+
+				<h2>Multiple inputs</h2>
+				<p>
+					While multiple &lt;input&gt;s are supported visually, validation styles are only available for input
+					groups with a single &lt;input&gt;.
+				</p>
+
+				<div class="bd-example">
+					<bootstrap-input-group>
+						<span class="input-group-text">First and last name</span>
+						<input type="text" aria-label="First name" class="form-control">
+						<input type="text" aria-label="Last name" class="form-control">
+					</bootstrap-input-group>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-input-group&gt;
+	&lt;span class="input-group-text">First and last name&lt;/span&gt;
+	&lt;input type="text" aria-label="First name" class="form-control"&gt;
+	&lt;input type="text" aria-label="Last name" class="form-control"&gt;
+&lt;/bootstrap-input-group&gt;
+</pre>
+				</figure>
+
+				<h2>Multiple addons</h2>
+				<p>
+					Multiple add-ons are supported and can be mixed with checkbox and radio input elements.
+				</p>
+
+				<div class="bd-example">
+					<bootstrap-input-group class="mb-3">
+						<span class="input-group-text">$</span>
+						<span class="input-group-text">0.00</span>
+						<input type="text" class="form-control"
+							aria-label="Dollar amount (with dot and two decimal places)">
+					</bootstrap-input-group>
+					<bootstrap-input-group>
+						<input type="text" class="form-control"
+							aria-label="Dollar amount (with dot and two decimal places)">
+						<span class="input-group-text">$</span>
+						<span class="input-group-text">0.00</span>
+					</bootstrap-input-group>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-input-group class="mb-3"&gt;
+	&lt;span class="input-group-text"&gt;$&lt;/span&gt;
+	&lt;span class="input-group-text"&gt;0.00&lt;/span&gt;
+	&lt;input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)"&gt;
+&lt;/bootstrap-input-group&gt;
+
+&lt;bootstrap-input-group&gt;
+	&lt;input type="text" class="form-control"	aria-label="Dollar amount (with dot and two decimal places)"&gt;
+	&lt;span class="input-group-text"&gt;$&lt;/span&gt;
+	&lt;span class="input-group-text"&gt;0.00&lt;/span&gt;
+&lt;/bootstrap-input-group&gt;</pre>
+				</figure>
+
+				<h2>Buttons addons</h2>
+				<p>
+					Input groups with Bootstrap Button as addons.
+				</p>
+
+				<div class="bd-example">
+					<bootstrap-input-group class="mb-3">
+						<bootstrap-button style-mode="secondary" outlined>Button</bootstrap-button>
+						<input type="text" class="form-control" aria-label="Example text with button addon">
+					</bootstrap-input-group>
+					<bootstrap-input-group class="mb-3">
+						<input type="text" class="form-control" placeholder="Recipient's username"
+							aria-label="Recipient's username">
+						<bootstrap-button style-mode="secondary" outlined outlined>Button</bootstrap-button>
+					</bootstrap-input-group>
+					<bootstrap-input-group class="mb-3">
+						<bootstrap-button style-mode="secondary" outlined outlined>Button</bootstrap-button>
+						<bootstrap-button style-mode="secondary" outlined outlined>Button</bootstrap-button>
+						<input type="text" class="form-control">
+					</bootstrap-input-group>
+					<bootstrap-input-group>
+						<input type="text" class="form-control" placeholder="Recipient's username"
+							aria-label="Recipient's username with two button addons">
+						<bootstrap-button style-mode="secondary" outlined>Button</bootstrap-button>
+						<bootstrap-button style-mode="secondary" outlined>Button</bootstrap-button>
+					</bootstrap-input-group>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-input-group class="mb-3"&gt;
+	&lt;bootstrap-button style-mode="secondary" outlined&gt;Button&lt;/bootstrap-button&gt;
+	&lt;input type="text" class="form-control" aria-label="Example text with button addon"&gt;
+&lt;/bootstrap-input-group&gt;
+
+&lt;bootstrap-input-group class="mb-3"&gt;
+	&lt;input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username"&gt;
+	&lt;bootstrap-button style-mode="secondary" outlined outlined&gt;Button&lt;/bootstrap-button&gt;
+&lt;/bootstrap-input-group&gt;
+
+&lt;bootstrap-input-group class="mb-3"&gt;
+	&lt;bootstrap-button style-mode="secondary" outlined outlined&gt;Button&lt;/bootstrap-button&gt;
+	&lt;bootstrap-button style-mode="secondary" outlined outlined&gt;Button&lt;/bootstrap-button&gt;
+	&lt;input type="text" class="form-control"&gt;
+&lt;/bootstrap-input-group&gt;
+
+&lt;bootstrap-input-group&gt;
+	&lt;input type="text" class="form-control" placeholder="Recipient's username"&gt;
+	&lt;bootstrap-button style-mode="secondary" outlined &gt;Button&lt;/bootstrap-button&gt;
+	&lt;bootstrap-button style-mode="secondary" outlined &gt;Button&lt;/bootstrap-button&gt;
+&lt;/bootstrap-input-group&gt;</pre>
+				</figure>
+
+				<h2>Buttons with dropdowns</h2>
+				<p>
+					Input groups with Bootstrap Dropdowns that contains Bootstrap buttons as addons.
+				</p>
+
+				<div class="bd-example">
+					<bootstrap-input-group class="mb-3">
+						<bootstrap-drop-down outlined label="Dropdown">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-drop-down>
+						<input type="text" class="form-control">
+					</bootstrap-input-group>
+					<bootstrap-input-group>
+						<input type="text" class="form-control">
+						<bootstrap-drop-down outlined label="Dropdown">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-drop-down>
+					</bootstrap-input-group>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-input-group class="mb-3"&gt;
+	&lt;bootstrap-drop-down outlined label="Dropdown"&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;
+		&lt;div class="dropdown-divider"&gt;&lt;/div&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Separated link&lt;/a&gt;
+	&lt;/bootstrap-drop-down&gt;
+	&lt;input type="text" class="form-control"&gt;
+&lt;/bootstrap-input-group&gt;
+
+&lt;bootstrap-input-group&gt;
+	&lt;input type="text" class="form-control"&gt;
+	&lt;bootstrap-drop-down outlined label="Dropdown"&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;
+		&lt;div class="dropdown-divider"&gt;&lt;/div&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Separated link&lt;/a&gt;
+	&lt;/bootstrap-drop-down&gt;
+&lt;/bootstrap-input-group&gt;</pre>
+				</figure>
+
+				<h2>Buttons with Split Buttons</h2>
+				<p>
+					Input groups with Bootstrap Split Buttons that contains Bootstrap buttons as addons.
+				</p>
+
+				<div class="bd-example">
+					<bootstrap-input-group class="mb-3">
+						<bootstrap-split-button outlined label="Dropdown">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-split-button>
+						<input type="text" class="form-control">
+					</bootstrap-input-group>
+					<bootstrap-input-group>
+						<input type="text" class="form-control">
+						<bootstrap-split-button outlined label="Dropdown">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-split-button>
+					</bootstrap-input-group>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-input-group class="mb-3"&gt;
+	&lt;bootstrap-split-button outlined label="Dropdown"&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;
+		&lt;div class="dropdown-divider"&gt;&lt;/div&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Separated link&lt;/a&gt;
+	&lt;/bootstrap-split-button&gt;
+	&lt;input type="text" class="form-control"&gt;
+&lt;/bootstrap-input-group&gt;
+
+&lt;bootstrap-input-group&gt;
+	&lt;input type="text" class="form-control"&gt;
+	&lt;bootstrap-split-button outlined label="Dropdown"&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;
+		&lt;div class="dropdown-divider"&gt;&lt;/div&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Separated link&lt;/a&gt;
+	&lt;/bootstrap-split-button&gt;
+&lt;/bootstrap-input-group&gt;</pre>
+				</figure>
+
+				<h2>Custom select</h2>
+				<p>
+					Input groups with a select insted of input.
+				</p>
+
+				<div class="bd-example">
+					<bootstrap-input-group class="mb-3">
+						<label class="input-group-text" for="inputGroupSelect01">Options</label>
+						<select class="custom-select form-control" id="inputGroupSelect01">
+							<option selected>Choose...</option>
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						</select>
+					</bootstrap-input-group>
+					<bootstrap-input-group class="mb-3">
+						<select class=" custom-select form-control" id="inputGroupSelect01">
+							<option selected>Choose...</option>
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						</select>
+						<label class="input-group-text" for="inputGroupSelect01">Options</label>
+					</bootstrap-input-group>
+					<bootstrap-input-group class="mb-3">
+						<button class=" btn btn-outline-secondary" type="button">Button</button>
+						<select class="custom-select form-control" aria-label="Example select with button addon">
+							<option selected>Choose...</option>
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						</select>
+					</bootstrap-input-group>
+					<bootstrap-input-group>
+						<select class="custom-select form-control" aria-label="Example select with button addon">
+							<option selected>Choose...</option>
+							<option value="1">One</option>
+							<option value="2">Two</option>
+							<option value="3">Three</option>
+						</select>
+						<button class="btn btn-outline-secondary" type="button">Button</button>
+					</bootstrap-input-group>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-input-group class="mb-3"&gt;
+	&lt;label class="input-group-text" for="inputGroupSelect01"&gt;Options&lt;/label&gt;
+	&lt;select class="custom-select form-control" id="inputGroupSelect01"&gt;
+		&lt;option selected&gt;Choose...&lt;/option&gt;
+		&lt;option value="1"&gt;One&lt;/option&gt;
+		&lt;option value="2"&gt;Two&lt;/option&gt;
+		&lt;option value="3"&gt;Three&lt;/option&gt;
+	&lt;/select&gt;
+&lt;/bootstrap-input-group&gt;
+
+&lt;bootstrap-input-group class="mb-3"&gt;
+	&lt;select class=" custom-select form-control" id="inputGroupSelect01"&gt;
+		&lt;option selected&gt;Choose...&lt;/option&gt;
+		&lt;option value="1"&gt;One&lt;/option&gt;
+		&lt;option value="2"&gt;Two&lt;/option&gt;
+		&lt;option value="3"&gt;Three&lt;/option&gt;
+	&lt;/select&gt;
+	&lt;label class="input-group-text" for="inputGroupSelect01"&gt;Options&lt;/label&gt;
+&lt;/bootstrap-input-group&gt;
+
+&lt;bootstrap-input-group class="mb-3"&gt;
+	&lt;button class=" btn btn-outline-secondary" type="button"&gt;Button&lt;/button&gt;
+	&lt;select class="custom-select form-control" aria-label="Example select with button addon"&gt;
+		&lt;option selected&gt;Choose...&lt;/option&gt;
+		&lt;option value="1"&gt;One&lt;/option&gt;
+		&lt;option value="2"&gt;Two&lt;/option&gt;
+		&lt;option value="3"&gt;Three&lt;/option&gt;
+	&lt;/select&gt;
+&lt;/bootstrap-input-group&gt;
+
+&lt;bootstrap-input-group&gt;
+	&lt;select class="custom-select form-control" aria-label="Example select with button addon"&gt;
+		&lt;option selected&gt;Choose...&lt;/option&gt;
+		&lt;option value="1"&gt;One&lt;/option&gt;
+		&lt;option value="2"&gt;Two&lt;/option&gt;
+		&lt;option value="3"&gt;Three&lt;/option&gt;
+	&lt;/select&gt;
+	&lt;button class="btn btn-outline-secondary" type="button"&gt;Button&lt;/button&gt;
+&lt;/bootstrap-input-group&gt;</pre>
+				</figure>
+
+				<h2>Custom file input</h2>
+				<p>
+					Input groups with a file upload.
+				</p>
+
+				<div class="bd-example">
+					<bootstrap-input-group class="mb-3">
+						<span class="input-group-text">Upload</span>
+						<div class="custom-file form-control">
+							<input type="file" class="custom-file-input" />
+							<label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+						</div>
+					</bootstrap-input-group>
+					<bootstrap-input-group class="mb-3">
+						<div class="custom-file  form-control">
+							<input type="file" class="custom-file-input" />
+							<label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+						</div>
+						<span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
+					</bootstrap-input-group>
+					<bootstrap-input-group class="mb-3">
+						<button class="btn btn-outline-secondary" type="button">Button</button>
+						<div class="custom-file  form-control">
+							<input type="file" class="custom-file-input" />
+							<label class="custom-file-label" for="inputGroupFile03">Choose file</label>
+						</div>
+					</bootstrap-input-group>
+					<bootstrap-input-group>
+						<div class="custom-file form-control">
+							<input type="file" class="custom-file-input" />
+							<label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+						</div>
+						<button class="btn btn-outline-secondary" type="button">Button</button>
+					</bootstrap-input-group>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-input-group class="mb-3"&gt;
+	&lt;label class="input-group-text" for="inputGroupSelect01"&gt;Options&lt;/label&gt;
+	&lt;select class="custom-select form-control" id="inputGroupSelect01"&gt;
+		&lt;option selected&gt;Choose...&lt;/option&gt;
+		&lt;option value="1"&gt;One&lt;/option&gt;
+		&lt;option value="2"&gt;Two&lt;/option&gt;
+		&lt;option value="3"&gt;Three&lt;/option&gt;
+	&lt;/select&gt;
+&lt;/bootstrap-input-group&gt;
+
+&lt;bootstrap-input-group class="mb-3"&gt;
+	&lt;select class=" custom-select form-control" id="inputGroupSelect01"&gt;
+		&lt;option selected&gt;Choose...&lt;/option&gt;
+		&lt;option value="1"&gt;One&lt;/option&gt;
+		&lt;option value="2"&gt;Two&lt;/option&gt;
+		&lt;option value="3"&gt;Three&lt;/option&gt;
+	&lt;/select&gt;
+	&lt;label class="input-group-text" for="inputGroupSelect01"&gt;Options&lt;/label&gt;
+&lt;/bootstrap-input-group&gt;
+
+&lt;bootstrap-input-group class="mb-3"&gt;
+	&lt;button class=" btn btn-outline-secondary" type="button"&gt;Button&lt;/button&gt;
+	&lt;select class="custom-select form-control" aria-label="Example select with button addon"&gt;
+		&lt;option selected&gt;Choose...&lt;/option&gt;
+		&lt;option value="1"&gt;One&lt;/option&gt;
+		&lt;option value="2"&gt;Two&lt;/option&gt;
+		&lt;option value="3"&gt;Three&lt;/option&gt;
+	&lt;/select&gt;
+&lt;/bootstrap-input-group&gt;
+
+&lt;bootstrap-input-group&gt;
+	&lt;select class="custom-select form-control" aria-label="Example select with button addon"&gt;
+		&lt;option selected&gt;Choose...&lt;/option&gt;
+		&lt;option value="1"&gt;One&lt;/option&gt;
+		&lt;option value="2"&gt;Two&lt;/option&gt;
+		&lt;option value="3"&gt;Three&lt;/option&gt;
+	&lt;/select&gt;
+	&lt;button class="btn btn-outline-secondary" type="button"&gt;Button&lt;/button&gt;
+&lt;/bootstrap-input-group&gt;</pre>
+				</figure>
+
+				<h2 id="modal">Modal</h2>
+				<p>Use Smart's Bootstrap JavaScript modal to add dialogs to your site for lightboxes, user
+					notifications, or completely custom content.</p>
+
+				<h2>How it works</h2>
+				<p>Before getting started with Bootstrap’s modal component, be sure to read the following as our menu
+					options have recently changed.</p>
+				<ul>
+					<li>
+						Modals are built with HTML, CSS, and JavaScript. They’re positioned over everything else in the
+						document and remove scroll from the
+
+						<body> so that modal content scrolls instead.
+					</li>
+					<li>
+						Clicking on the modal “backdrop” will automatically close the modal.
+					</li>
+					<li>
+						Bootstrap only supports one modal window at a time. Nested modals aren’t supported as we believe
+						them to be poor user experiences.
+					</li>
+					<li>
+						Modals use position: fixed, which can sometimes be a bit particular about its rendering.
+						Whenever possible, place your modal HTML in a top-level position to avoid potential interference
+						from other elements.
+						You’ll likely run into issues when nesting a .modal within another fixed element.
+					</li>
+					<li>
+						Once again, due to position: fixed, there are some caveats with using modals on mobile devices.
+						See our browser support docs for details.
+					</li>
+					<li>
+						Due to how HTML5 defines its semantics, the autofocus HTML attribute has no effect in Bootstrap
+						modals. To achieve the same effect, use some custom JavaScript:
+						<figure class="highlight">
+							<pre class="prettyprint">
+document.querySelector('#myModal').addEventListener('shown', function() {
+	document.querySelector('#myInput').select();
+});</pre>
+						</figure>
+					</li>
+				</ul>
+				<p>
+					Below is a static modal example (meaning its position and display have been overridden). Included
+					are the modal header, modal body (required for padding), and modal footer (optional). We ask that
+					you include modal headers with dismiss actions whenever possible, or provide another explicit
+					dismiss action.
+				</p>
+
+				<div class="bd-example bd-example-modal">
+					<bootstrap-modal>
+						<div class="modal-header">
+							<h5 class="modal-title">Modal title</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<p>Modal body text goes here.</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-primary">Save changes</button>
+						</div>
+					</bootstrap-modal>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-modal&gt;
+	&lt;div class="modal-header"&gt;
+		&lt;h5 class="modal-title"&gt;Modal title&lt;/h5&gt;
+		&lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;
+			&lt;span aria-hidden="true"&gt;&times;&lt;/span&gt;
+		&lt;/button&gt;
+	&lt;/div&gt;
+	&lt;div class="modal-body"&gt;
+		&lt;p&gt;Modal body text goes here.&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class="modal-footer"&gt;
+		&lt;button type="button" class="btn btn-secondary" data-dismiss="modal"&gt;Close&lt;/button&gt;
+		&lt;button type="button" class="btn btn-primary"&gt;Save changes&lt;/button&gt;
+	&lt;/div&gt;
+&lt;/bootstrap-modal&gt;</pre>
+				</figure>
+
+				<h2>Live demo</h2>
+
+				<p>
+					Toggle a working modal demo by clicking the button below. It will slide down and fade in from the
+					top of the page.
+				</p>
+
+				<bootstrap-modal id="exampleModalLive" class="fade">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p>Modal body text goes here.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					</div>
+				</bootstrap-modal>
+				<div class="bd-example">
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLive">
+						Launch demo modal
+					</button>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;!-- Button trigger modal --&gt;
+&lt;button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLive"&gt;
+	Launch demo modal
+&lt;/button&gt;
+
+&lt;!-- Modal --&gt;
+&lt;bootstrap-modal id="exampleModalLive" class="fade"&gt;
+	&lt;div class="modal-header"&gt;
+		&lt;h5 class="modal-title" id="exampleModalLabel"&gt;Modal title&lt;/h5&gt;
+		&lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;
+			&lt;span aria-hidden="true"&gt;&times;&lt;/span&gt;
+		&lt;/button&gt;
+	&lt;/div&gt;
+	&lt;div class="modal-body"&gt;
+		&lt;p&gt;Modal body text goes here.&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class="modal-footer"&gt;
+		&lt;button type="button" class="btn btn-secondary" data-dismiss="modal"&gt;Close&lt;/button&gt;
+		&lt;button type="button" class="btn btn-primary"&gt;Save changes&lt;/button&gt;
+	&lt;/div&gt;
+&lt;/bootstrap-modal&gt;</pre>
+				</figure>
+
+				<h2>Scrolling long content</h2>
+
+				<p>
+					When modals become too long for the user’s viewport or device, they scroll independent of the page
+					itself. By default all modals are with auto height.
+				</p>
+
+				<bootstrap-modal id="exampleModalLong" class="fade">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+							egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
+							vel augue laoreet rutrum faucibus dolor auctor.</p>
+						<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque
+							nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+						</p>
+						<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+							egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
+							vel augue laoreet rutrum faucibus dolor auctor.</p>
+						<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque
+							nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+						</p>
+						<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+							egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
+							vel augue laoreet rutrum faucibus dolor auctor.</p>
+						<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque
+							nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+						</p>
+						<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+							egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
+							vel augue laoreet rutrum faucibus dolor auctor.</p>
+						<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque
+							nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+						</p>
+						<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+							egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
+							vel augue laoreet rutrum faucibus dolor auctor.</p>
+						<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque
+							nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+						</p>
+						<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+							egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
+							vel augue laoreet rutrum faucibus dolor auctor.</p>
+						<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque
+							nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+						</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					</div>
+				</bootstrap-modal>
+				<div class="bd-example">
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+						Launch demo modal
+					</button>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;!-- Button trigger modal --&gt;
+&lt;button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"&gt;
+	Launch demo modal
+&lt;/button&gt;
+
+&lt;!-- Modal --&gt;
+&lt;bootstrap-modal id="exampleModalLong" class="fade"&gt;
+	&lt;div class="modal-header"&gt;
+		&lt;h5 class="modal-title" id="exampleModalLongTitle"&gt;Modal title&lt;/h5&gt;
+		&lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;
+			&lt;span aria-hidden="true">&times;&lt;/span&gt;
+		&lt;/button&gt;
+	&lt;/div&gt;
+	&lt;div class="modal-body"&gt;
+		...
+	&lt;/div&gt;
+	&lt;div class="modal-footer"&gt;
+		&lt;button type="button" class="btn btn-secondary" data-dismiss="modal"&gt;Close&lt;/button&gt;
+		&lt;button type="button" class="btn btn-primary"&gt;Save changes&lt;/button&gt;
+	&lt;/div&gt;
+&lt;/bootstrap-modal&gt;</pre>
+				</figure>
+
+				<p>
+					You can also create a scrollable modal that allows scroll the modal body by setting the
+					<b>scrollable</b> property:
+				</p>
+
+				<bootstrap-modal id="exampleModalScrollable" class="fade" scrollable>
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+							egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
+							vel augue laoreet rutrum faucibus dolor auctor.</p>
+						<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque
+							nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+						</p>
+						<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+							egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
+							vel augue laoreet rutrum faucibus dolor auctor.</p>
+						<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque
+							nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+						</p>
+						<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+							egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
+							vel augue laoreet rutrum faucibus dolor auctor.</p>
+						<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque
+							nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+						</p>
+						<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+							egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
+							vel augue laoreet rutrum faucibus dolor auctor.</p>
+						<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque
+							nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+						</p>
+						<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+							egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
+							vel augue laoreet rutrum faucibus dolor auctor.</p>
+						<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque
+							nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+						</p>
+						<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+							egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
+							vel augue laoreet rutrum faucibus dolor auctor.</p>
+						<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque
+							nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+						</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					</div>
+				</bootstrap-modal>
+				<div class="bd-example">
+					<button type="button" class="btn btn-primary" data-toggle="modal"
+						data-target="#exampleModalScrollable">
+						Launch demo modal
+					</button>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;!-- Button trigger modal --&gt;
+&lt;button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollable"&gt;
+	Launch demo modal
+&lt;/button&gt;
+
+&lt;!-- Modal --&gt;
+&lt;bootstrap-modal id="exampleModalLive" class="fade" scrollable&gt;
+	&lt;div class="modal-header"&gt;
+		&lt;h5 class="modal-title" id="exampleModalScrollable"&gt;Modal title&lt;/h5&gt;
+		&lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;
+			&lt;span aria-hidden="true">&times;&lt;/span&gt;
+		&lt;/button&gt;
+	&lt;/div&gt;
+	&lt;div class="modal-body"&gt;
+		...
+	&lt;/div&gt;
+	&lt;div class="modal-footer"&gt;
+		&lt;button type="button" class="btn btn-secondary" data-dismiss="modal"&gt;Close&lt;/button&gt;
+		&lt;button type="button" class="btn btn-primary"&gt;Save changes&lt;/button&gt;
+	&lt;/div&gt;
+&lt;/bootstrap-modal&gt;</pre>
+				</figure>
+
+				<h2>Vertically centered</h2>
+
+				<p>
+					Add the <b>centered</b> property to vertically center the modal.
+				</p>
+
+				<bootstrap-modal id="exampleModalCenter" class="fade" centered>
+					<div class="modal-header">
+						<h5 class="modal-title">Modal title</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+							egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					</div>
+				</bootstrap-modal>
+				<bootstrap-modal id="exampleModalScrollableCenter" class="fade" centered scrollable>
+					<div class="modal-header">
+						<h5 class="modal-title">Modal title</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+							egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
+							vel augue laoreet rutrum faucibus dolor auctor.</p>
+						<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque
+							nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+						</p>
+						<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+							egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+						<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
+							vel augue laoreet rutrum faucibus dolor auctor.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					</div>
+				</bootstrap-modal>
+				<div class="bd-example">
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+						Vertically centered modal
+					</button>
+					<button type="button" class="btn btn-primary" data-toggle="modal"
+						data-target="#exampleModalScrollableCenter">
+						Vertically centered scrollable modal
+					</button>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;!-- Button trigger vertically centered modal --&gt;
+&lt;button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"&gt;
+	Vertically centered modal
+&lt;/button&gt;
+
+&lt;!-- Button trigger vertically centered scrollable modal --&gt;
+&lt;button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalScrollableCenter"&gt;
+	Vertically centered scrollable modal
+&lt;/button&gt;
+
+&lt;!-- Vertically centered modal --&gt;
+&lt;bootstrap-modal id="exampleModalCenter" class="fade" centered&gt;
+	&lt;div class="modal-header"&gt;
+		&lt;h5 class="modal-title" id="exampleModalLabel"&gt;Modal title&lt;/h5&gt;
+		&lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;
+			&lt;span aria-hidden="true"&gt;&times;&lt;/span&gt;
+		&lt;/button&gt;
+	&lt;/div&gt;
+	&lt;div class="modal-body"&gt;
+		&lt;p&gt;Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+			egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class="modal-footer"&gt;
+		&lt;button type="button" class="btn btn-secondary" data-dismiss="modal"&gt;Close&lt;/button&gt;
+		&lt;button type="button" class="btn btn-primary"&gt;Save changes&lt;/button&gt;
+	&lt;/div&gt;
+&lt;/bootstrap-modal&gt;
+
+&lt;!-- Vertically centered scrollable modal --&gt;
+&lt;bootstrap-modal id="exampleModalCenter" class="fade" centered scrollable&gt;
+	&lt;div class="modal-header"&gt;
+		&lt;h5 class="modal-title" id="exampleModalLabel"&gt;Modal title&lt;/h5&gt;
+		&lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;
+			&lt;span aria-hidden="true"&gt;&times;&lt;/span&gt;
+		&lt;/button&gt;
+	&lt;/div&gt;
+	&lt;div class="modal-body"&gt;
+		&lt;p&gt;Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+			egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.&lt;/p&gt;
+		&lt;p&gt;Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
+			vel augue laoreet rutrum faucibus dolor auctor.&lt;/p&gt;
+		&lt;p&gt;Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque
+			nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.
+		&lt;/p&gt;
+		&lt;p&gt;Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in,
+			egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.&lt;/p&gt;
+		&lt;p&gt;Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus
+			vel augue laoreet rutrum faucibus dolor auctor.&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class="modal-footer"&gt;
+		&lt;button type="button" class="btn btn-secondary" data-dismiss="modal"&gt;Close&lt;/button&gt;
+		&lt;button type="button" class="btn btn-primary"&gt;Save changes&lt;/button&gt;
+	&lt;/div&gt;
+&lt;/bootstrap-modal&gt;</pre>
+				</figure>
+
+				<!-- <h2>Tooltips and popovers</h2>
+
+				<p>
+					Tooltips and popovers can be placed within modals as needed. When modals are closed, any tooltips
+					and popovers within are also automatically dismissed.
+				</p>
+
+				<bootstrap-modal id="exampleModalPopovers" class="fade">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalPopoversLabel">Modal title</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<h5>Popover in a modal</h5>
+						<p>This <a href="#" role="button" class="btn btn-secondary popover-test" title=""
+								data-content="Popover body content is set in this attribute."
+								data-container="#exampleModalPopovers" data-original-title="Popover title">button</a>
+							triggers a popover on click.</p>
+						<hr>
+						<h5>Tooltips in a modal</h5>
+						<p><a href="#" class="tooltip-test" title="" data-container="#exampleModalPopovers"
+								data-original-title="Tooltip">This link</a> and <a href="#" class="tooltip-test"
+								title="" data-container="#exampleModalPopovers" data-original-title="Tooltip">that
+								link</a> have tooltips on hover.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Save changes</button>
+					</div>
+				</bootstrap-modal>
+				<div class="bd-example">
+					<button type="button" class="btn btn-primary" data-toggle="modal"
+						data-target="#exampleModalPopovers">
+						Launch demo modal
+					</button>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;div class="modal-body"&gt;
+  &lt;h5&gt;Popover in a modal&lt;/h5&gt;
+  &lt;p&gt;This &lt;a href="#" role="button" class="btn btn-secondary popover-test" title="Popover title" data-content="Popover body content is set in this attribute."&gt;button&lt;/a&gt; triggers a popover on click.&lt;/p&gt;
+  &lt;hr&gt;
+  &lt;h5&gt;Tooltips in a modal&lt;/h5&gt;
+  &lt;p&gt;&lt;a href="#" class="tooltip-test" title="Tooltip"&gt;This link&lt;/a&gt; and &lt;a href="#" class="tooltip-test" title="Tooltip"&gt;that link&lt;/a&gt; have tooltips on hover.&lt;/p&gt;
+&lt;/div&gt;</pre>
+				</figure> -->
+
+				<h2>Varying modal content</h2>
+
+				<p>
+					Have a bunch of buttons that all trigger the same modal with slightly different contents?
+					Below is a live demo followed by example HTML and JavaScript. For more information, read the modal
+					events docs for details on relatedTarget.
+				</p>
+
+				<bootstrap-modal id="exampleModal" class="fade">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">New message</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<form>
+							<div class="form-group">
+								<label for="recipient-name" class="col-form-label">Recipient:</label>
+								<input type="text" class="form-control" id="recipient-name">
+							</div>
+							<div class="form-group">
+								<label for="message-text" class="col-form-label">Message:</label>
+								<textarea class="form-control" id="message-text"></textarea>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Send message</button>
+					</div>
+				</bootstrap-modal>
+				<div class="bd-example">
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+						data-whatever="@mdo">Open modal for @mdo</button>
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+						data-whatever="@fat">Open modal for @fat</button>
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+						data-whatever="@getbootstrap">Open modal for @getbootstrap</button>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;div class="modal-body"&gt;
+  &lt;h5&gt;Popover in a modal&lt;/h5&gt;
+  &lt;p&gt;This &lt;a href="#" role="button" class="btn btn-secondary popover-test" title="Popover title" data-content="Popover body content is set in this attribute."&gt;button&lt;/a&gt; triggers a popover on click.&lt;/p&gt;
+  &lt;hr&gt;
+  &lt;h5&gt;Tooltips in a modal&lt;/h5&gt;
+  &lt;p&gt;&lt;a href="#" class="tooltip-test" title="Tooltip"&gt;This link&lt;/a&gt; and &lt;a href="#" class="tooltip-test" title="Tooltip"&gt;that link&lt;/a&gt; have tooltips on hover.&lt;/p&gt;
+&lt;/div&gt;</pre>
+				</figure>
+
+
+		</section>
+		<section></section>
+	</div>
 </body>
-<footer>
-by: <a href="https://www.htmlelements.com/">https://www.htmlelements.com/</a>
-</footeR>
+
+
 </html>

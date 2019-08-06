@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-webcomponents",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "Bootstrap Web Components",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/HTMLElements/smart-core.git"
   },
   "dependencies": {
-    "@smarthtmlelements/smart-core": "^2.4.3"
+    "@smarthtmlelements/smart-core": "^4.0.1"
   },
   "author": "",
   "license": "https://github.com/HTMLElements/Bootstrap-Web-Components/blob/master/LICENSE",

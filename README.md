@@ -19,7 +19,7 @@ The package contains a set of Free Custom Elements based on the popular Boostrap
 
 
 ```html
-<h2>Bootstrap Buttons</h2><br/>
+Bootstrap Buttons
 <bootstrap-button style-mode="primary">Primary</bootstrap-button>
 <bootstrap-button style-mode="secondary">Secondary</bootstrap-button>
 <bootstrap-button style-mode="success">Success</bootstrap-button>
@@ -29,27 +29,84 @@ The package contains a set of Free Custom Elements based on the popular Boostrap
 <bootstrap-button style-mode="light">Light</bootstrap-button>
 <bootstrap-button style-mode="dark">Dark</bootstrap-button>
 <bootstrap-button style-mode="link">Link</bootstrap-button>
-<br/><br/><h2>Bootstrap Outline Buttons</h2><br/>
-<bootstrap-button outlined style-mode="primary">Primary</bootstrap-button>
-<bootstrap-button outlined style-mode="secondary">Secondary</bootstrap-button>
-<bootstrap-button outlined style-mode="success">Success</bootstrap-button>
-<bootstrap-button outlined style-mode="danger">Danger</bootstrap-button>
-<bootstrap-button outlined style-mode="warning">Warning</bootstrap-button>
-<bootstrap-button outlined style-mode="info">Info</bootstrap-button>
-<bootstrap-button outlined style-mode="light">Light</bootstrap-button>
-<bootstrap-button outlined style-mode="dark">Dark</bootstrap-button>
-<bootstrap-button outlined style-mode="link">Link</bootstrap-button>
-<br/><br/><h2>Bootstrap Buttons Size</h2><br/>
-<bootstrap-button size-mode="lg">Large Button</bootstrap-button>
-<bootstrap-button size-mode="lg">Large Button</bootstrap-button>
-<br/><br/>
-<bootstrap-button size-mode="sm">Small Button</bootstrap-button>
-<bootstrap-button size-mode="sm">Small Button</bootstrap-button>
-<br/><br/><h2>Bootstrap Disabled Buttons</h2><br/>
-<bootstrap-button disabled style-mode="primary">Primary</bootstrap-button>
-<bootstrap-button disabled style-mode="secondary">Secondary</bootstrap-button>	
 ```
 
+```html
+Bootstrap CheckBox
+<bootstrap-check-box checked>Checked</bootstrap-check-box>
+<bootstrap-check-box>Unchecked</bootstrap-check-box>
+```
+
+```html
+Bootstrap RadioButton
+<bootstrap-radio-button checked> Active</bootstrap-radio-button>
+<bootstrap-radio-button>Radio</bootstrap-radio-button>
+<bootstrap-radio-button>Radio</bootstrap-radio-button>
+```
+
+```html
+Bootstrap DropDown
+<bootstrap-drop-down label="Dropdown button">
+	<a class="dropdown-item" href="#">Action</a>
+	<a class="dropdown-item" href="#">Another action</a>
+	<a class="dropdown-item" href="#">Something else here</a>
+</bootstrap-drop-down>
+```
+
+```html
+Bootstrap Split Buttons
+<bootstrap-split-button label="Dropdown button">
+	<a class="dropdown-item" href="#">Action</a>
+	<a class="dropdown-item" href="#">Another action</a>
+	<a class="dropdown-item" href="#">Something else here</a>
+</bootstrap-split-button>
+```
+
+```html
+	Bootstrap Input Groups
+	<bootstrap-input-group class="mb-3">
+		<span class="input-group-text" id="basic-addon1">@</span>
+		<input type="text" class="form-control" placeholder="Username" aria-label="Username"
+			aria-describedby="basic-addon1">
+	</bootstrap-input-group>
+	<bootstrap-input-group class="mb-3">
+		<input type="text" class="form-control" placeholder="Recipient's username"
+			aria-label="Recipient's username" aria-describedby="basic-addon2">
+		<span class="input-group-text" id="basic-addon2">@example.com</span>
+	</bootstrap-input-group>
+	<label for="basic-url">Your vanity URL</label>
+	<bootstrap-input-group class="mb-3">
+		<span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+	</bootstrap-input-group>
+	<bootstrap-input-group class="mb-3">
+		<span class="input-group-text">$</span>
+		<input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+		<span class="input-group-text">.00</span>
+	</bootstrap-input-group>
+	<bootstrap-input-group>
+		<span class="input-group-text">With textarea</span>
+		<textarea class="form-control" aria-label="With textarea"></textarea>
+	</bootstrap-input-group>
+```
+
+```html
+Bootstrap Modals
+<bootstrap-modal id="exampleModalLive" class="fade">
+	<div class="modal-header">
+		<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	<div class="modal-body">
+		<p>Modal body text goes here.</p>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		<button type="button" class="btn btn-primary">Save changes</button>
+	</div>
+</bootstrap-modal>
+```
 [<img src="https://raw.githubusercontent.com/htmlelements/Bootstrap-Web-Components/master/Bootstrap.png" alt="Screenshot of Bootstrap, Elements">](https://htmlelements.com/demos/)
 
 
