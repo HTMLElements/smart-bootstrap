@@ -41,13 +41,13 @@ window.onload = function () {
 
         if (isButton && isButton.getAttribute('data-toggle') === 'modal') {
             const modal = document.querySelector(isButton.getAttribute('data-target')),
-                data = isButton.hasAttribute('data-whatever');
+                data = isButton.getAttribute('data-whatever');
 
-            if (isButton.hasAttribute('data-whatever')) {
+            if (data) {
                 const modalInput = modal.querySelector('.modal-body input');
 
                 if (modalInput) {
-                    modalInput.value = isButton.getAttribute('data-whatever');
+                    modalInput.value = data;
                 }
             }
 
@@ -56,4 +56,8 @@ window.onload = function () {
             }
         }
     });
+
+    const modal = document.querySelector('#exampleModal');
+
+    modal
 }
