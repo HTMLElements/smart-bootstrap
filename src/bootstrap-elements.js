@@ -886,14 +886,14 @@ Smart('bootstrap-modal', class Modal extends Smart.ContentElement {
 				value: '',
 				type: 'string'
 			},
+			'sizeMode': {
+				value: '',
+				allowedValue: ['sm', '', 'lg', 'xl'],
+				type: 'string'
+			},
 			'scrollable': {
 				value: false,
 				type: 'boolean'
-			},
-			'sizeMode': {
-				value: '',
-				allowedValue: ['lg', 'sm', ''],
-				type: 'string'
 			},
 			'tabindex': {
 				value: -1,
@@ -902,8 +902,20 @@ Smart('bootstrap-modal', class Modal extends Smart.ContentElement {
 			'centered': {
 				value: false,
 				type: 'boolean'
+			},
+			'opened': {
+				value: false,
+				type: 'boolean'
+			},
+			'backdrop': {
+				allowedValues: ['static', 'default', 'none'],
+				value: 'default',
+				type: 'string'
+			},
+			'keyboard': {
+				value: true,
+				type: 'boolean'
 			}
-
 		};
 	}
 
@@ -912,8 +924,6 @@ Smart('bootstrap-modal', class Modal extends Smart.ContentElement {
 	*/
 	static get listeners() {
 		return {
-			'up': '_upHandler',
-			'dialog.down': '_dialogDownHandler',
 			'keydown': '_keydownHandler',
 			'click': '_clickHandler'
 		};
@@ -936,11 +946,15 @@ Smart('bootstrap-modal', class Modal extends Smart.ContentElement {
 	propertyChangedHandler(propertyName, oldValue, newValue) {
 		const that = this;
 
-		if(propertyName === 'tabindex') {
+		if (propertyName === 'tabindex') {
 			that.setAttribute('tabindex', newValue);
 		}
-		else if(propertyName === 'scrollable' || propertyName === 'centered') {
+		else if (propertyName === 'scrollable' || propertyName === 'centered') {
 			that.$.dialog.classList[newValue ? 'add' : 'remove']('modal-dialog-' + propertyName);
+		}
+		else if (propertyName === 'sizeMode') {
+			that.$.dialog.classList.remove('modal-' + oldValue);
+			that.$.dialog.classList.add('modal-' + newValue);
 		}
 	}
 
@@ -950,17 +964,30 @@ Smart('bootstrap-modal', class Modal extends Smart.ContentElement {
 		that.classList.add('modal');
 		that.$.dialog.classList[that.scrollable ? 'add' : 'remove']('modal-dialog-scrollable');
 		that.$.dialog.classList[that.centered ? 'add' : 'remove']('modal-dialog-centered');
+
+		if (that.sizeMode !== '') {
+			that.$.dialog.classList.add('modal-' + that.sizeMode);
+		}
+
+		if (that.opened) {
+			that.show(true);
+		}
+
 		that.setAttribute('tabindex', that.tabindex);
+	}
+
+	handleUpdate() {
+		this._adjustDialog()
 	}
 
 	toggle() {
 		return this.opened ? this.hide() : this.show();
 	}
 
-	show() {
+	show(initialization) {
 		const that = this;
 
-		if (that.opened || that._isTransitioning) {
+		if ((!initialization && that.opened) || that._isTransitioning) {
 			return;
 		}
 
@@ -1032,36 +1059,6 @@ Smart('bootstrap-modal', class Modal extends Smart.ContentElement {
 		}
 	}
 
-	// _transitionendHandler(event) {
-	// 	const that = this;
-
-	// 	this._isTransitioning = false;
-
-	// 	if (that.opened) {
-	// 		this._element.focus();
-	// 		that.$.fireEvent('shown')
-	// 	}
-	// 	else {
-	// 		that._hideModal(event);
-	// 	}
-	// }
-
-	_dialogDownHandler(event) {
-		this._dialogDown = true;
-	}
-
-	_upHandler() {
-		const that = this;
-
-		event.stopPropagation();
-
-		if (that._dialogDown && event.target === that) {
-			this._ignoreBackdropClick = true;
-		}
-
-		delete that._dialogDown;
-	}
-
 	_hideModal() {
 		const that = this;
 
@@ -1106,9 +1103,7 @@ Smart('bootstrap-modal', class Modal extends Smart.ContentElement {
 	}
 
 	_keydownHandler(event) {
-		const that = this;
-
-		if (event.which === 27) {
+		if (event.which === 27 && !this.keyboard) {
 			event.preventDefault()
 			this.hide()
 		}
@@ -1128,6 +1123,11 @@ Smart('bootstrap-modal', class Modal extends Smart.ContentElement {
 		}
 		if (event.target !== event.currentTarget) {
 			return
+		}
+
+		if(that.backdrop === 'static') {
+			that.focus();
+			return;
 		}
 
 		that.hide()
@@ -1245,7 +1245,6 @@ Smart('bootstrap-modal', class Modal extends Smart.ContentElement {
 		}
 		else {
 			transitionComplete()
-			// that._transitionendHandler()
 		}
 	}
 
@@ -1266,7 +1265,7 @@ Smart('bootstrap-modal', class Modal extends Smart.ContentElement {
 		const that = this;
 		const animate = that.classList.contains('fade');
 
-		if (that.opened) {
+		if (that.opened && that.backdrop !== 'none') {
 			if (!that._backdrop) {
 				that._backdrop = document.createElement('div')
 				that._backdrop.className = 'modal-backdrop';

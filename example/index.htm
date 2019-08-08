@@ -2183,15 +2183,171 @@ document.querySelector('#myModal').addEventListener('shown', function() {
 				</div>
 				<figure class="highlight">
 					<pre class="prettyprint">
-&lt;div class="modal-body"&gt;
-  &lt;h5&gt;Popover in a modal&lt;/h5&gt;
-  &lt;p&gt;This &lt;a href="#" role="button" class="btn btn-secondary popover-test" title="Popover title" data-content="Popover body content is set in this attribute."&gt;button&lt;/a&gt; triggers a popover on click.&lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h5&gt;Tooltips in a modal&lt;/h5&gt;
-  &lt;p&gt;&lt;a href="#" class="tooltip-test" title="Tooltip"&gt;This link&lt;/a&gt; and &lt;a href="#" class="tooltip-test" title="Tooltip"&gt;that link&lt;/a&gt; have tooltips on hover.&lt;/p&gt;
-&lt;/div&gt;</pre>
+&lt;button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo&lt;/button&gt;
+&lt;button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat"&gt;Open modal for @fat&lt;/button&gt;
+&lt;button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap"&gt;Open modal for @getbootstrap&lt;/button&gt;
+
+&lt;bootstrap-modal id="exampleModal" class="fade"&gt;
+	&lt;div class="modal-header"&gt;
+		&lt;h5 class="modal-title" id="exampleModalLabel"&gt;New message&lt;/h5&gt;
+		&lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;
+			&lt;span aria-hidden="true"&gt;&times;&lt;/span&gt;
+		&lt;/button&gt;
+	&lt;/div&gt;
+	&lt;div class="modal-body"&gt;
+		&lt;form&gt;
+			&lt;div class="form-group"&gt;
+				&lt;label for="recipient-name" class="col-form-label"&gt;Recipient:&lt;/label&gt;
+				&lt;input type="text" class="form-control" id="recipient-name"&gt;
+			&lt;/div&gt;
+			&lt;div class="form-group"&gt;
+				&lt;label for="message-text" class="col-form-label"&gt;Message:&lt;/label&gt;
+				&lt;textarea class="form-control" id="message-text"&gt;&lt;/textarea&gt;
+			&lt;/div&gt;
+		&lt;/form&gt;
+	&lt;/div&gt;
+	&lt;div class="modal-footer"&gt;
+		&lt;button type="button" class="btn btn-secondary" data-dismiss="modal"&gt;Close&lt;/button&gt;
+		&lt;button type="button" class="btn btn-primary"&gt;Send message&lt;/button&gt;
+	&lt;/div&gt;
+&lt;/bootstrap-modal&gt;</pre>
 				</figure>
 
+				<p>
+					Changing the contnet of the input inside the modal is simple as that:
+				</p>
+
+				<figure class="highlight">
+					<pre class="prettyprint">
+window.onload = function () {
+    document.addEventListener('click', function () {
+        const target = event.target,
+            isButton = event.target.closest('button');
+
+        if (isButton && isButton.getAttribute('data-toggle') === 'modal') {
+            const modal = document.querySelector(isButton.getAttribute('data-target')),
+                data = isButton.getAttribute('data-whatever');
+
+            if (data) {
+                const modalInput = modal.querySelector('.modal-body input');
+
+                if (modalInput) {
+                    modalInput.value = data;
+                }
+            }
+
+            if (modal) {
+                modal.toggle();
+            }
+        }
+ });</pre>
+				</figure>
+
+				<h2>Change Animation</h2>
+				<p>
+					Animation is purely made via CSS. The default animation depends on the CSS class <b>fade</b>.
+					Removing that class will disable it.
+				</p>
+
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-modal&gt; Empty Modal with no Animation &lt;/bootstrap-modal&gt;
+					</pre>
+				</figure>
+
+				<h2>
+					Embedding YouTube videos
+				</h2>
+
+				<p>Embedding YouTube videos in modals requires additional JavaScript not in Bootstrap to automatically
+					stop playback and more.</p>
+
+				<h2>Optional Sizes</h2>
+				<p>Modals have three optional sizes, available via modifier classes to be placed on a Modal
+					These sizes kick in at certain breakpoints to avoid horizontal scrollbars on narrower viewports.</p>
+
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th>Size</th>
+							<th>Class</th>
+							<th>Modal max-width</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Small</td>
+							<td><code>.modal-sm</code></td>
+							<td><code>300px</code></td>
+						</tr>
+						<tr>
+							<td>Default</td>
+							<td class="text-muted">None</td>
+							<td><code>500px</code></td>
+						</tr>
+						<tr>
+							<td>Large</td>
+							<td><code>.modal-lg</code></td>
+							<td><code>800px</code></td>
+						</tr>
+						<tr>
+							<td>Extra large</td>
+							<td><code>.modal-xl</code></td>
+							<td><code>1140px</code></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<bootstrap-modal id="sizeModeModal" class="fade" backdrop="none">
+					<div class="modal-header">
+						<h5 class="modal-title h4" id="myExtraLargeModalLabel">Extra large modal</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">×</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						...
+					</div>
+				</bootstrap-modal>
+				<div class="bd-example">
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sizeModeModal"
+						data-size="xl">Extra large modal</button>
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sizeModeModal"
+						data-size="lg">Large modal</button>
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sizeModeModal"
+						data-size="sm">Small modal</button>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sizeModeModal" data-size="xl"&gt;Extra large modal&lt;/button&gt;
+&lt;button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sizeModeModal" data-size="lg"&gt;Large modal&lt;/button&gt;
+&lt;button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sizeModeModal" data-size="sm"&gt;Small modal&lt;/button&gt;
+
+&lt;bootstrap-modal id="sizeModeModal" class="fade"&gt;
+	&lt;div class="modal-header"&gt;
+		&lt;h5 class="modal-title h4" id="myExtraLargeModalLabel"&gt;Extra large modal&lt;/h5&gt;
+		&lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;
+			&lt;span aria-hidden="true"&gt;×&lt;/span&gt;
+		&lt;/button&gt;
+	&lt;/div&gt;
+	&lt;div class="modal-body"&gt;
+		...
+	&lt;/div&gt;
+&lt;/bootstrap-modal&gt;</pre>
+				</figure>
+
+				<h2>Usage</h2>
+				<p>
+					The modal plugin toggles your hidden content on demand. It also
+					adds .modal-open to the &lt;body&gt; to override default scrolling behavior and generates a
+					.modal-backdrop to provide a click area for dismissing shown modals when clicking outside the modal.
+				</p>
 
 		</section>
 		<section></section>

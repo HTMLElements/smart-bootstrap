@@ -41,7 +41,8 @@ window.onload = function () {
 
         if (isButton && isButton.getAttribute('data-toggle') === 'modal') {
             const modal = document.querySelector(isButton.getAttribute('data-target')),
-                data = isButton.getAttribute('data-whatever');
+                data = isButton.getAttribute('data-whatever'),
+                size = isButton.getAttribute('data-size');
 
             if (data) {
                 const modalInput = modal.querySelector('.modal-body input');
@@ -51,13 +52,14 @@ window.onload = function () {
                 }
             }
 
+            if(size) {
+                modal.querySelector('.modal-title').innerHTML = isButton.textContent.trim();
+                modal.sizeMode = size;
+            }
+
             if (modal) {
                 modal.toggle();
             }
         }
     });
-
-    const modal = document.querySelector('#exampleModal');
-
-    modal
 }
