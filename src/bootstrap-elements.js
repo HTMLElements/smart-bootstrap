@@ -878,14 +878,6 @@ Smart('bootstrap-modal', class Modal extends Smart.ContentElement {
 	// Element's properties.
 	static get properties() {
 		return {
-			'placeholder': {
-				value: '',
-				type: 'string'
-			},
-			'styleMode': {
-				value: '',
-				type: 'string'
-			},
 			'sizeMode': {
 				value: '',
 				allowedValue: ['sm', '', 'lg', 'xl'],
@@ -895,9 +887,9 @@ Smart('bootstrap-modal', class Modal extends Smart.ContentElement {
 				value: false,
 				type: 'boolean'
 			},
-			'tabindex': {
-				value: -1,
-				type: 'number'
+			'focus': {
+				value: true,
+				type: 'boolean'
 			},
 			'centered': {
 				value: false,
@@ -946,8 +938,8 @@ Smart('bootstrap-modal', class Modal extends Smart.ContentElement {
 	propertyChangedHandler(propertyName, oldValue, newValue) {
 		const that = this;
 
-		if (propertyName === 'tabindex') {
-			that.setAttribute('tabindex', newValue);
+		if (propertyName === 'focus') {
+			newValue ? that.setAttribute('tabindex', -1) : that.removeAttribute('tabindex');
 		}
 		else if (propertyName === 'scrollable' || propertyName === 'centered') {
 			that.$.dialog.classList[newValue ? 'add' : 'remove']('modal-dialog-' + propertyName);
@@ -1057,6 +1049,9 @@ Smart('bootstrap-modal', class Modal extends Smart.ContentElement {
 		if (that.parentElement) {
 			that.parentElement.removeChild(that);
 		}
+
+		window.removeEventListener('resize', that._windowResizeHandler);
+		document.removeEventListener('focusin', that._forceFocusHandler);// Guard against infinite focus loop
 	}
 
 	_hideModal() {
@@ -1103,7 +1098,7 @@ Smart('bootstrap-modal', class Modal extends Smart.ContentElement {
 	}
 
 	_keydownHandler(event) {
-		if (event.which === 27 && !this.keyboard) {
+		if (event.which === 27 && this.keyboard) {
 			event.preventDefault()
 			this.hide()
 		}
@@ -1197,15 +1192,18 @@ Smart('bootstrap-modal', class Modal extends Smart.ContentElement {
 		}
 	}
 
+	_windowResizeHandler() {
+		this._adjustDialog();
+	}
+
 	_setResizeEvent() {
-		const that = this,
-			resizeHanler = (event) => that._adjustDialog();
+		const that = this;
 
 		if (that.opened) {
-			window.addEventListener('resize', resizeHanler);
+			window.addEventListener('resize', that._windowResizeHandler);
 		}
 		else {
-			window.removeEventListener('resize', resizeHanler);
+			window.removeEventListener('resize', that._windowResizeHandler);
 		}
 	}
 
@@ -1248,17 +1246,20 @@ Smart('bootstrap-modal', class Modal extends Smart.ContentElement {
 		}
 	}
 
-	_enforceFocus() {
-		const that = this,
-			focusInHandler = function () {
-				if (document !== event.target && that !== event.target && !that.contains(event.target)) {
-					event.preventDefault();
-					that.hide();
-				}
-			}
+	_forceFocusHandler(event) {
+		const that = this;
 
-		document.removeEventListener('focusin', focusInHandler);// Guard against infinite focus loop
-		document.addEventListener('focusin', focusInHandler);
+		if (document !== event.target && that !== event.target && !that.contains(event.target)) {
+			event.preventDefault();
+			that.hide();
+		}
+	}
+
+	_enforceFocus() {
+		const that = this;
+
+		document.removeEventListener('focusin', that._forceFocusHandler);// Guard against infinite focus loop
+		document.addEventListener('focusin', that._forceFocusHandler);
 	}
 
 	_showBackdrop(callback) {
