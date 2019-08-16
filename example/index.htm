@@ -11,10 +11,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="styles.css" />
+	<link rel="stylesheet" type="text/css" href="../src/core.css" />
 	<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
 	<script type="text/javascript" src="../node_modules/@smarthtmlelements/smart-core/source/smart.core.js"></script>
 	<script src="index.js"></script>
 	<script type="text/javascript" src="../src/bootstrap-elements.js"></script>
+
 </head>
 
 <body>
@@ -36,6 +38,7 @@
 					<li><a href="#inputGroups">Input group</a></li>
 					<li><a href="#modal">Modal</a></li>
 					<li><a href="#forms">Forms</a></li>
+					<li><a href="#tabs">Tabs</a></li>
 				</ul>
 			</nav>
 
@@ -2448,7 +2451,8 @@ window.onload = function () {
 
 				<h2>Events</h2>
 
-				<p>SBootstrap’s modal class exposes a few events for hooking into modal functionality. All modal events
+				<p>Smart's Bootstrap modal class exposes a few events for hooking into modal functionality. All modal
+					events
 					are fired at the modal itself (i.e. at the &lt;bootstrap-modal&gt;)</p>
 
 				<table class="table table-bordered table-striped">
@@ -2483,6 +2487,7 @@ window.onload = function () {
 
 
 				<h2 id="forms">Bootstrap Forms</h2>
+
 				<p>
 					Examples and usage guidelines for form control styles, layout options, and custom components for
 					creating a wide variety of forms.
@@ -2490,15 +2495,2008 @@ window.onload = function () {
 
 				<h2>Overview</h2>
 
-				<p>Bootstrap’s form controls expand on our Rebooted form styles with classes. Use these classes to opt
-					into their customized displays for a more consistent rendering across browsers and devices.</p>
+				<p>
+					Bootstrap’s form controls expand on our Rebooted form styles with classes. Use these classes to opt
+					into their customized displays for a more consistent rendering across browsers and devices.
+				</p>
 
-				<p>Be sure to use an appropriate type attribute on all inputs (e.g., email for email address or number
+				<p>
+					Be sure to use an appropriate type attribute on all inputs (e.g., email for email address or number
 					for numerical information) to take advantage of newer input controls like email verification, number
-					selection, and more.</p>
+					selection, and more.
+				</p>
 
 				<p>Here’s a quick example to demonstrate Bootstrap’s form styles. Keep reading for documentation on
 					required classes, form layout, and more.</p>
+
+				<div class="bd-example">
+					<form>
+						<div class="form-group">
+							<label for="exampleInputEmail1">Email address</label>
+							<input type="email" class="form-control" id="exampleInputEmail1"
+								aria-describedby="emailHelp" placeholder="Enter email">
+							<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+								else.</small>
+						</div>
+						<div class="form-group">
+							<label for="exampleInputPassword1">Password</label>
+							<input type="password" class="form-control" id="exampleInputPassword1"
+								placeholder="Password">
+						</div>
+						<div class="form-group form-check">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">Check me out</label>
+						</div>
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</form>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;form&gt;
+	&lt;div class="form-group"&gt;
+		&lt;label for="exampleInputEmail1"&gt;Email address&lt;/label&gt;
+		&lt;input type="email" class="form-control" id="exampleInputEmail1"
+			aria-describedby="emailHelp" placeholder="Enter email"&gt;
+		&lt;small id="emailHelp" class="form-text text-muted"&gt;We'll never share your email with anyone else.&lt;/small&gt;
+	&lt;/div&gt;
+	&lt;div class="form-group"&gt;
+		&lt;label for="exampleInputPassword1"&gt;Password&lt;/label&gt;
+		&lt;input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"&gt;
+	&lt;/div&gt;
+	&lt;div class="form-group form-check"&gt;
+		&lt;input type="checkbox" class="form-check-input" id="exampleCheck1"&gt;
+		&lt;label class="form-check-label" for="exampleCheck1"&gt;Check me out&lt;/label&gt;
+	&lt;/div&gt;
+	&lt;button type="submit" class="btn btn-primary"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</pre>
+				</figure>
+
+				<h2>Form controls</h2>
+
+				<p>Textual form controls—like &lt;input&gt;s, &lt;select&gt;s, and &lt;textarea&gt;s—are styled with the
+					.form-control class. Included are styles for general appearance, focus state, sizing, and more.
+				</p>
+
+				<div class="bd-example">
+					<form>
+						<div class="form-group">
+							<label for="exampleFormControlInput1">Email address</label>
+							<input type="email" class="form-control" id="exampleFormControlInput1"
+								placeholder="name@example.com">
+						</div>
+						<div class="form-group">
+							<label for="exampleFormControlSelect1">Example select</label>
+							<select class="form-control" id="exampleFormControlSelect1">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="exampleFormControlSelect2">Example multiple select</label>
+							<select multiple="" class="form-control" id="exampleFormControlSelect2">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="exampleFormControlTextarea1">Example textarea</label>
+							<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+						</div>
+					</form>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;form&gt;
+	&lt;div class="form-group"&gt;
+		&lt;label for="exampleFormControlInput1"&gt;Email address&lt;/label&gt;
+		&lt;input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"&gt;
+	&lt;/div&gt;
+	&lt;div class="form-group"&gt;
+		&lt;label for="exampleFormControlSelect1"&gt;Example select&lt;/label&gt;
+		&lt;select class="form-control" id="exampleFormControlSelect1"&gt;
+			&lt;option&gt;1&lt;/option&gt;
+			&lt;option&gt;2&lt;/option&gt;
+			&lt;option&gt;3&lt;/option&gt;
+			&lt;option&gt;4&lt;/option&gt;
+			&lt;option&gt;5&lt;/option&gt;
+		&lt;/select&gt;
+	&lt;/div&gt;
+	&lt;div class="form-group"&gt;
+		&lt;label for="exampleFormControlSelect2"&gt;Example multiple select&lt;/label&gt;
+		&lt;select multiple="" class="form-control" id="exampleFormControlSelect2"&gt;
+			&lt;option&gt;1&lt;/option&gt;
+			&lt;option&gt;2&lt;/option&gt;
+			&lt;option&gt;3&lt;/option&gt;
+			&lt;option&gt;4&lt;/option&gt;
+			&lt;option&gt;5&lt;/option&gt;
+		&lt;/select&gt;
+	&lt;/div&gt;
+	&lt;div class="form-group"&gt;
+		&lt;label for="exampleFormControlTextarea1"&gt;Example textarea&lt;/label&gt;
+		&lt;textarea class="form-control" id="exampleFormControlTextarea1" rows="3"&gt;&lt;/textarea&gt;
+	&lt;/div&gt;
+&lt;/form&gt;</pre>
+				</figure>
+
+				<h2>Sizing</h2>
+
+				<p>Set heights using classes like .form-control-lg and .form-control-sm.</p>
+
+				<div class="bd-example">
+					<input class="form-control form-control-lg" type="text" placeholder=".form-control-lg">
+					<input class="form-control" type="text" placeholder="Default input">
+					<input class="form-control form-control-sm" type="text" placeholder=".form-control-sm">
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;input class="form-control form-control-lg" type="text" placeholder=".form-control-lg"&gt;
+&lt;input class="form-control" type="text" placeholder="Default input"&gt;
+&lt;input class="form-control form-control-sm" type="text" placeholder=".form-control-sm"&gt;</pre>
+				</figure>
+
+				<div class="bd-example">
+					<select class="form-control form-control-lg">
+						<option>Large select</option>
+					</select>
+					<select class="form-control">
+						<option>Default select</option>
+					</select>
+					<select class="form-control form-control-sm">
+						<option>Small select</option>
+					</select>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;select class="form-control form-control-lg"&gt;
+	&lt;option&gt;Large select&lt;/option&gt;
+ &lt;/select&gt;
+ &lt;select class="form-control"&gt;
+	&lt;option&gt;Default select&lt;/option&gt;
+ &lt;/select&gt;
+ &lt;select class="form-control form-control-sm"&gt;
+	&lt;option&gt;Small select&lt;/option&gt;
+ &lt;/select&gt;</pre>
+				</figure>
+
+				<h2>Readonly plain text</h2>
+
+				<p>
+					If you want to have &lt;input readonly&gt; elements in your form styled as plain text, use the
+					.form-control-plaintext class to remove the default form field styling and preserve the correct
+					margin and padding.
+				</p>
+
+				<div class="bd-example">
+					<form>
+						<div class="form-group row">
+							<label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+							<div class="col-sm-10">
+								<input type="text" readonly class="form-control-plaintext" id="staticEmail"
+									value="email@example.com">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+							<div class="col-sm-10">
+								<input type="password" class="form-control" id="inputPassword" placeholder="Password">
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;form&gt;
+	&lt;div class="form-group row"&gt;
+		&lt;label for="staticEmail" class="col-sm-2 col-form-label"&gt;Email&lt;/label&gt;
+		&lt;div class="col-sm-10"&gt;
+			&lt;input type="text" readonly class="form-control-plaintext" id="staticEmail" 
+				value="email@example.com"&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="form-group row"&gt;
+		&lt;label for="inputPassword" class="col-sm-2 col-form-label"&gt;Password&lt;/label&gt;
+		&lt;div class="col-sm-10"&gt;
+			&lt;input type="password" class="form-control" id="inputPassword" placeholder="Password"&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/form&gt;</pre>
+				</figure>
+
+				<div class="bd-example">
+					<form class="form-inline">
+						<div class="form-group mb-2">
+							<label for="staticEmail2" class="sr-only">Email</label>
+							<input type="text" readonly class="form-control-plaintext" id="staticEmail2"
+								value="email@example.com">
+						</div>
+						<div class="form-group mx-sm-3 mb-2">
+							<label for="inputPassword2" class="sr-only">Password</label>
+							<input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+						</div>
+						<button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
+					</form>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;form class="form-inline"&gt;
+  &lt;div class="form-group mb-2"&gt;
+    &lt;label for="staticEmail2" class="sr-only"&gt;Email&lt;/label&gt;
+    &lt;input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com"&gt;
+  &lt;/div&gt;
+  &lt;div class="form-group mx-sm-3 mb-2"&gt;
+    &lt;label for="inputPassword2" class="sr-only"&gt;Password&lt;/label&gt;
+    &lt;input type="password" class="form-control" id="inputPassword2" placeholder="Password"&gt;
+  &lt;/div&gt;
+  &lt;button type="submit" class="btn btn-primary mb-2"&gt;Confirm identity&lt;/button&gt;
+&lt;/form&gt;</pre>
+				</figure>
+
+				<h2>Range Inputs</h2>
+
+				<p>
+					Set horizontally scrollable range inputs using .form-control-range.
+				</p>
+
+				<div class="bd-example">
+					<form>
+						<div class="form-group">
+							<label for="formControlRange">Example Range input</label>
+							<input type="range" class="form-control-range" id="formControlRange">
+						</div>
+					</form>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;form&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label for="formControlRange"&gt;Example Range input&lt;/label&gt;
+    &lt;input type="range" class="form-control-range" id="formControlRange"&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</pre>
+				</figure>
+
+				<h2>Checkboxes and radios</h2>
+
+				<p>
+					Default checkboxes and radios are improved upon with the help of .form-check, a single class for
+					both input types that improves the layout and behavior of their HTML elements. Checkboxes are for
+					selecting one or several options in a list, while radios are for selecting one option from many.
+				</p>
+
+				<p>
+					Disabled checkboxes and radios are supported. The disabled attribute will apply a lighter color to
+					help indicate the input’s state.
+				</p>
+
+				<p>
+					Checkboxes and radios use are built to support HTML-based form validation and provide concise,
+					accessible labels. As such, our &lt;input&lg;s and &lt;label&lg;s are sibling elements as opposed to
+					an &lt;input&lg;
+					within a &lt;label&lg;. This is slightly more verbose as you must specify id and for attributes to
+					relate the &lt;input&lg; and &lt;label&lg;.
+				</p>
+
+				<h2>Default (stacked)</h2>
+
+				<div class="bd-example">
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+						<label class="form-check-label" for="defaultCheck1">
+							Default checkbox
+						</label>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled>
+						<label class="form-check-label" for="defaultCheck2">
+							Disabled checkbox
+						</label>
+					</div>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;div class="form-check"&gt;
+  &lt;input class="form-check-input" type="checkbox" value="" id="defaultCheck1"&gt;
+  &lt;label class="form-check-label" for="defaultCheck1"&gt;
+    Default checkbox
+  &lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="form-check"&gt;
+  &lt;input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled&gt;
+  &lt;label class="form-check-label" for="defaultCheck2"&gt;
+    Disabled checkbox
+  &lt;/label&gt;
+&lt;/div&gt;</pre>
+				</figure>
+
+				<h2>Inline</h2>
+
+				<p>Group checkboxes or radios on the same horizontal row by adding .form-check-inline to any
+					.form-check.</p>
+
+				<div class="bd-example">
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+						<label class="form-check-label" for="inlineCheckbox1">1</label>
+					</div>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+						<label class="form-check-label" for="inlineCheckbox2">2</label>
+					</div>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+						<label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
+					</div>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;div class="form-check form-check-inline"&gt;
+  &lt;input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"&gt;
+  &lt;label class="form-check-label" for="inlineCheckbox1"&gt;1&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="form-check form-check-inline"&gt;
+  &lt;input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"&gt;
+  &lt;label class="form-check-label" for="inlineCheckbox2"&gt;2&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="form-check form-check-inline"&gt;
+  &lt;input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled&gt;
+  &lt;label class="form-check-label" for="inlineCheckbox3"&gt;3 (disabled)&lt;/label&gt;
+&lt;/div&gt;</pre>
+				</figure>
+
+				<h2>Horizontal form</h2>
+
+				<p>Create horizontal forms with the grid by adding the .row class to form groups and using the .col-*-*
+					classes to specify the width of your labels and controls. Be sure to add .col-form-label to your
+					&lt;label&gt;s as well so they’re vertically centered with their associated form controls..</p>
+
+				<div class="bd-example">
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+						<label class="form-check-label" for="inlineCheckbox1">1</label>
+					</div>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+						<label class="form-check-label" for="inlineCheckbox2">2</label>
+					</div>
+					<div class="form-check form-check-inline">
+						<input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+						<label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
+					</div>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;div class="form-check form-check-inline"&gt;
+  &lt;input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1"&gt;
+  &lt;label class="form-check-label" for="inlineCheckbox1"&gt;1&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="form-check form-check-inline"&gt;
+  &lt;input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"&gt;
+  &lt;label class="form-check-label" for="inlineCheckbox2"&gt;2&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="form-check form-check-inline"&gt;
+  &lt;input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled&gt;
+  &lt;label class="form-check-label" for="inlineCheckbox3"&gt;3 (disabled)&lt;/label&gt;
+&lt;/div&gt;</pre>
+				</figure>
+
+				<h2>Layout</h2>
+
+				<p>Since Bootstrap applies display: block and width: 100% to almost all our form controls, forms will by
+					default stack vertically. Additional classes can be used to vary this layout on a per-form basis.
+				</p>
+
+				<h2>Form groups</h2>
+
+				<p>
+					The .form-group class is the easiest way to add some structure to forms. It provides a flexible
+					class that encourages proper grouping of labels, controls, optional help text, and form validation
+					messaging. By default it only applies margin-bottom, but it picks up additional styles in
+					.form-inline as needed. Use it with &lt;fieldset&gt;s, &lt;div&gt;s, or nearly any other element.
+				</p>
+
+				<div class="bd-example">
+					<form>
+						<div class="form-group">
+							<label for="formGroupExampleInput">Example label</label>
+							<input type="text" class="form-control" id="formGroupExampleInput"
+								placeholder="Example input">
+						</div>
+						<div class="form-group">
+							<label for="formGroupExampleInput2">Another label</label>
+							<input type="text" class="form-control" id="formGroupExampleInput2"
+								placeholder="Another input">
+						</div>
+					</form>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;form&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label for="formGroupExampleInput"&gt;Example label&lt;/label&gt;
+    &lt;input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input"&gt;
+  &lt;/div&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label for="formGroupExampleInput2"&gt;Another label&lt;/label&gt;
+    &lt;input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input"&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</pre>
+				</figure>
+
+				<h2>Form grid</h2>
+
+				<p>
+					More complex forms can be built using our grid classes. Use these for form layouts that require
+					multiple columns, varied widths, and additional alignment options.
+				</p>
+
+				<div class="bd-example">
+					<form>
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<label for="inputEmail4">Email</label>
+								<input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+							</div>
+							<div class="form-group col-md-6">
+								<label for="inputPassword4">Password</label>
+								<input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputAddress">Address</label>
+							<input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+						</div>
+						<div class="form-group">
+							<label for="inputAddress2">Address 2</label>
+							<input type="text" class="form-control" id="inputAddress2"
+								placeholder="Apartment, studio, or floor">
+						</div>
+						<div class="form-row">
+							<div class="form-group col-md-6">
+								<label for="inputCity">City</label>
+								<input type="text" class="form-control" id="inputCity">
+							</div>
+							<div class="form-group col-md-4">
+								<label for="inputState">State</label>
+								<select id="inputState" class="form-control">
+									<option selected>Choose...</option>
+									<option>...</option>
+								</select>
+							</div>
+							<div class="form-group col-md-2">
+								<label for="inputZip">Zip</label>
+								<input type="text" class="form-control" id="inputZip">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" id="gridCheck">
+								<label class="form-check-label" for="gridCheck">
+									Check me out
+								</label>
+							</div>
+						</div>
+						<button type="submit" class="btn btn-primary">Sign in</button>
+					</form>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;form&gt;
+  &lt;div class="form-row"&gt;
+    &lt;div class="form-group col-md-6"&gt;
+      &lt;label for="inputEmail4"&gt;Email&lt;/label&gt;
+      &lt;input type="email" class="form-control" id="inputEmail4" placeholder="Email"&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group col-md-6"&gt;
+      &lt;label for="inputPassword4"&gt;Password&lt;/label&gt;
+      &lt;input type="password" class="form-control" id="inputPassword4" placeholder="Password"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label for="inputAddress"&gt;Address&lt;/label&gt;
+    &lt;input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"&gt;
+  &lt;/div&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label for="inputAddress2"&gt;Address 2&lt;/label&gt;
+    &lt;input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor"&gt;
+  &lt;/div&gt;
+  &lt;div class="form-row"&gt;
+    &lt;div class="form-group col-md-6"&gt;
+      &lt;label for="inputCity"&gt;City&lt;/label&gt;
+      &lt;input type="text" class="form-control" id="inputCity"&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group col-md-4"&gt;
+      &lt;label for="inputState"&gt;State&lt;/label&gt;
+      &lt;select id="inputState" class="form-control"&gt;
+        &lt;option selected&gt;Choose...&lt;/option&gt;
+        &lt;option&gt;...&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group col-md-2"&gt;
+      &lt;label for="inputZip"&gt;Zip&lt;/label&gt;
+      &lt;input type="text" class="form-control" id="inputZip"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="form-group"&gt;
+    &lt;div class="form-check"&gt;
+      &lt;input class="form-check-input" type="checkbox" id="gridCheck"&gt;
+      &lt;label class="form-check-label" for="gridCheck"&gt;
+        Check me out
+      &lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button type="submit" class="btn btn-primary"&gt;Sign in&lt;/button&gt;
+&lt;/form&gt;</pre>
+				</figure>
+
+				<h2>Form row</h2>
+
+				<p>
+					You may also swap .row for .form-row, a variation of our standard grid row that overrides the
+					default column gutters for tighter and more compact layouts.
+				</p>
+
+				<P>
+					Be sure to use .col-form-label-sm or .col-form-label-lg to your &lt;label&gt;s or &lt;legend&gt;s to
+					correctly follow the size of .form-control-lg and .form-control-sm.
+				</P>
+
+				<div class="bd-example">
+					<form>
+						<div class="form-group row">
+							<label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+							<div class="col-sm-10">
+								<input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+							<div class="col-sm-10">
+								<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+							</div>
+						</div>
+						<fieldset class="form-group">
+							<div class="row">
+								<legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+								<div class="col-sm-10">
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1"
+											value="option1" checked>
+										<label class="form-check-label" for="gridRadios1">
+											First radio
+										</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2"
+											value="option2">
+										<label class="form-check-label" for="gridRadios2">
+											Second radio
+										</label>
+									</div>
+									<div class="form-check disabled">
+										<input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3"
+											value="option3" disabled>
+										<label class="form-check-label" for="gridRadios3">
+											Third disabled radio
+										</label>
+									</div>
+								</div>
+							</div>
+						</fieldset>
+						<div class="form-group row">
+							<div class="col-sm-2">Checkbox</div>
+							<div class="col-sm-10">
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" id="gridCheck1">
+									<label class="form-check-label" for="gridCheck1">
+										Example checkbox
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="col-sm-10">
+								<button type="submit" class="btn btn-primary">Sign in</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;form&gt;
+  &lt;div class="form-group row"&gt;
+    &lt;label for="inputEmail3" class="col-sm-2 col-form-label"&gt;Email&lt;/label&gt;
+    &lt;div class="col-sm-10"&gt;
+      &lt;input type="email" class="form-control" id="inputEmail3" placeholder="Email"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="form-group row"&gt;
+    &lt;label for="inputPassword3" class="col-sm-2 col-form-label"&gt;Password&lt;/label&gt;
+    &lt;div class="col-sm-10"&gt;
+      &lt;input type="password" class="form-control" id="inputPassword3" placeholder="Password"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;fieldset class="form-group"&gt;
+    &lt;div class="row"&gt;
+      &lt;legend class="col-form-label col-sm-2 pt-0"&gt;Radios&lt;/legend&gt;
+      &lt;div class="col-sm-10"&gt;
+        &lt;div class="form-check"&gt;
+          &lt;input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked&gt;
+          &lt;label class="form-check-label" for="gridRadios1"&gt;
+            First radio
+          &lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class="form-check"&gt;
+          &lt;input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2"&gt;
+          &lt;label class="form-check-label" for="gridRadios2"&gt;
+            Second radio
+          &lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class="form-check disabled"&gt;
+          &lt;input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled&gt;
+          &lt;label class="form-check-label" for="gridRadios3"&gt;
+            Third disabled radio
+          &lt;/label&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/fieldset&gt;
+  &lt;div class="form-group row"&gt;
+    &lt;div class="col-sm-2"&gt;Checkbox&lt;/div&gt;
+    &lt;div class="col-sm-10"&gt;
+      &lt;div class="form-check"&gt;
+        &lt;input class="form-check-input" type="checkbox" id="gridCheck1"&gt;
+        &lt;label class="form-check-label" for="gridCheck1"&gt;
+          Example checkbox
+        &lt;/label&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="form-group row"&gt;
+    &lt;div class="col-sm-10"&gt;
+      &lt;button type="submit" class="btn btn-primary"&gt;Sign in&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</pre>
+				</figure>
+
+				<h2>Column sizing</h2>
+
+				<p>
+					As shown in the previous examples, our grid system allows you to place any number of .cols within a
+					.row or .form-row. They’ll split the available width equally between them. You may also pick a
+					subset of your columns to take up more or less space, while the remaining .cols equally split the
+					rest, with specific column classes like .col-7.
+				</p>
+
+				<div class="bd-example">
+					<form>
+						<div class="form-row">
+							<div class="col-7">
+								<input type="text" class="form-control" placeholder="City">
+							</div>
+							<div class="col">
+								<input type="text" class="form-control" placeholder="State">
+							</div>
+							<div class="col">
+								<input type="text" class="form-control" placeholder="Zip">
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;form&gt;
+  &lt;div class="form-row"&gt;
+    &lt;div class="col-7"&gt;
+      &lt;input type="text" class="form-control" placeholder="City"&gt;
+    &lt;/div&gt;
+    &lt;div class="col"&gt;
+      &lt;input type="text" class="form-control" placeholder="State"&gt;
+    &lt;/div&gt;
+    &lt;div class="col"&gt;
+      &lt;input type="text" class="form-control" placeholder="Zip"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</pre>
+				</figure>
+
+				<h2>Inline forms</h2>
+
+				<p>
+					Use the .form-inline class to display a series of labels, form controls, and buttons on a single
+					horizontal row. Form controls within inline forms vary slightly from their default states.
+				</p>
+
+				<ul>
+					<li>Controls are <code class="highlighter-rouge">display: flex</code>, collapsing any HTML white
+						space and allowing you to provide alignment control with spacing and flexbox utilities.</li>
+					<li>Controls and input groups receive <code class="highlighter-rouge"></code>width: auto</code> to
+						override
+						the Bootstrap default <code class="highlighter-rouge">width: 100%</code>.</li>
+					<li>Controls <strong>only appear inline in viewports that are at least 576px wide</strong> to
+						account for narrow viewports on mobile devices.</li>
+				</ul>
+
+				<p>
+					You may need to manually address the width and alignment of individual form controls with spacing
+					utilities (as shown below). Lastly, be sure to always include a &lt;label&gt; with each form
+					control, even
+					if you need to hide it from non-screenreader visitors with .sr-only.
+				</p>
+
+				<div class="bd-example">
+					<form class="form-inline">
+						<label class="sr-only" for="inlineFormInputName2">Name</label>
+						<input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2"
+							placeholder="Jane Doe">
+
+						<label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
+						<div class="input-group mb-2 mr-sm-2">
+							<div class="input-group-prepend">
+								<div class="input-group-text">@</div>
+							</div>
+							<input type="text" class="form-control" id="inlineFormInputGroupUsername2"
+								placeholder="Username">
+						</div>
+
+						<div class="form-check mb-2 mr-sm-2">
+							<input class="form-check-input" type="checkbox" id="inlineFormCheck">
+							<label class="form-check-label" for="inlineFormCheck">
+								Remember me
+							</label>
+						</div>
+
+						<button type="submit" class="btn btn-primary mb-2">Submit</button>
+					</form>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;form class="form-inline"&gt;
+  &lt;label class="sr-only" for="inlineFormInputName2"&gt;Name&lt;/label&gt;
+  &lt;input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Jane Doe"&gt;
+
+  &lt;label class="sr-only" for="inlineFormInputGroupUsername2"&gt;Username&lt;/label&gt;
+  &lt;div class="input-group mb-2 mr-sm-2"&gt;
+    &lt;div class="input-group-prepend"&gt;
+      &lt;div class="input-group-text"&gt;@&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Username"&gt;
+  &lt;/div&gt;
+
+  &lt;div class="form-check mb-2 mr-sm-2"&gt;
+    &lt;input class="form-check-input" type="checkbox" id="inlineFormCheck"&gt;
+    &lt;label class="form-check-label" for="inlineFormCheck"&gt; Remember me &lt;/label&gt;
+  &lt;/div&gt;
+
+  &lt;button type="submit" class="btn btn-primary mb-2"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;</pre>
+				</figure>
+
+				<h2>Disabled forms</h2>
+
+				<p>
+					Add the disabled boolean attribute on an input to prevent user interactions and make it appear
+					lighter.
+				</p>
+
+				<figure class="highlight">
+					<pre
+						class="prettyprint">&lt;input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled&gt;</pre>
+				</figure>
+
+				<p>Add the disabled attribute to a &lt;fieldset&gt; to disable all the controls within.</p>
+
+				<div class="bd-example">
+					<form>
+						<fieldset disabled>
+							<div class="form-group">
+								<label for="disabledTextInput">Disabled input</label>
+								<input type="text" id="disabledTextInput" class="form-control"
+									placeholder="Disabled input">
+							</div>
+							<div class="form-group">
+								<label for="disabledSelect">Disabled select menu</label>
+								<select id="disabledSelect" class="form-control">
+									<option>Disabled select</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" id="disabledFieldsetCheck" disabled>
+									<label class="form-check-label" for="disabledFieldsetCheck">
+										Can't check this
+									</label>
+								</div>
+							</div>
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</fieldset>
+					</form>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;form&gt;
+  &lt;fieldset disabled&gt;
+    &lt;div class="form-group"&gt;
+      &lt;label for="disabledTextInput"&gt;Disabled input&lt;/label&gt;
+      &lt;input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input"&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+      &lt;label for="disabledSelect"&gt;Disabled select menu&lt;/label&gt;
+      &lt;select id="disabledSelect" class="form-control"&gt;
+        &lt;option&gt;Disabled select&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/div&gt;
+    &lt;div class="form-group"&gt;
+      &lt;div class="form-check"&gt;
+        &lt;input class="form-check-input" type="checkbox" id="disabledFieldsetCheck" disabled&gt;
+        &lt;label class="form-check-label" for="disabledFieldsetCheck"&gt;
+          Can't check this
+        &lt;/label&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button type="submit" class="btn btn-primary"&gt;Submit&lt;/button&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;</pre>
+				</figure>
+
+				<h2>Validation</h2>
+
+				<p>
+					Provide valuable, actionable feedback to your users with HTML5 form validation–available in all our
+					supported browsers. Choose from the browser default validation feedback, or implement custom
+					messages with our built-in classes and starter JavaScript.
+				</p>
+
+				<h3>How it works</h3>
+
+				<p>Here’s how form validation works with Bootstrap:</p>
+
+				<ul>
+					<li>HTML form validation is applied via CSS’s two pseudo-classes, <code
+							class="highlighter-rouge">:invalid</code> and <code class="highlighter-rouge">:valid</code>.
+						It applies to <code class="highlighter-rouge">&lt;input&gt;</code>, <code
+							class="highlighter-rouge">&lt;select&gt;</code>, and <code
+							class="highlighter-rouge">&lt;textarea&gt;</code> elements.</li>
+					<li>Bootstrap scopes the <code class="highlighter-rouge">:invalid</code> and <code
+							class="highlighter-rouge">:valid</code> styles to parent <code
+							class="highlighter-rouge">.was-validated</code> class, usually applied to the <code
+							class="highlighter-rouge">&lt;form&gt;</code>. Otherwise, any required field without a value
+						shows up as invalid on page load. This way, you may choose when to activate them (typically
+						after form submission is attempted).</li>
+					<li>To reset the appearance of the form (for instance, in the case of dynamic form submissions using
+						AJAX), remove the <code class="highlighter-rouge">.was-validated</code> class from the <code
+							class="highlighter-rouge">&lt;form&gt;</code> again after submission.</li>
+					<li>As a fallback, <code class="highlighter-rouge">.is-invalid</code> and <code
+							class="highlighter-rouge">.is-valid</code> classes may be used instead of the pseudo-classes
+						for <a href="#server-side">server side validation</a>. They do not require a <code
+							class="highlighter-rouge">.was-validated</code> parent class.</li>
+					<li>Due to constraints in how CSS works, we cannot (at present) apply styles to a <code
+							class="highlighter-rouge">&lt;label&gt;</code> that comes before a form control in the DOM
+						without the help of custom JavaScript.</li>
+					<li>All modern browsers support the constraint
+						validation API</a>, a series of JavaScript methods for validating form controls.</li>
+					<li>Feedback messages may utilize the <a href="#browser-defaults">browser defaults</a> (different
+						for each browser, and unstylable via CSS) or our custom feedback styles with additional HTML and
+						CSS.</li>
+					<li>You may provide custom validity messages with <code
+							class="highlighter-rouge">setCustomValidity</code> in JavaScript.</li>
+				</ul>
+
+				<p>
+					With that in mind, consider the following demos for our custom form validation styles, optional
+					server side classes, and browser defaults.
+				</p>
+
+				<h3>Custom styles</h3>
+
+				<p>
+					For custom Bootstrap form validation messages, you’ll need to add the novalidate boolean attribute
+					to your &lt;form&gt;. This disables the browser default feedback tooltips, but still provides access
+					to
+					the form validation APIs in JavaScript. Try to submit the form below; our JavaScript will
+					intercept the submit button and relay feedback to you. When attempting to submit, you’ll see the
+					:invalid and :valid styles applied to your form controls.
+				</p>
+
+				<p>
+					Custom feedback styles apply custom colors, borders, focus styles, and background icons to better
+					communicate feedback. Background icons for &lt;select&gt;s are only available with .custom-select,
+					and not
+					.form-control.
+				</p>
+
+				<div class="bd-example">
+					<form class="needs-validation" novalidate>
+						<div class="form-row">
+							<div class="col-md-4 mb-3">
+								<label for="validationCustom01">First name</label>
+								<input type="text" class="form-control" id="validationCustom01" placeholder="First name"
+									value="Mark" required>
+								<div class="valid-feedback">
+									Looks good!
+								</div>
+							</div>
+							<div class="col-md-4 mb-3">
+								<label for="validationCustom02">Last name</label>
+								<input type="text" class="form-control" id="validationCustom02" placeholder="Last name"
+									value="Otto" required>
+								<div class="valid-feedback">
+									Looks good!
+								</div>
+							</div>
+							<div class="col-md-4 mb-3">
+								<label for="validationCustomUsername">Username</label>
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<span class="input-group-text" id="inputGroupPrepend">@</span>
+									</div>
+									<input type="text" class="form-control" id="validationCustomUsername"
+										placeholder="Username" aria-describedby="inputGroupPrepend" required>
+									<div class="invalid-feedback">
+										Please choose a username.
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="col-md-6 mb-3">
+								<label for="validationCustom03">City</label>
+								<input type="text" class="form-control" id="validationCustom03" placeholder="City"
+									required>
+								<div class="invalid-feedback">
+									Please provide a valid city.
+								</div>
+							</div>
+							<div class="col-md-3 mb-3">
+								<label for="validationCustom04">State</label>
+								<input type="text" class="form-control" id="validationCustom04" placeholder="State"
+									required>
+								<div class="invalid-feedback">
+									Please provide a valid state.
+								</div>
+							</div>
+							<div class="col-md-3 mb-3">
+								<label for="validationCustom05">Zip</label>
+								<input type="text" class="form-control" id="validationCustom05" placeholder="Zip"
+									required>
+								<div class="invalid-feedback">
+									Please provide a valid zip.
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+								<label class="form-check-label" for="invalidCheck">
+									Agree to terms and conditions
+								</label>
+								<div class="invalid-feedback">
+									You must agree before submitting.
+								</div>
+							</div>
+						</div>
+						<button class="btn btn-primary" type="submit">Submit form</button>
+					</form>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;form class="needs-validation" novalidate&gt;
+  &lt;div class="form-row"&gt;
+    &lt;div class="col-md-4 mb-3"&gt;
+      &lt;label for="validationCustom01"&gt;First name&lt;/label&gt;
+      &lt;input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Mark" required&gt;
+      &lt;div class="valid-feedback"&gt;
+        Looks good!
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-md-4 mb-3"&gt;
+      &lt;label for="validationCustom02"&gt;Last name&lt;/label&gt;
+      &lt;input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required&gt;
+      &lt;div class="valid-feedback"&gt;
+        Looks good!
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-md-4 mb-3"&gt;
+      &lt;label for="validationCustomUsername"&gt;Username&lt;/label&gt;
+      &lt;div class="input-group"&gt;
+        &lt;div class="input-group-prepend"&gt;
+          &lt;span class="input-group-text" id="inputGroupPrepend"&gt;@&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;input type="text" class="form-control" id="validationCustomUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required&gt;
+        &lt;div class="invalid-feedback"&gt;
+          Please choose a username.
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="form-row"&gt;
+    &lt;div class="col-md-6 mb-3"&gt;
+      &lt;label for="validationCustom03"&gt;City&lt;/label&gt;
+      &lt;input type="text" class="form-control" id="validationCustom03" placeholder="City" required&gt;
+      &lt;div class="invalid-feedback"&gt;
+        Please provide a valid city.
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-md-3 mb-3"&gt;
+      &lt;label for="validationCustom04"&gt;State&lt;/label&gt;
+      &lt;input type="text" class="form-control" id="validationCustom04" placeholder="State" required&gt;
+      &lt;div class="invalid-feedback"&gt;
+        Please provide a valid state.
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-md-3 mb-3"&gt;
+      &lt;label for="validationCustom05"&gt;Zip&lt;/label&gt;
+      &lt;input type="text" class="form-control" id="validationCustom05" placeholder="Zip" required&gt;
+      &lt;div class="invalid-feedback"&gt;
+        Please provide a valid zip.
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="form-group"&gt;
+    &lt;div class="form-check"&gt;
+      &lt;input class="form-check-input" type="checkbox" value="" id="invalidCheck" required&gt;
+      &lt;label class="form-check-label" for="invalidCheck"&gt;
+        Agree to terms and conditions
+      &lt;/label&gt;
+      &lt;div class="invalid-feedback"&gt;
+        You must agree before submitting.
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button class="btn btn-primary" type="submit"&gt;Submit form&lt;/button&gt;
+&lt;/form&gt;</pre>
+				</figure>
+
+				<h2>Custom forms</h2>
+
+				<p>
+					For even more customization and cross browser consistency, use our completely custom form elements
+					to replace the browser defaults. They’re built on top of semantic and accessible markup, so they’re
+					solid replacements for any default form control.
+				</p>
+
+				<h3>Checkboxes and radios</h3>
+
+				<p>
+					Each checkbox and radio &lt;input&gt; and &lt;label&gt; pairing is wrapped in a &lt;div&gt; to
+					create our custom
+					control. Structurally, this is the same approach as our default .form-check.
+
+					We use the sibling selector (~) for all our &lt;input&gt; states—like :checked—to properly style
+					our custom form indicator. When combined with the .custom-control-label class, we can also
+					style the text for each item based on the &lt;input&gt;’s state.
+
+					We hide the default &lt;input&gt; with opacity and use the .custom-control-label to build a new
+					custom form indicator in its place with ::before and ::after. Unfortunately we can’t build a
+					custom one from just the &lt;input&gt; because CSS’s content doesn’t work on that element.
+
+					In the checked states, we use base64 embedded SVG icons from Open Iconic. This provides us
+					the best control for styling and positioning across browsers and devices.
+				</p>
+
+				<h3>Checkboxes</h3>
+
+				<div class="bd-example">
+					<div class="custom-control custom-checkbox">
+						<input type="checkbox" class="custom-control-input" id="customCheck1">
+						<label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+					</div>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;div class="custom-control custom-checkbox"&gt;
+  &lt;input type="checkbox" class="custom-control-input" id="customCheck1"&gt;
+  &lt;label class="custom-control-label" for="customCheck1"&gt;Check this custom checkbox&lt;/label&gt;
+&lt;/div&gt;</pre>
+				</figure>
+
+				<p>
+					Custom checkboxes can also utilize the :indeterminate pseudo class when manually set via JavaScript
+					(there is no available HTML attribute for specifying it).
+				</p>
+
+				<p>The following code should set the checkbox input to inditerminate state</p>
+
+				<div class="bd-example">
+					<div class="custom-control custom-checkbox">
+						<input type="checkbox" class="custom-control-input" id="indeterminateCheckbox">
+						<label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+					</div>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">document.querySelector('.your-checkbox').indeterminate = true;</pre>
+				</figure>
+
+				<h2>Radios</h2>
+
+				<div class="bd-example">
+					<div class="custom-control custom-radio">
+						<input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+						<label class="custom-control-label" for="customRadio1">Toggle this custom radio</label>
+					</div>
+					<div class="custom-control custom-radio">
+						<input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+						<label class="custom-control-label" for="customRadio2">Or toggle this other custom radio</label>
+					</div>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;div class="custom-control custom-radio"&gt;
+	&lt;input type="radio" id="customRadio1" name="customRadio" class="custom-control-input"&gt;
+	&lt;label class="custom-control-label" for="customRadio1"&gt;Toggle this custom radio&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="custom-control custom-radio"&gt;
+	&lt;input type="radio" id="customRadio2" name="customRadio" class="custom-control-input"&gt;
+	&lt;label class="custom-control-label" for="customRadio2"&gt;Or toggle this other custom radio&lt;/label&gt;
+&lt;/div&gt;</pre>
+				</figure>
+
+				<h2>Inline</h2>
+
+				<div class="bd-example">
+					<div class="custom-control custom-radio custom-control-inline">
+						<input type="radio" id="customRadioInline1" name="customRadioInline1"
+							class="custom-control-input">
+						<label class="custom-control-label" for="customRadioInline1">Toggle this custom radio</label>
+					</div>
+					<div class="custom-control custom-radio custom-control-inline">
+						<input type="radio" id="customRadioInline2" name="customRadioInline1"
+							class="custom-control-input">
+						<label class="custom-control-label" for="customRadioInline2">Or toggle this other custom
+							radio</label>
+					</div>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;div class="custom-control custom-radio custom-control-inline"&gt;
+  &lt;input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input"&gt;
+  &lt;label class="custom-control-label" for="customRadioInline1"&gt;Toggle this custom radio&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="custom-control custom-radio custom-control-inline"&gt;
+  &lt;input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input"&gt;
+  &lt;label class="custom-control-label" for="customRadioInline2"&gt;Or toggle this other custom radio&lt;/label&gt;
+&lt;/div&gt;</pre>
+				</figure>
+
+				<h2>Disabled</h2>
+
+				<p>
+					Custom checkboxes and radios can also be disabled. Add the disabled boolean attribute to the
+					&lt;input&gt;
+					and the custom indicator and label description will be automatically styled.
+				</p>
+
+				<div class="bd-example">
+					<div class="custom-control custom-checkbox">
+						<input type="checkbox" class="custom-control-input" id="customCheckDisabled1" disabled>
+						<label class="custom-control-label" for="customCheckDisabled1">Check this custom
+							checkbox</label>
+					</div>
+
+					<div class="custom-control custom-radio">
+						<input type="radio" name="radioDisabled" id="customRadioDisabled2" class="custom-control-input"
+							disabled>
+						<label class="custom-control-label" for="customRadioDisabled2">Toggle this custom radio</label>
+					</div>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;div class="custom-control custom-checkbox"&gt;
+  &lt;input type="checkbox" class="custom-control-input" id="customCheckDisabled1" disabled&gt;
+  &lt;label class="custom-control-label" for="customCheckDisabled1"&gt;Check this custom checkbox&lt;/label&gt;
+&lt;/div&gt;
+
+&lt;div class="custom-control custom-radio"&gt;
+  &lt;input type="radio" name="radioDisabled" id="customRadioDisabled2" class="custom-control-input" disabled&gt;
+  &lt;label class="custom-control-label" for="customRadioDisabled2"&gt;Toggle this custom radio&lt;/label&gt;
+&lt;/div&gt;</pre>
+				</figure>
+
+				<h2>Switches</h2>
+
+				<p>
+					A switch has the markup of a custom checkbox but uses the .custom-switch class to render a toggle
+					switch. Switches also support the disabled attribute.
+				</p>
+
+				<div class="bd-example">
+					<div class="custom-control custom-switch">
+						<input type="checkbox" class="custom-control-input" id="customSwitch1">
+						<label class="custom-control-label" for="customSwitch1">Toggle this switch element</label>
+					</div>
+					<div class="custom-control custom-switch">
+						<input type="checkbox" class="custom-control-input" disabled id="customSwitch2">
+						<label class="custom-control-label" for="customSwitch2">Disabled switch element</label>
+					</div>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;div class="custom-control custom-switch"&gt;
+  &lt;input type="checkbox" class="custom-control-input" id="customSwitch1"&gt;
+  &lt;label class="custom-control-label" for="customSwitch1"&gt;Toggle this switch element&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class="custom-control custom-switch"&gt;
+  &lt;input type="checkbox" class="custom-control-input" disabled id="customSwitch2"&gt;
+  &lt;label class="custom-control-label" for="customSwitch2"&gt;Disabled switch element&lt;/label&gt;
+&lt;/div&gt;</pre>
+				</figure>
+
+				<h2>Select menu</h2>
+
+				<p>
+					Custom &lt;select&gt; menus need only a custom class, .custom-select to trigger the custom styles.
+					Custom
+					styles are limited to the &lt;select&gt;’s initial appearance and cannot modify the &lt;option&gt;s
+					due to
+					browser limitatio
+				</p>
+
+				<div class="bd-example">
+					<select class="custom-select custom-select-lg mb-3">
+						<option selected>Open this select menu</option>
+						<option value="1">One</option>
+						<option value="2">Two</option>
+						<option value="3">Three</option>
+					</select>
+
+					<select class="custom-select custom-select-sm">
+						<option selected>Open this select menu</option>
+						<option value="1">One</option>
+						<option value="2">Two</option>
+						<option value="3">Three</option>
+					</select>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;select class="custom-select custom-select-lg mb-3"&gt;
+  &lt;option selected&gt;Open this select menu&lt;/option&gt;
+  &lt;option value="1"&gt;One&lt;/option&gt;
+  &lt;option value="2"&gt;Two&lt;/option&gt;
+  &lt;option value="3"&gt;Three&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;select class="custom-select custom-select-sm"&gt;
+  &lt;option selected&gt;Open this select menu&lt;/option&gt;
+  &lt;option value="1"&gt;One&lt;/option&gt;
+  &lt;option value="2"&gt;Two&lt;/option&gt;
+  &lt;option value="3"&gt;Three&lt;/option&gt;
+&lt;/select&gt;</pre>
+				</figure>
+
+				<h2>Range</h2>
+
+				<p>
+					Create custom &lt;input type="range"&gt; controls with .custom-range. The track (the background) and
+					thumb
+					(the value) are both styled to appear the same across browsers. As only IE and Firefox support
+					“filling” their track from the left or right of the thumb as a means to visually indicate progress,
+					we do not currently support it.
+				</p>
+
+				<div class="bd-example">
+					<label for="customRange2">Example range</label>
+					<input type="range" class="custom-range" min="0" max="5" id="customRange2">
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;label for="customRange2">Example range&lt;/label&gt;
+&lt;input type="range" class="custom-range" min="0" max="5" id="customRange2"&gt;</pre>
+				</figure>
+
+				<h2>File browser</h2>
+
+				<p>
+					The file input is the most gnarly of the bunch and requires additional JavaScript if you’d like to
+					hook them up with functional Choose file… and selected file name text.
+				</p>
+
+				<div class="bd-example">
+					<div class="custom-file">
+						<input type="file" class="custom-file-input" id="customFile">
+						<label class="custom-file-label" for="customFile">Choose file</label>
+					</div>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;div class="custom-file"&gt;
+  &lt;input type="file" class="custom-file-input" id="customFile"&gt;
+  &lt;label class="custom-file-label" for="customFile"&gt;Choose file&lt;/label&gt;
+&lt;/div&gt;</pre>
+				</figure>
+
+				<p>
+					We hide the default file &lt;input&gt; via opacity and instead style the &lt;label&gt;. The button
+					is generated
+					and positioned with ::after. Lastly, we declare a width and height on the &lt;input&gt; for proper
+					spacing for surrounding content.
+				</p>
+
+				<h2 id=tabs>Tabs</h2>
+
+				<p>There are three types of Tab controls : nav, tab and pills. The <b>tabType</b> property determines
+					the type. By default it's set to 'tabs'.</p>
+
+				<h3>Navs</h3>
+
+				<p>
+					Navigation available in Bootstrap share general markup and styles, from the base .nav class to the
+					active and disabled states. Swap modifier classes to switch between each style.
+				</p>
+
+				<p>
+					Navigation available in Bootstrap share general markup and styles, from the base .nav class to the
+					active and disabled states. Swap modifier classes to switch between each style.
+				</p>
+
+				<div class="bd-example">
+					<bootstrap-tabs tab-type="nav">
+						<a class="active" href="#">Active</a>
+						<a href="#">Link</a>
+						<a href="#">Link</a>
+						<a class="disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</bootstrap-tabs>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-tabs tab-type="nav"&gt;
+	&lt;a class="active" href="#"&gt;Active&lt;/a&gt;
+	&lt;a href="#"&gt;Link&lt;/a&gt;
+	&lt;a href="#"&gt;Link&lt;/a&gt;
+	&lt;a class="disabled" href="#" tabindex="-1" aria-disabled="true"&gt;Disabled&lt;/a&gt;
+&lt;/bootstrap-tabs&gt;</pre>
+				</figure>
+
+				<h2>Alignment</h2>
+
+				<p>
+					Change the horizontal alignment of your nav with flexbox utilities. By default, navs are
+					left-aligned, but you can easily change them to center or right aligned via the <b>align</b>
+					property.
+				</p>
+
+				<p>Centered with <b>align="center"</b></p>
+
+				<div class="bd-example">
+					<bootstrap-tabs tab-type="nav" alignment="center">
+						<a class="active" href="#">Active</a>
+						<a href="#">Link</a>
+						<a href="#">Link</a>
+						<a class="disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</bootstrap-tabs>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-tabs tab-type="nav" alignment="center"&gt;
+	&lt;a class="active" href="#"&gt;Active&lt;/a&gt;
+	&lt;a href="#"&gt;Link&lt;/a&gt;
+	&lt;a href="#"&gt;Link&lt;/a&gt;
+	&lt;a class="disabled" href="#" tabindex="-1" aria-disabled="true"&gt;Disabled&lt;/a&gt;
+&lt;/bootstrap-tabs&gt;</pre>
+				</figure>
+
+				<p>Right-aligned with <b>align="end"</b></p>
+
+				<div class="bd-example">
+					<bootstrap-tabs tab-type="nav" alignment="end">
+						<a class="active" href="#">Active</a>
+						<a href="#">Link</a>
+						<a href="#">Link</a>
+						<a class="disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</bootstrap-tabs>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-tabs tab-type="nav" alignment="end"&gt;
+	&lt;a class="active" href="#"&gt;Active&lt;/a&gt;
+	&lt;a href="#"&gt;Link&lt;/a&gt;
+	&lt;a href="#"&gt;Link&lt;/a&gt;
+	&lt;a class="disabled" href="#" tabindex="-1" aria-disabled="true"&gt;Disabled&lt;/a&gt;
+&lt;/bootstrap-tabs&gt;</pre>
+				</figure>
+
+				<p>Vertical-aligned with <b>align="vertical"</b></p>
+
+				<div class="bd-example">
+					<bootstrap-tabs tab-type="nav" alignment="vertical">
+						<a class="active" href="#">Active</a>
+						<a href="#">Link</a>
+						<a href="#">Link</a>
+						<a class="disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</bootstrap-tabs>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-tabs tab-type="nav" alignment="vertical"&gt;
+	&lt;a class="active" href="#"&gt;Active&lt;/a&gt;
+	&lt;a href="#"&gt;Link&lt;/a&gt;
+	&lt;a href="#"&gt;Link&lt;/a&gt;
+	&lt;a class="disabled" href="#" tabindex="-1" aria-disabled="true"&gt;Disabled&lt;/a&gt;
+&lt;/bootstrap-tabs&gt;</pre>
+				</figure>
+
+				<p>Vertical-aligned works with <b>listType="nav"</b> as well:</p>
+
+				<div class="bd-example">
+					<bootstrap-tabs tab-type="nav" alignment="vertical" list-type="nav">
+						<a class="active" href="#">Active</a>
+						<a href="#">Link</a>
+						<a href="#">Link</a>
+						<a class="disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</bootstrap-tabs>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+	&lt;bootstrap-tabs tab-type="nav" alignment="vertical" list-type="nav"&gt;
+		&lt;a class="active" href="#"&gt;Active&lt;/a&gt;
+		&lt;a href="#"&gt;Link&lt;/a&gt;
+		&lt;a href="#"&gt;Link&lt;/a&gt;
+		&lt;a class="disabled" href="#" tabindex="-1" aria-disabled="true"&gt;Disabled&lt;/a&gt;
+	&lt;/bootstrap-tabs&gt;</pre>
+				</figure>
+
+				<h3>Tabs</h3>
+
+				<p>Here's the default appearance of the Smart's bootstrap Tabs control. Setting the <b>tabType</b>
+					property to 'tabs' will also change the the element to it's default state.</p>
+
+				<div class="bd-example">
+					<bootstrap-tabs>
+						<a class="active" href="#">Active</a>
+						<a href="#">Link</a>
+						<a href="#">Link</a>
+						<a class="disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</bootstrap-tabs>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-tabs"&gt;
+	&lt;a class="active" href="#"&gt;Active&lt;/a&gt;
+	&lt;a href="#"&gt;Link&lt;/a&gt;
+	&lt;a href="#"&gt;Link&lt;/a&gt;
+	&lt;a class="disabled" href="#" tabindex="-1" aria-disabled="true"&gt;Disabled&lt;/a&gt;
+&lt;/bootstrap-tabs&gt;</pre>
+				</figure>
+
+				<h3>Pills</h3>
+
+				<p>Pills is the third appearance of the Tab control. Changing the <b>tabType</b> property to 'pills' in
+					order to change the appearance of the element.</p>
+
+				<div class="bd-example">
+					<bootstrap-tabs tab-type="pills">
+						<a class="active" href="#">Active</a>
+						<a href="#">Link</a>
+						<a href="#">Link</a>
+						<a class="disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</bootstrap-tabs>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-tabs tab-type="pills"&gt;
+	&lt;a class="active" href="#"&gt;Active&lt;/a&gt;
+	&lt;a href="#"&gt;Link&lt;/a&gt;
+	&lt;a href="#"&gt;Link&lt;/a&gt;
+	&lt;a class="disabled" href="#" tabindex="-1" aria-disabled="true"&gt;Disabled&lt;/a&gt;
+&lt;/bootstrap-tabs&gt;</pre>
+				</figure>
+
+				<h2>Fill and justify</h2>
+
+				<p>
+					Force your Tab contents to extend the full available width one of two modifier classes. To
+					proportionately fill all available space with your .nav-items, set the <b>fill</b> property. Notice
+					that all
+					horizontal space is occupied, but not every nav item has the same width.
+				</p>
+
+				<div class="bd-example">
+					<bootstrap-tabs tab-type="pills" fill>
+						<a class="active" href="#">Active</a>
+						<a href="#">Much longer nav link</a>
+						<a href="#">Link</a>
+						<a class="disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</bootstrap-tabs>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-tabs tab-type="pills" fill&gt;
+	&lt;a class="active" href="#"&gt;Active&lt;/a&gt;
+	&lt;a href="#"&gt;Link&lt;/a&gt;
+	&lt;a href="#"&gt;Link&lt;/a&gt;
+	&lt;a class="disabled" href="#" tabindex="-1" aria-disabled="true"&gt;Disabled&lt;/a&gt;
+&lt;/bootstrap-tabs&gt;</pre>
+				</figure>
+
+
+				<p>
+					For equal-width elements, set the <b>justified</b> property. All horizontal space will be occupied
+					by nav links,
+					but unlike the <b>fill</b> above, every nav item will be the same width.
+				</p>
+
+				<div class="bd-example">
+					<bootstrap-tabs tab-type="pills" justified>
+						<a class="active" href="#">Active</a>
+						<a href="#">Much longer nav link</a>
+						<a href="#">Link</a>
+						<a class="disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</bootstrap-tabs>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-tabs tab-type="pills" justified&gt;
+	&lt;a class="active" href="#"&gt;Active&lt;/a&gt;
+	&lt;a href="#"&gt;Link&lt;/a&gt;
+	&lt;a href="#"&gt;Link&lt;/a&gt;
+	&lt;a class="disabled" href="#" tabindex="-1" aria-disabled="true"&gt;Disabled&lt;/a&gt;
+&lt;/bootstrap-tabs&gt;</pre>
+				</figure>
+
+				<h2>Regarding accessibility</h2>
+
+				<p>
+					If you’re using navs to provide a navigation bar, be sure to add a role="navigation" to the element.
+
+					Note that navigation bars, even if visually styled as tabs with the <b>tabType="tabs"</b> property,
+					should not be given role="tablist", role="tab" or role="tabpanel" attributes. These are
+					only appropriate for dynamic tabbed interfaces, as described in the WAI ARIA Authoring
+					Practices. See JavaScript behavior for dynamic tabbed interfaces in this section for an
+					example.
+				</p>
+
+				<h2>Using dropdowns</h2>
+
+				<p>
+					Tabs with dropdowns
+				</p>
+
+				<div class="bd-example">
+					<bootstrap-tabs>
+						<a class="active" href="#">Active</a>
+						<bootstrap-drop-down label="Dropdown" label-type="a" style-mode="">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-drop-down>
+						<a href="#">Link</a>
+						<a class="disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</bootstrap-tabs>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-tabs&gt;
+	&lt;a class="active" href="#"&gt;Active&lt;/a&gt;
+	&lt;bootstrap-drop-down label="Dropdown" label-type="a" style-mode=""&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;
+		&lt;div class="dropdown-divider"&gt;&lt;/div&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Separated link&lt;/a&gt;
+	&lt;/bootstrap-drop-down&gt;
+	&lt;a href="#"&gt;Link&lt;/a&gt;
+	&lt;a class="disabled" href="#" tabindex="-1" aria-disabled="true"&gt;Disabled&lt;/a&gt;
+&lt;/bootstrap-tabs&gt;</pre>
+				</figure>
+
+				<p>
+					Pills with dropdowns
+				</p>
+
+				<div class="bd-example">
+					<bootstrap-tabs tab-type="pills">
+						<a class="active" href="#">Active</a>
+						<bootstrap-drop-down label="Dropdown" label-type="a" style-mode="">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Separated link</a>
+						</bootstrap-drop-down>
+						<a href="#">Link</a>
+						<a class="disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</bootstrap-tabs>
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-tabs tab-type="pills"&gt;
+	&lt;a class="active" href="#"&gt;Active&lt;/a&gt;
+	&lt;bootstrap-drop-down label="Dropdown" label-type="a" style-mode=""&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Action&lt;/a&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Another action&lt;/a&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Something else here&lt;/a&gt;
+		&lt;div class="dropdown-divider"&gt;&lt;/div&gt;
+		&lt;a class="dropdown-item" href="#"&gt;Separated link&lt;/a&gt;
+	&lt;/bootstrap-drop-down&gt;
+	&lt;a href="#"&gt;Link&lt;/a&gt;
+	&lt;a class="disabled" href="#" tabindex="-1" aria-disabled="true"&gt;Disabled&lt;/a&gt;
+&lt;/bootstrap-tabs&gt;</pre>
+				</figure>
+
+				<h2>Dynamic Tabs</h2>
+
+				<p>
+					Dynamic tabbed interfaces, as described in the WAI ARIA Authoring Practices, require role="tablist",
+					role="tab", role="tabpanel", and additional aria- attributes in order to convey their structure,
+					functionality and current state to users of assistive technologies (such as screen readers).
+
+					Note that dynamic tabbed interfaces should not contain dropdown menus, as this causes both usability
+					and accessibility issues. From a usability perspective, the fact that the currently displayed tab’s
+					trigger element is not immediately visible (as it’s inside the closed dropdown menu) can cause
+					confusion. From an accessibility point of view, there is currently no sensible way to map this sort
+					of construct to a standard WAI ARIA pattern, meaning that it cannot be easily made understandable to
+					users of assistive technologies.
+				</p>
+
+				<div class="bd-example">
+					<bootstrap-tabs role="tablist">
+						<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+							aria-controls="home" aria-selected="true">Home</a>
+						<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+							aria-controls="profile" aria-selected="false">Profile</a>
+						<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+							aria-controls="contact" aria-selected="false">Contact</a>
+					</bootstrap-tabs>
+					<div class="tab-content" id="myTabContent">
+						<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+							Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown
+							aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan
+							helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu
+							banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone.
+							Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
+						</div>
+						<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+							Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.
+							Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson
+							artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo
+							enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud
+							organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia
+							yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes
+							anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson
+							biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente
+							accusamus tattooed echo park.
+						</div>
+						<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+							Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's
+							organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify
+							pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy
+							hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred
+							pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie
+							etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl
+							craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.
+						</div>
+					</div>
+
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-tabs role="tablist"&gt;
+	&lt;a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+			aria-controls="home" aria-selected="true"&gt;Home&lt;/a&gt;
+	&lt;a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+		aria-controls="profile" aria-selected="false"&gt;Profile&lt;/a&gt;
+	&lt;a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+		aria-controls="contact" aria-selected="false"&gt;Contact&lt;/a&gt;
+&lt;/bootstrap-tabs&gt;
+&lt;div class="tab-content" id="myTabContent"&gt;
+	&lt;div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"&gt;
+		...
+	&lt;/div&gt;
+	&lt;div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"&gt;
+		...
+	&lt;/div&gt;
+	&lt;div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"&gt;
+		...
+	&lt;/div&gt;
+&lt;/div&gt;</pre>
+				</figure>
+
+				<p>Dynamic Tabs also works with pills:</p>
+
+				<div class="bd-example">
+					<bootstrap-tabs role="tablist" tab-type="pills">
+						<a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
+							aria-controls="pills-home" aria-selected="true">Home</a>
+						<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
+							aria-controls="pills-profile" aria-selected="false">Profile</a>
+						<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
+							aria-controls="pills-contact" aria-selected="false">Contact</a>
+					</bootstrap-tabs>
+					<div class="tab-content" id="pills-tabContent">
+						<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+							Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown
+							aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan
+							helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu
+							banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone.
+							Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
+						</div>
+						<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+							Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.
+							Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson
+							artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo
+							enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud
+							organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia
+							yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes
+							anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson
+							biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente
+							accusamus tattooed echo park.
+						</div>
+						<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+							Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's
+							organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify
+							pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy
+							hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred
+							pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie
+							etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl
+							craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.
+						</div>
+					</div>
+
+				</div>
+				<div class="bd-clipboard">
+					<div class="simple-tooltip">
+						<button type="button" class="btn-clipboard" onclick="onClick()" onmouseout="onMouseOut()">
+							<span class="tooltip-text">Copy to clipboard</span>Copy</button>
+					</div>
+				</div>
+				<figure class="highlight">
+					<pre class="prettyprint">
+&lt;bootstrap-tabs role="tablist" tab-type="pills"&gt;
+	&lt;a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
+			aria-controls="home" aria-selected="true"&gt;Home&lt;/a&gt;
+	&lt;a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
+		aria-controls="profile" aria-selected="false"&gt;Profile&lt;/a&gt;
+	&lt;a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
+		aria-controls="contact" aria-selected="false"&gt;Contact&lt;/a&gt;
+&lt;/bootstrap-tabs&gt;
+&lt;div class="tab-content" id="myTabContent"&gt;
+	&lt;div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"&gt;
+		...
+	&lt;/div&gt;
+	&lt;div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"&gt;
+		...
+	&lt;/div&gt;
+	&lt;div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"&gt;
+		...
+	&lt;/div&gt;
+&lt;/div&gt;</pre>
+			</figure>
+
 		</section>
 		<section></section>
 	</div>

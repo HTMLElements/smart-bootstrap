@@ -62,4 +62,6 @@ window.onload = function () {
             }
         }
     });
+
+    document.getElementById('indeterminateCheckbox').indeterminate = true;
 }
