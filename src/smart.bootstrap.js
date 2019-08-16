@@ -267,6 +267,15 @@ Smart('bootstrap-drop-down', class DropDown extends Smart.ContentElement {
 				value: '',
 				type: 'string'
 			},
+			'labelType': {
+				allowedValues: ['a', 'button'],
+				value: 'button',
+				type: 'string'
+			},
+			'href': {
+				value: '#',
+				type: 'string'
+			},
 			'opened': {
 				value: false,
 				type: 'boolean'
@@ -300,7 +309,7 @@ Smart('bootstrap-drop-down', class DropDown extends Smart.ContentElement {
 			'document.click': '_clearMenus',
 			'document.keyup': '_clearMenus',
 			'button.keydown': '_dataApiKeydownHandler',
-			'button.click': '_clickHandler',
+			'container.click': '_clickHandler',
 			'dropDownContainer.click': '_clickHandler',
 			'keydown': '_dataApiKeydownHandler'
 		};
@@ -351,6 +360,21 @@ Smart('bootstrap-drop-down', class DropDown extends Smart.ContentElement {
 		else if (propertyName === 'opened') {
 			newValue ? that.show() : that.hide();
 		}
+		else if (propertyName === 'labelType') {
+			that.$.button.outerHTML = that.$.button.outerHTML.replace('<' + oldValue + ' ', '<' + newValue + ' ').replace('</' + oldValue + '>', '</' + newValue + '>');
+			that.$.button = that.querySelector('[smart-id="button"]');
+
+			if (newValue === 'a') {
+				that.$.button.setAttribute('href', that.href);
+			}
+			else {
+				that.$.button.classList.add('btn');
+				that.$.button.removeAttribute('href');
+			}
+		}
+		else if (propertyName === 'href' && that.labelType === 'a') {
+			that.$.button.setAttribute('href', newValue);
+		}
 	}
 
 	/** CheckBox's template. */
@@ -371,6 +395,13 @@ Smart('bootstrap-drop-down', class DropDown extends Smart.ContentElement {
 		that.ARROW_DOWN_KEYCODE = 40; // KeyboardEvent.which value for down arrow key
 		that.RIGHT_MOUSE_BUTTON_WHICH = 3; // MouseEvent.which value for the right button (assuming a right-handed mouse)
 		that.REGEXP_KEYDOWN = new RegExp(`${that.ARROW_UP_KEYCODE}|${that.ARROW_DOWN_KEYCODE}|${that.ESCAPE_KEYCODE}`);
+
+		if (that.labelType === 'a') {
+			that.$.button.outerHTML = that.$.button.outerHTML.replace('<button ', '<a ').replace('</button>', '</a>');
+			that.$.button = that.querySelector('[smart-id="button"]');
+			that.$.button.setAttribute('href', that.href);
+			that.$.button.classList.remove('btn');
+		}
 
 		if (!that.dropDownAppendTo) {
 			that.dropDownAppendTo = that.$.container;
@@ -579,10 +610,12 @@ Smart('bootstrap-drop-down', class DropDown extends Smart.ContentElement {
 	}
 
 	_clickHandler(event) {
-		event.preventDefault();
 		event.stopPropagation();
 
-		this.toggle();
+		if (event.target.closest('.dropdown-menu') || event.target.closest('.dropdown-toggle')) {
+			event.preventDefault();
+			this.toggle();
+		}
 	}
 
 	_getParentFromElement(element) {
@@ -878,32 +911,36 @@ Smart('bootstrap-modal', class Modal extends Smart.ContentElement {
 	// Element's properties.
 	static get properties() {
 		return {
-			'placeholder': {
+			'sizeMode': {
 				value: '',
-				type: 'string'
-			},
-			'styleMode': {
-				value: '',
+				allowedValue: ['sm', '', 'lg', 'xl'],
 				type: 'string'
 			},
 			'scrollable': {
 				value: false,
 				type: 'boolean'
 			},
-			'sizeMode': {
-				value: '',
-				allowedValue: ['lg', 'sm', ''],
-				type: 'string'
-			},
-			'tabindex': {
-				value: -1,
-				type: 'number'
+			'focus': {
+				value: true,
+				type: 'boolean'
 			},
 			'centered': {
 				value: false,
 				type: 'boolean'
+			},
+			'opened': {
+				value: false,
+				type: 'boolean'
+			},
+			'backdrop': {
+				allowedValues: ['static', 'default', 'none'],
+				value: 'default',
+				type: 'string'
+			},
+			'keyboard': {
+				value: true,
+				type: 'boolean'
 			}
-
 		};
 	}
 
@@ -912,8 +949,6 @@ Smart('bootstrap-modal', class Modal extends Smart.ContentElement {
 	*/
 	static get listeners() {
 		return {
-			'up': '_upHandler',
-			'dialog.down': '_dialogDownHandler',
 			'keydown': '_keydownHandler',
 			'click': '_clickHandler'
 		};
@@ -936,11 +971,15 @@ Smart('bootstrap-modal', class Modal extends Smart.ContentElement {
 	propertyChangedHandler(propertyName, oldValue, newValue) {
 		const that = this;
 
-		if(propertyName === 'tabindex') {
-			that.setAttribute('tabindex', newValue);
+		if (propertyName === 'focus') {
+			newValue ? that.setAttribute('tabindex', -1) : that.removeAttribute('tabindex');
 		}
-		else if(propertyName === 'scrollable' || propertyName === 'centered') {
+		else if (propertyName === 'scrollable' || propertyName === 'centered') {
 			that.$.dialog.classList[newValue ? 'add' : 'remove']('modal-dialog-' + propertyName);
+		}
+		else if (propertyName === 'sizeMode') {
+			that.$.dialog.classList.remove('modal-' + oldValue);
+			that.$.dialog.classList.add('modal-' + newValue);
 		}
 	}
 
@@ -950,17 +989,30 @@ Smart('bootstrap-modal', class Modal extends Smart.ContentElement {
 		that.classList.add('modal');
 		that.$.dialog.classList[that.scrollable ? 'add' : 'remove']('modal-dialog-scrollable');
 		that.$.dialog.classList[that.centered ? 'add' : 'remove']('modal-dialog-centered');
+
+		if (that.sizeMode !== '') {
+			that.$.dialog.classList.add('modal-' + that.sizeMode);
+		}
+
+		if (that.opened) {
+			that.show(true);
+		}
+
 		that.setAttribute('tabindex', that.tabindex);
+	}
+
+	handleUpdate() {
+		this._adjustDialog()
 	}
 
 	toggle() {
 		return this.opened ? this.hide() : this.show();
 	}
 
-	show() {
+	show(initialization) {
 		const that = this;
 
-		if (that.opened || that._isTransitioning) {
+		if ((!initialization && that.opened) || that._isTransitioning) {
 			return;
 		}
 
@@ -1030,36 +1082,9 @@ Smart('bootstrap-modal', class Modal extends Smart.ContentElement {
 		if (that.parentElement) {
 			that.parentElement.removeChild(that);
 		}
-	}
 
-	// _transitionendHandler(event) {
-	// 	const that = this;
-
-	// 	this._isTransitioning = false;
-
-	// 	if (that.opened) {
-	// 		this._element.focus();
-	// 		that.$.fireEvent('shown')
-	// 	}
-	// 	else {
-	// 		that._hideModal(event);
-	// 	}
-	// }
-
-	_dialogDownHandler(event) {
-		this._dialogDown = true;
-	}
-
-	_upHandler() {
-		const that = this;
-
-		event.stopPropagation();
-
-		if (that._dialogDown && event.target === that) {
-			this._ignoreBackdropClick = true;
-		}
-
-		delete that._dialogDown;
+		window.removeEventListener('resize', that._windowResizeHandler);
+		document.removeEventListener('focusin', that._forceFocusHandler);// Guard against infinite focus loop
 	}
 
 	_hideModal() {
@@ -1106,9 +1131,7 @@ Smart('bootstrap-modal', class Modal extends Smart.ContentElement {
 	}
 
 	_keydownHandler(event) {
-		const that = this;
-
-		if (event.which === 27) {
+		if (event.which === 27 && this.keyboard) {
 			event.preventDefault()
 			this.hide()
 		}
@@ -1128,6 +1151,11 @@ Smart('bootstrap-modal', class Modal extends Smart.ContentElement {
 		}
 		if (event.target !== event.currentTarget) {
 			return
+		}
+
+		if (that.backdrop === 'static') {
+			that.focus();
+			return;
 		}
 
 		that.hide()
@@ -1197,15 +1225,18 @@ Smart('bootstrap-modal', class Modal extends Smart.ContentElement {
 		}
 	}
 
+	_windowResizeHandler() {
+		this._adjustDialog();
+	}
+
 	_setResizeEvent() {
-		const that = this,
-			resizeHanler = (event) => that._adjustDialog();
+		const that = this;
 
 		if (that.opened) {
-			window.addEventListener('resize', resizeHanler);
+			window.addEventListener('resize', that._windowResizeHandler);
 		}
 		else {
-			window.removeEventListener('resize', resizeHanler);
+			window.removeEventListener('resize', that._windowResizeHandler);
 		}
 	}
 
@@ -1245,28 +1276,30 @@ Smart('bootstrap-modal', class Modal extends Smart.ContentElement {
 		}
 		else {
 			transitionComplete()
-			// that._transitionendHandler()
+		}
+	}
+
+	_forceFocusHandler(event) {
+		const that = this;
+
+		if (document !== event.target && that !== event.target && !that.contains(event.target)) {
+			event.preventDefault();
+			that.hide();
 		}
 	}
 
 	_enforceFocus() {
-		const that = this,
-			focusInHandler = function () {
-				if (document !== event.target && that !== event.target && !that.contains(event.target)) {
-					event.preventDefault();
-					that.hide();
-				}
-			}
+		const that = this;
 
-		document.removeEventListener('focusin', focusInHandler);// Guard against infinite focus loop
-		document.addEventListener('focusin', focusInHandler);
+		document.removeEventListener('focusin', that._forceFocusHandler);// Guard against infinite focus loop
+		document.addEventListener('focusin', that._forceFocusHandler);
 	}
 
 	_showBackdrop(callback) {
 		const that = this;
 		const animate = that.classList.contains('fade');
 
-		if (that.opened) {
+		if (that.opened && that.backdrop !== 'none') {
 			if (!that._backdrop) {
 				that._backdrop = document.createElement('div')
 				that._backdrop.className = 'modal-backdrop';
@@ -1322,5 +1355,352 @@ Smart('bootstrap-modal', class Modal extends Smart.ContentElement {
 			callback()
 		}
 	}
+});
 
+Smart('bootstrap-tabs', class Tabs extends Smart.ContentElement {
+	// Element's properties.
+	static get properties() {
+		return {
+			'sizeMode': {
+				value: '',
+				allowedValue: ['sm', '', 'lg', 'xl'],
+				type: 'string'
+			},
+			'tabType': {
+				value: 'tabs',
+				allowedValue: ['tabs', 'nav', 'pills'],
+				type: 'string'
+			},
+			'listType': {
+				value: 'ul',
+				allowedValue: ['ul', 'ol', 'nav'],
+				type: 'string'
+			},
+			'alignment': {
+				value: '',
+				allowedValue: ['', 'center', 'end', 'vertical'],
+				type: 'string'
+			},
+			'fill': {
+				value: false,
+				type: 'boolean'
+			},
+			'justified': {
+				value: false,
+				type: 'boolean'
+			}
+		};
+	}
+
+	/**
+	* Element's Event Listeners
+	*/
+	static get listeners() {
+		return {
+			'click': '_clickHandler'
+		};
+	}
+
+	/** Button's template. */
+	template() {
+		return '<div id="container"><content></content></div>';
+	}
+
+	ready() {
+		const that = this;
+
+		that.render();
+
+		if (!that._list) {
+			return;
+		}
+
+		if (that.alignment && that._list) {
+			that._list.classList.add(that.alignment === 'vertical' ? 'flex-column' : 'justify-content-' + that.alignment);
+		}
+
+		if (that.tabType !== 'nav') {
+			that._list.classList.add('nav-' + that.tabType);
+		}
+
+		if (that.fill) {
+			that._list.classList.add('nav-fill');
+		}
+
+		if (that.justified) {
+			that._list.classList.add('nav-justified');
+		}
+	}
+
+	appendChild(node) {
+		const that = this;
+
+		if (!that.isCompleted) {
+			const args = Array.prototype.slice.call(arguments, 2);
+			return HTMLElement.prototype.appendChild.apply(that, args.concat(Array.prototype.slice.call(arguments)));
+		}
+
+		if (node) {
+			that.$.container.appendChild(node);
+		}
+	}
+
+	removeChild(node) {
+		const that = this;
+
+		if (!that.isCompleted) {
+			const args = Array.prototype.slice.call(arguments, 2);
+			return HTMLElement.prototype.removeChild.apply(that, args.concat(Array.prototype.slice.call(arguments)));
+		}
+
+		if (!node) {
+			that.$.container.removeChild(node);
+		}
+	}
+
+	insertBefore(newNode, referenceNode) {
+		const that = this;
+
+		if (!that.isCompleted) {
+			const args = Array.prototype.slice.call(arguments, 2);
+			return HTMLElement.prototype.insertBefore.apply(that, args.concat(Array.prototype.slice.call(arguments)));
+		}
+
+		if (newNode) {
+			that.$.container.insertBefore(newNode, referenceNode);
+		}
+	}
+
+	propertyChangedHandler(propertyName, oldValue, newValue) {
+		const that = this;
+
+		if (propertyName === 'listType') {
+			const listItems = that.querySelectorAll('.nav-link');
+
+			that.$.container.innerHTML = '';
+
+			for (let i = 0; i < listItems.length; i++) {
+				that.appendChild(listItems[i]);
+			}
+
+			that.render();
+		}
+
+		if (!that._list) {
+			return;
+		}
+
+		if (propertyName === 'alignment') {
+			that._list.classList.remove(newValue === 'vertical' ? 'flex-column' : 'justify-content-' + oldValue);
+
+			if (newValue) {
+				that._list.classList.add(newValue === 'vertical' ? 'flex-column' : 'justify-content-' + newValue);
+			}
+		}
+		else if (propertyName === 'tabType') {
+			that._list.classList.remove('nav-' + oldValue);
+
+			if (newValue !== 'nav') {
+				that._list.classList.add('nav-' + newValue);
+			}
+		}
+		else if (propertyName === 'fill' || propertyName === 'justified') {
+			that._list.classList[newValue ? 'add' : 'remove']('nav-' + propertyName);
+		}
+	}
+
+	render() {
+		const that = this,
+			container = that.$.container,
+			fragment = document.createDocumentFragment();
+
+		while (container.firstElementChild) {
+			const navLink = container.firstElementChild;
+
+			if (navLink) {
+				if (navLink instanceof Smart.DropDown) {
+					navLink.querySelector('.dropdown-toggle').classList.add('nav-link');
+				}
+				else {
+					navLink.classList.add('nav-link');
+				}
+
+				fragment.appendChild(navLink);
+			}
+		}
+
+		that.$.container.innerHTML = '';
+
+		if (!fragment.children.length) {
+			return;
+		}
+
+		const list = document.createElement(that.listType);
+
+		that._list = list;
+
+		list.classList.add('nav');
+
+		if (that.listType === 'nav') {
+			while (fragment.firstElementChild) {
+				if (fragment.firstElementChild.classList.contains('tab-content')) {
+					that.$.container.appendChild(fragment.firstElementChild);
+					continue;
+				}
+
+				list.appendChild(fragment.firstElementChild);
+			}
+		}
+		else {
+			while (fragment.firstElementChild) {
+				if (fragment.firstElementChild.classList.contains('tab-content')) {
+					that.$.container.appendChild(fragment.firstElementChild);
+					continue;
+				}
+
+				const listItem = document.createElement('li');
+
+				listItem.classList.add('nav-item');
+				listItem.appendChild(fragment.firstElementChild);
+
+				list.appendChild(listItem);
+			}
+		}
+
+		that.$.container.insertBefore(list, that.$.container.lastElementChild);
+	}
+
+	_getSelectorFromElement(element) {
+		let selector = element.getAttribute('data-target')
+
+		if (!selector || selector === '#') {
+			const hrefAttr = element.getAttribute('href');
+
+			selector = hrefAttr && hrefAttr !== '#' ? hrefAttr.trim() : '';
+		}
+
+		return document.querySelector(selector);
+	}
+
+	// Public
+
+	show(item) {
+		const that = this;
+
+		if (that.disabled) {
+			return
+		}
+
+		const items = Array.from(that.getElementsByClassName('nav-link')),
+			activeItem = items.find(item => item.classList.contains('active')),
+			selector = that._getSelectorFromElement(item);
+
+		if (!item || !item.classList.contains('nav-link') || item === activeItem) {
+			return;
+		}
+
+		that.$.fireEvent('show', { relatedTarget: activeItem, target: item });
+
+		const isDefaultPrevented = that.$.fireEvent('show', { relatedTarget: activeItem, target: item }).defaultPrevented;
+
+		if (isDefaultPrevented) {
+			return
+		}
+
+		that._activate(item, that);
+
+		const complete = () => {
+			that.$.fireEvent('shown', { relatedTarget: activeItem, target: item });
+		}
+
+		if (selector) {
+			that._activate(selector, selector.parentElement, complete)
+		}
+		else {
+			complete()
+		}
+	}
+
+	dispose() {
+		const that = this;
+
+		if (that.parentElement) {
+			that.parentElement.removeChild(that);
+		}
+	}
+
+	// Private
+
+	_activate(item, container, callback) {
+		const active = container && container.querySelector('.active'),
+			complete = () => this._transitionComplete(item, active, callback);
+
+		if (callback && active && active.classList.contains('fade')) {
+			active.classList.remove('show');
+			active.addEventListener('transitionend', complete, { once: true });
+		}
+		else {
+			complete()
+		}
+	}
+
+	_transitionComplete(element, active, callback) {
+		if (active) {
+			active.classList.remove('active');
+
+			const dropdownChild = active.parentElement.querySelector('.dropdown-menu .active');
+
+			if (dropdownChild) {
+				dropdownChild.classList.remove('active');
+			}
+
+			if (active.getAttribute('role') === 'tab') {
+				active.setAttribute('aria-selected', false)
+			}
+		}
+
+		element.classList.add('active');
+
+		if (element.getAttribute('role') === 'tab') {
+			element.setAttribute('aria-selected', true)
+		}
+
+		//Causes reflow
+		element.offsetHeight;
+
+		if (element.classList.contains('fade')) {
+			element.classList.add('show')
+		}
+
+		if (element.parentElement && element.parentElement.classList.contains('dropdown-menu')) {
+			const dropdownElement = element.closest('.dropdown');
+
+			if (dropdownElement) {
+				const dropdownToggle = dropdownElement.querySelector('.dropdown-toggle');
+
+				dropdownToggle.classList.add('active');
+			}
+
+			element.setAttribute('aria-expanded', true);
+		}
+
+		if (callback) {
+			callback()
+		}
+	}
+
+	_clickHandler(event) {
+		const that = this;
+
+		if (that.disabled) {
+			return;
+		}
+
+		const target = event.target;
+
+		//[data-toggle="tab"], [data-toggle="pill"], [data-toggle="list"]
+		if (['tab', 'pill', 'list'].indexOf(target.getAttribute('data-toggle')) > -1) {
+			that.show(target);
+		}
+	}
 });
