@@ -352,3 +352,18 @@ nav li a {
 .bd-example-tabs .nav-tabs {
   margin-bottom: 1rem;
 }
+
+/* Forms */
+.bd-example>.form-control+.form-control {
+	margin-top: .5rem;
+}
+
+/* Example tabbable tabs */
+
+.bd-example-tabs .nav-tabs {
+	margin-bottom: 1rem;
+}
+
+#pills-tabContent {
+	margin-top : 1rem;
+}
