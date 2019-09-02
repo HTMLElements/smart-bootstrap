@@ -3,8 +3,11 @@
 [Installation ↗](https://www.npmjs.com/package/smart-bootstrap)
 
 The package extends Bootstrap by adding Material Design and CSS3 Variables for Styling. 
+
 The Boostrap components are rewritten from scratch and are built as Web Components by using the ```Smart Framework```.
+
 The Bootstrap SCSS is rewritten with CSS3 Variables and Material Design is added. 
+
 
 ![Material Design Bootstrap](https://github.com/HTMLElements/MBWC-Toolkit/blob/master/images/bootstrap.png)
 
