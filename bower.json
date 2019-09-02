@@ -1,9 +1,9 @@
 {
-  "name": "boostrap-web-components",
+  "name": "smart-bootstrap",
   "authors": [
     "jQWidgets Ltd"
   ],
-  "description": "Free Boostrap Web Components",
+  "description": "Material Design Boostrap Web Components by Smart HTML Elements | FREE",
   "license": "Apache-2.0",
   "keywords": [
     "bootstrap web components",
@@ -12,6 +12,8 @@
     "javascript bootstrap",
     "bootstrap custom element",
     "bootstrap user interface",
+	"bootstrap modal",
+	"material bootstrap",
     "bootstrap tabs",
     "bootstrap"
   ],
@@ -23,7 +25,6 @@
     "**/tests"
   ],
   "dependencies": {
-    "webcomponentsjs": "^1.0.0",
-    "smart-core": "HTMLElements/smart-core"
+    
   }
 }

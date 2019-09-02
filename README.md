@@ -1,25 +1,18 @@
-# [Bootstrap Web Components](https://www.htmlelements.com)[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Get%20over%2020%20free%20custom%20elements%20based%20on%20SmartHTMLElements%20&url=https://www.htmlelements.com/&via=htmlelements&hashtags=bootstrap,design,templates,autocomplete,bootstrap-components,typeahead,developers,webcomponents,customelements,polymer,material)
+# [Material Design Bootstrap Web Components](https://www.htmlelements.com)[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Get%20over%2020%20free%20custom%20elements%20based%20on%20SmartHTMLElements%20&url=https://www.htmlelements.com/&via=htmlelements&hashtags=bootstrap,design,templates,autocomplete,bootstrap-components,typeahead,developers,webcomponents,customelements,polymer,material)
 
+# &lt;Material Design Bootstrap Web Components&gt;
 
-&nbsp;
-[![Price](https://img.shields.io/badge/price-FREE-0098f7.svg)](https://github.com/HTMLElements/Bootstrap-Web-Components/blob/master/LICENSE)
-[![npm](https://img.shields.io/npm/v/bootstrap-webcomponents.svg?style=flat)](https://www.npmjs.com/package/bootstrap-webcomponents)
-[![GitHub package version](https://img.shields.io/github/package-json/v/HTMLElements/Bootstrap-Web-Components.svg)](https://github.com/HTMLElements/Bootstrap-Web-Components)
-[![License: APACHE](https://img.shields.io/badge/license-APACHE-blue.svg)](https://github.com/HTMLElements/Bootstrap-Web-Components/blob/master/LICENSE)
-[![](https://img.shields.io/website-up-down-green-red/https/shields.io.svg?label=www.htmlelements.com)](https://www.htmlelements.com)
-[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/htmlelements/bootstrap-webcomponents)
+[Installation ↗](https://www.npmjs.com/package/smart-bootstrap)
 
-# &lt;Bootstrap Web Components&gt;
-
-[Installation ↗](https://www.npmjs.com/package/bootstrap-webcomponents)
-
-The package contains a set of Free Custom Elements based on the popular Boostrap library. 
+The package extends Bootstrap by adding Material Design and CSS3 Variables for Styling. 
+The Boostrap components are rewritten from scratch and are built as Web Components by using the ```Smart Framework```.
+The Bootstrap SCSS is rewritten with CSS3 Variables and Material Design is added. 
 
 [Demo ↗](https://www.htmlelements.com/demos/bootstrap/)
 
 
 ```html
-Bootstrap Buttons
+Material Design Bootstrap Buttons
 <bootstrap-button style-mode="primary">Primary</bootstrap-button>
 <bootstrap-button style-mode="secondary">Secondary</bootstrap-button>
 <bootstrap-button style-mode="success">Success</bootstrap-button>
@@ -32,20 +25,20 @@ Bootstrap Buttons
 ```
 
 ```html
-Bootstrap CheckBox
+Material Design Bootstrap CheckBox
 <bootstrap-check-box checked>Checked</bootstrap-check-box>
 <bootstrap-check-box>Unchecked</bootstrap-check-box>
 ```
 
 ```html
-Bootstrap RadioButton
+Material Design Bootstrap RadioButton
 <bootstrap-radio-button checked> Active</bootstrap-radio-button>
 <bootstrap-radio-button>Radio</bootstrap-radio-button>
 <bootstrap-radio-button>Radio</bootstrap-radio-button>
 ```
 
 ```html
-Bootstrap DropDown
+Material Design Bootstrap DropDown
 <bootstrap-drop-down label="Dropdown button">
 	<a class="dropdown-item" href="#">Action</a>
 	<a class="dropdown-item" href="#">Another action</a>
@@ -63,7 +56,7 @@ Bootstrap Split Buttons
 ```
 
 ```html
-Bootstrap Input Groups
+Material Design Bootstrap Input Groups
 <bootstrap-input-group class="mb-3">
 	<span class="input-group-text" id="basic-addon1">@</span>
 	<input type="text" class="form-control" placeholder="Username" aria-label="Username"
@@ -90,7 +83,7 @@ Bootstrap Input Groups
 ```
 
 ```html
-Bootstrap Modals
+Material Design Bootstrap Modals
 <bootstrap-modal id="exampleModalLive" class="fade">
 	<div class="modal-header">
 		<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
@@ -107,45 +100,47 @@ Bootstrap Modals
 	</div>
 </bootstrap-modal>
 ```
-[<img src="https://raw.githubusercontent.com/htmlelements/Bootstrap-Web-Components/master/Bootstrap.png" alt="Screenshot of Bootstrap, Elements">](https://htmlelements.com/demos/)
 
+```html 
+Material Design Tabs
+<bootstrap-tabs style-mode="warning" role="tablist">
+	<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home13" role="tab"
+		aria-controls="home13" aria-selected="true">Home</a>
+	<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile13" role="tab"
+		aria-controls="profile13" aria-selected="false">Profile</a>
+	<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact13" role="tab"
+		aria-controls="contact13" aria-selected="false">Contact</a>
+</bootstrap-tabs>
+<div class="tab-content" id="myTabContent">
+	<div class="tab-pane fade show active" id="home13" role="tabpanel" aria-labelledby="home-tab">
+		Content 1
+	</div>
+	<div class="tab-pane fade" id="profile13" role="tabpanel" aria-labelledby="profile-tab">
+		Content 2
+	</div>
+	<div class="tab-pane fade" id="contact13" role="tabpanel" aria-labelledby="contact-tab">
+		Content 3
+	</div>
+</div>
+```
 
-## The file structure for Smart HTML Elements
+```html
+Material Design Inputs
+<bootstrap-input placeholder="Primary" style-mode="primary"></bootstrap-input>
+```
+
+```html
+Material Design TextArea
+<bootstrap-textarea placeholder="Primary" style-mode="primary"></bootstrap-textarea>
+```
+
+## The file structure
 
 - `src/`
 
   Javascript files.
 
 - `src/styles/`
-
-  Component CSS Files.
-
-- `example/`
-
-  Example files
-
-## Running demos in browser
-
-1. Fork the repository and clone it locally.
-
-1. Make sure you have [npm](https://www.npmjs.com/) installed.
-
-1. When in the directory, run `npm install` 
-
-1. Run a localhost or upload the demo on a web server. Then run:
-
-  - /example/
-
-
-## Following the coding style
-
-We are using [ESLint](http://eslint.org/) for linting JavaScript code. 
-
-## Creating a pull request
-
-  - Make sure your code is compliant with ESLint
-  - [Submit a pull request](https://www.digitalocean.com/community/tutorials/how-to-create-a-pull-request-on-github) with detailed title and description
-  - Wait for response from one of our team members
 
 
 ## License
