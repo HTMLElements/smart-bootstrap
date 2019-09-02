@@ -1,6 +1,6 @@
 {
-  "name": "smart-bootstrap",
-  "version": 4.4.0",
+  "name": "@smarthtmlelements/smart-bootstrap",
+  "version": "4.4.2",
   "description": "Material Design Bootstrap Web Components with CSS3 Variables",
   "main": "index.js",
   "scripts": {
@@ -8,16 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HTMLElements/smart-core.git"
+    "url": "git+https://github.com/HTMLElements/smart-bootstrap.git"
   },
-  "dependencies": {
-  },
-  "author": "",
-  "license": "https://github.com/HTMLElements/MBWC-Toolkit/blob/master/LICENSE",
+  "dependencies": {},
+  "author": "jQWidgets LTD",
+  "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/HTMLElements/https://github.com/HTMLElements/MBWC-Toolkit/issues"
+    "url": "https://github.com/HTMLElements/smart-bootstrap/issues"
   },
-  "homepage": "https://github.com/HTMLElements/https://github.com/HTMLElements/MBWC-Toolkit#readme",
+  "homepage": "https://github.com/HTMLElements/smart-bootstrap#readme",
   "keywords": [
     "input",
     "element",
@@ -26,11 +25,11 @@
     "bootstrap dropdown",
     "bootstrap button",
     "bootstrap input",
-	"bootstrap tabs",
-	"bootstrap modal",
-	"material bootstrap",
-	"mdbootstrap",
-	"bootstrap input group",
+    "bootstrap tabs",
+    "bootstrap modal",
+    "material bootstrap",
+    "mdbootstrap",
+    "bootstrap input group",
     "input web component",
     "datainput web component",
     "input component",
