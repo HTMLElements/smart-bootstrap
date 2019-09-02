@@ -3,7 +3,7 @@
 ## Installation
 
 ```javascript
-npm install @smarthtmlelemnets/smart-core
+npm install @smarthtmlelemnets/smart-bootstrap
 ```
 
 ## CSS
