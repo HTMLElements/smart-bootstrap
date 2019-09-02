@@ -8,7 +8,7 @@ npm install @smarthtmlelemnets/smart-bootstrap
 
 ## CSS
 
-Copy-paste the stylesheet <link> into your <head> before all other stylesheets to load our CSS.
+Copy-paste the stylesheet <link> into your <head> before all othernpm stylesheets to load our CSS.
 
 ```html
 <link rel="stylesheet" href="src/styles/smart.bootstrap.css">
@@ -45,13 +45,13 @@ The Bootstrap SCSS is rewritten with CSS3 Variables and Material Design is added
 
 ## Components
 
-![Material Design Bootstrap](https://github.com/HTMLElements/MBWC-Toolkit/blob/master/images/bootstrap.png)
+![Material Design Bootstrap](https://raw.githubusercontent.com/htmlelements/smart-bootstrap/master/images/bootstrap.png)
 
 [Demo ↗](https://www.htmlelements.com/demos/bootstrap/)
 
 Material Design Bootstrap Button Web Component
 
-![Material Design Buttons](https://github.com/HTMLElements/MBWC-Toolkit/blob/master/images/bootstrap-buttons.png)
+![Material Design Buttons](https://raw.githubusercontent.com/htmlelements/smart-bootstrap/master/images/bootstrap-buttons.png)
 
 ```html
 <bootstrap-button style-mode="primary">Primary</bootstrap-button>
@@ -67,7 +67,7 @@ Material Design Bootstrap Button Web Component
 
 Material Design Bootstrap CheckBox Web Component
 
-![Material Design Forms](https://github.com/HTMLElements/MBWC-Toolkit/blob/master/images/bootstrap-forms.png)
+![Material Design Forms](https://raw.githubusercontent.com/htmlelements/smart-bootstrap/master/images/bootstrap-forms.png)
 
 ```html
 <bootstrap-check-box checked>Checked</bootstrap-check-box>
@@ -84,7 +84,7 @@ Material Design Bootstrap Radio Button Web Component
 
 Material Design Bootstrap DropDown Web Component
 
-![Material Design Dropdown](https://github.com/HTMLElements/MBWC-Toolkit/blob/master/images/bootstrap-dropdown.png)
+![Material Design Dropdown](https://raw.githubusercontent.com/htmlelements/smart-bootstrap/master/images/bootstrap-dropdown.png)
 
 ```html
 <bootstrap-drop-down label="Dropdown button">
@@ -106,7 +106,7 @@ Material Design Bootstrap Split Button Web Component
 
 Material Design Bootstrap Input Group Web Component
 
-![Material Design Bootstrap InputGroup](https://github.com/HTMLElements/MBWC-Toolkit/blob/master/images/bootstrap-inputgroup.png)
+![Material Design Bootstrap InputGroup](https://raw.githubusercontent.com/htmlelements/smart-bootstrap/master/images/bootstrap-inputgroup.png)
 
 ```html
 <bootstrap-input-group class="mb-3">
@@ -136,7 +136,7 @@ Material Design Bootstrap Input Group Web Component
 
 Material Design Bootstrap Modal Web Component
 
-![Material Design Bootstrap Modal](https://github.com/HTMLElements/MBWC-Toolkit/blob/master/images/bootstrap-modal.png)
+![Material Design Bootstrap Modal](https://raw.githubusercontent.com/htmlelements/smart-bootstrap/master/images/bootstrap-modal.png)
 
 ```html
 <bootstrap-modal id="exampleModalLive" class="fade">
@@ -158,7 +158,7 @@ Material Design Bootstrap Modal Web Component
 
 Material Design Bootstrap Tabs Web Component
 
-![Material Design Bootstrap abs](https://github.com/HTMLElements/MBWC-Toolkit/blob/master/images/bootstrap-tabs.png)
+![Material Design Bootstrap abs](https://raw.githubusercontent.com/htmlelements/smart-bootstrap/master/images/bootstrap-tabs.png)
 
 ```html 
 <bootstrap-tabs style-mode="warning" role="tablist">
@@ -184,7 +184,7 @@ Material Design Bootstrap Tabs Web Component
 
 Material Design Bootstrap Input Web Component
 
-![Material Design Bootstrap input](https://github.com/HTMLElements/MBWC-Toolkit/blob/master/images/bootstrap-input.png)
+![Material Design Bootstrap input](https://raw.githubusercontent.com/htmlelements/smart-bootstrap/master/images/bootstrap-input.png)
 
 ```html
 <bootstrap-input placeholder="Primary" style-mode="primary"></bootstrap-input>
@@ -192,7 +192,7 @@ Material Design Bootstrap Input Web Component
 
 Material Design Bootstrap TextArea Web Component
 
-![Material Design Bootstrap Textarea](https://github.com/HTMLElements/MBWC-Toolkit/blob/master/images/bootstrap-textarea.png)
+![Material Design Bootstrap Textarea](https://raw.githubusercontent.com/htmlelements/smart-bootstrap/master/images/bootstrap-textarea.png)
 
 ```html
 <bootstrap-textarea placeholder="Primary" style-mode="primary"></bootstrap-textarea>
@@ -200,7 +200,7 @@ Material Design Bootstrap TextArea Web Component
 
 Material Design Bootstrap Range Web Component
 
-![Material Design Bootstrap Range](https://github.com/HTMLElements/MBWC-Toolkit/blob/master/images/bootstrap-range.png)
+![Material Design Bootstrap Range](https://raw.githubusercontent.com/htmlelements/smart-bootstrap/master/images/bootstrap-range.png)
 
 ```html
 <bootstrap-range></bootstrap-range>
@@ -208,7 +208,7 @@ Material Design Bootstrap Range Web Component
 
 Material Design Progress Web Component
 
-![Material Design Bootstrap Progress](https://github.com/HTMLElements/MBWC-Toolkit/blob/master/images/bootstrap-forms-2.png)
+![Material Design Bootstrap Progress](https://raw.githubusercontent.com/htmlelements/smart-bootstrap/master/images/bootstrap-forms-2.png)
 
 ```html
 <bootstrap-progress></bootstrap-progress>
@@ -221,7 +221,7 @@ Material Design Circular Progress Web Component
 
 Material Design File Input Web Component
 
-![Material Design Bootstrap File Input](https://github.com/HTMLElements/MBWC-Toolkit/blob/master/images/bootstrap-fileinput.png)
+![Material Design Bootstrap File Input](https://raw.githubusercontent.com/htmlelements/smart-bootstrap/master/images/bootstrap-fileinput.png)
 
 ```html
 <bootstrap-file-input></bootstrap-file-input>
@@ -229,7 +229,7 @@ Material Design File Input Web Component
 
 Material Design Bootstrap Switch Button Web Component
 
-![Material Design Bootstrap Switch Button](https://github.com/HTMLElements/MBWC-Toolkit/blob/master/images/bootstrap-switch.png)
+![Material Design Bootstrap Switch Button](https://raw.githubusercontent.com/htmlelements/smart-bootstrap/master/images/bootstrap-switch.png)
 
 ```html
 <bootstrap-switch-button></bootstrap-switch-button>
