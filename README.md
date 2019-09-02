@@ -1,6 +1,41 @@
 # [Material Design Bootstrap Web Components | FREE](https://www.htmlelements.com)[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Get%20over%2020%20free%20custom%20elements%20based%20on%20SmartHTMLElements%20&url=https://www.htmlelements.com/&via=htmlelements&hashtags=bootstrap,design,templates,autocomplete,bootstrap-components,typeahead,developers,webcomponents,customelements,polymer,material)
 
-[Installation ↗](https://www.npmjs.com/package/smart-bootstrap)
+## Installation
+
+```javascript
+npm install @smarthtmlelemnets/smart-core
+```
+
+## CSS
+
+Copy-paste the stylesheet <link> into your <head> before all other stylesheets to load our CSS.
+
+```html
+<link rel="stylesheet" href="src/styles/smart.bootstrap.css">
+```
+
+or 
+
+```html
+import 'src/styles/smart.bootstrap.css';
+```
+
+## Javascript
+
+```html
+<script src="src/smart.element.js"></script>
+<script src="src/smart.bootstrap.js"></script>
+```
+
+or 
+
+```html
+import 'src/smart.element.js'
+import 'src/smart.bootstrap.js'
+```
+
+
+## Overview
 
 The package extends Bootstrap by adding Material Design and CSS3 Variables for Styling. 
 
@@ -8,6 +43,7 @@ The Boostrap components are rewritten from scratch and are built as Web Componen
 
 The Bootstrap SCSS is rewritten with CSS3 Variables and Material Design is added. 
 
+## Components
 
 ![Material Design Bootstrap](https://github.com/HTMLElements/MBWC-Toolkit/blob/master/images/bootstrap.png)
 
