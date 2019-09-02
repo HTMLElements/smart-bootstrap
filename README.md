@@ -10,10 +10,11 @@ The Bootstrap SCSS is rewritten with CSS3 Variables and Material Design is added
 
 [Demo ↗](https://www.htmlelements.com/demos/bootstrap/)
 
+Material Design Bootstrap Button Web Component
+
 ![Material Design Buttons](https://github.com/HTMLElements/MBWC-Toolkit/blob/master/images/bootstrap-buttons.png)
 
 ```html
-Material Design Bootstrap Button Web Component
 <bootstrap-button style-mode="primary">Primary</bootstrap-button>
 <bootstrap-button style-mode="secondary">Secondary</bootstrap-button>
 <bootstrap-button style-mode="success">Success</bootstrap-button>
@@ -24,24 +25,29 @@ Material Design Bootstrap Button Web Component
 <bootstrap-button style-mode="dark">Dark</bootstrap-button>
 <bootstrap-button style-mode="link">Link</bootstrap-button>
 ```
+
+Material Design Bootstrap CheckBox Web Component
+
 ![Material Design Forms](https://github.com/HTMLElements/MBWC-Toolkit/blob/master/images/bootstrap-forms.png)
 
 ```html
-Material Design Bootstrap CheckBox Web Component
 <bootstrap-check-box checked>Checked</bootstrap-check-box>
 <bootstrap-check-box>Unchecked</bootstrap-check-box>
 ```
 
+Material Design Bootstrap Radio Button Web Component
+
 ```html
-Material Design Bootstrap RadioButton Web Component
 <bootstrap-radio-button checked> Active</bootstrap-radio-button>
 <bootstrap-radio-button>Radio</bootstrap-radio-button>
 <bootstrap-radio-button>Radio</bootstrap-radio-button>
 ```
+
+Material Design Bootstrap DropDown Web Component
+
 ![Material Design Dropdown](https://github.com/HTMLElements/MBWC-Toolkit/blob/master/images/bootstrap-dropdown.png)
 
 ```html
-Material Design Bootstrap DropDown Web Component
 <bootstrap-drop-down label="Dropdown button">
 	<a class="dropdown-item" href="#">Action</a>
 	<a class="dropdown-item" href="#">Another action</a>
@@ -49,8 +55,9 @@ Material Design Bootstrap DropDown Web Component
 </bootstrap-drop-down>
 ```
 
-```html
 Material Design Bootstrap Split Button Web Component
+
+```html
 <bootstrap-split-button label="Dropdown button">
 	<a class="dropdown-item" href="#">Action</a>
 	<a class="dropdown-item" href="#">Another action</a>
@@ -58,8 +65,11 @@ Material Design Bootstrap Split Button Web Component
 </bootstrap-split-button>
 ```
 
-```html
 Material Design Bootstrap Input Group Web Component
+
+![Material Design Bootstrap InputGroup](https://github.com/HTMLElements/MBWC-Toolkit/blob/master/images/bootstrap-inputgroup.png)
+
+```html
 <bootstrap-input-group class="mb-3">
 	<span class="input-group-text" id="basic-addon1">@</span>
 	<input type="text" class="form-control" placeholder="Username" aria-label="Username"
@@ -84,10 +94,12 @@ Material Design Bootstrap Input Group Web Component
 	<textarea class="form-control" aria-label="With textarea"></textarea>
 </bootstrap-input-group>
 ```
-![Material Design Bootstrap Dropdown](https://github.com/HTMLElements/MBWC-Toolkit/blob/master/images/bootstrap-modal.png)
+
+Material Design Bootstrap Modal Web Component
+
+![Material Design Bootstrap Modal](https://github.com/HTMLElements/MBWC-Toolkit/blob/master/images/bootstrap-modal.png)
 
 ```html
-Material Design Bootstrap Modal Web Component
 <bootstrap-modal id="exampleModalLive" class="fade">
 	<div class="modal-header">
 		<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
@@ -104,10 +116,12 @@ Material Design Bootstrap Modal Web Component
 	</div>
 </bootstrap-modal>
 ```
+
+Material Design Bootstrap Tabs Web Component
+
 ![Material Design Bootstrap abs](https://github.com/HTMLElements/MBWC-Toolkit/blob/master/images/bootstrap-tabs.png)
 
 ```html 
-Material Design Bootstrap Tabs Web Component
 <bootstrap-tabs style-mode="warning" role="tablist">
 	<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home13" role="tab"
 		aria-controls="home13" aria-selected="true">Home</a>
@@ -128,31 +142,36 @@ Material Design Bootstrap Tabs Web Component
 	</div>
 </div>
 ```
+
+Material Design Bootstrap Input Web Component
+
 ![Material Design Bootstrap input](https://github.com/HTMLElements/MBWC-Toolkit/blob/master/images/bootstrap-input.png)
 
 ```html
-Material Design Bootstrap Input Web Component
 <bootstrap-input placeholder="Primary" style-mode="primary"></bootstrap-input>
 ```
+
+Material Design Bootstrap TextArea Web Component
+
 ![Material Design Bootstrap Textarea](https://github.com/HTMLElements/MBWC-Toolkit/blob/master/images/bootstrap-textarea.png)
 
 ```html
-Material Design Bootstrap TextArea Web Component
 <bootstrap-textarea placeholder="Primary" style-mode="primary"></bootstrap-textarea>
 ```
+
+Material Design Bootstrap Range Web Component
 
 ![Material Design Bootstrap Range](https://github.com/HTMLElements/MBWC-Toolkit/blob/master/images/bootstrap-range.png)
 
 ```html
-Material Design Bootstrap Range Web Component
 <bootstrap-range></bootstrap-range>
 ```
 
+Material Design Progress Web Component
 
 ![Material Design Bootstrap Progress](https://github.com/HTMLElements/MBWC-Toolkit/blob/master/images/bootstrap-forms-2.png)
 
 ```html
-Material Design Progress Web Component
 <bootstrap-progress></bootstrap-progress>
 ```
 
@@ -161,17 +180,19 @@ Material Design Circular Progress Web Component
 <bootstrap-circular></bootstrap-circular>
 ```
 
+Material Design File Input Web Component
+
 ![Material Design Bootstrap File Input](https://github.com/HTMLElements/MBWC-Toolkit/blob/master/images/bootstrap-fileinput.png)
 
 ```html
-Material Design File Input Web Component
 <bootstrap-file-input></bootstrap-file-input>
 ```
+
+Material Design Bootstrap Switch Button Web Component
 
 ![Material Design Bootstrap Switch Button](https://github.com/HTMLElements/MBWC-Toolkit/blob/master/images/bootstrap-switch.png)
 
 ```html
-Material Design Bootstrap Switch Button Web Component
 <bootstrap-switch-button></bootstrap-switch-button>
 ```
 
