@@ -1,7 +1,5 @@
 # [Material Design Bootstrap Web Components](https://www.htmlelements.com)[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Get%20over%2020%20free%20custom%20elements%20based%20on%20SmartHTMLElements%20&url=https://www.htmlelements.com/&via=htmlelements&hashtags=bootstrap,design,templates,autocomplete,bootstrap-components,typeahead,developers,webcomponents,customelements,polymer,material)
 
-# &lt;Material Design Bootstrap Web Components&gt;
-
 [Installation ↗](https://www.npmjs.com/package/smart-bootstrap)
 
 The package extends Bootstrap by adding Material Design and CSS3 Variables for Styling. 
@@ -45,6 +43,7 @@ Material Design Bootstrap DropDown
 	<a class="dropdown-item" href="#">Something else here</a>
 </bootstrap-drop-down>
 ```
+![Material Design Buttons](https://github.com/HTMLElements/MBWC-Toolkit/blob/master/Bootstrap.png)
 
 ```html
 Bootstrap Split Buttons
