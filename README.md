@@ -47,7 +47,7 @@ The Bootstrap SCSS is rewritten with CSS3 Variables and Material Design is added
 
 ![Material Design Bootstrap](https://raw.githubusercontent.com/htmlelements/smart-bootstrap/master/images/bootstrap.png)
 
-[Demo ↗](https://www.htmlelements.com/demos/bootstrap/)
+[Demo ↗](https://www.htmlelements.com/bootstrap/)
 
 Material Design Bootstrap Button Web Component
 
