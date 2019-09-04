@@ -1,4 +1,4 @@
-/* Smart HTML Elements v4.3.0 (2019-Aug) 
+/* Smart HTML Elements v4.4.0 (2019-Sep) 
 Copyright (c) 2011-2019 jQWidgets. 
 License: https://htmlelements.com/license/ */
 
@@ -258,6 +258,13 @@ Smart('bootstrap-toggle-button', class BootstrapToggleButton extends Smart.Boots
 		};
 	}
 
+template() {
+		return `<div><div id="button" class="btn">
+				 	<input class="hide"  indeterminate=[[indeterminate]] checked=[[checked]] id="input" type="checkbox" name=\'[[name]]\' autocomplete="off"/>
+				 	<label id="label"><content></content></label>
+			   </div></div>`;
+	}
+	
 	toggle(event) {
 		const that = this;
 
@@ -1964,6 +1971,17 @@ Smart('bootstrap-progress', class BootstrapProgress extends Smart.ContentElement
 		const that = this;	
 		
 		that.refresh();
+	}
+});
+
+Smart('bootstrap-circular', class BootstrapCircular extends Smart.Bootstrap.Progress {
+	static get properties() {
+			return {
+				'type': {
+					value: 'circular',
+					type: 'string'	
+				}
+			}
 	}
 });
 
